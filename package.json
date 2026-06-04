@@ -1,0 +1,22 @@
+{
+  "name": "static",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/twig": "^1.12.17",
+    "sass": "^1.100.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.0.12"
+  },
+  "dependencies": {
+    "inputmask": "^5.0.9",
+    "swiper": "^12.2.0",
+    "twig": "^3.0.0"
+  }
+}
