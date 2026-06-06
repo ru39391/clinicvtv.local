@@ -1,0 +1,45 @@
+@use './mixins' as *;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  @extend %full-height-col;
+  @include fs-lh(var(--font-size-body),1);
+  font-family: var(--font-family-body), sans-serif;
+  color: var(--color-basic);
+}
+
+.wrapper {
+  flex-grow: 1;
+}
+
+.container {
+  @include px(10px);
+  @include mx(auto);
+  max-width: 1280px;
+}
+
+.td-underline {
+  text-decoration: underline;
+}
+
+.icon-fluid {
+  @include object-fit();
+  pointer-events: none;
+}
+
+.zi-2 {
+  @include zi(2);
+}
+
+.w-auto {
+  width: auto;
+}
