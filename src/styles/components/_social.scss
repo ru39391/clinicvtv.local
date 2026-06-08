@@ -1,6 +1,14 @@
 @use "../utils/helpers" as *;
 
 .social {
-  @extend %d-flex-ai-center;
   gap: 0 10px;
+
+  &.social_hidden {
+    @extend %d-flex-ai-center;
+    display: none;
+
+    @media #{$breakpoint-up-xs} {
+      display: flex;
+    }
+  }
 }

@@ -7,10 +7,18 @@
 
 .contacts__item {
   @extend %d-flex-ai-center;
-  @include fs-lh(var(--font-size-md),var(--line-height-body));
+  @include fs-lh(var(--font-size-xs),18px);
+  font-weight: var(--fw-light);
   gap: 0 8px;
 
+  @media #{$breakpoint-up-md} {
+    @include fs-lh(var(--font-size-md),var(--line-height-body));
+    font-weight: var(--fw-normal);
+  }
+
   &.contacts__item_fs_sm {
-    @include fs-lh(var(--font-size-sm),18px);
+    @media #{$breakpoint-up-md} {
+      @include fs-lh(var(--font-size-sm),18px);
+    }
   }
 }

@@ -3,7 +3,7 @@
 .cards-wrapper {
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(4,minmax(min-content,1fr));
+  grid-template-columns: repeat(4,1fr);
   gap: 46px 42px;
 }
 
@@ -17,7 +17,8 @@
 }
 
 .card__title {
-  @include fs-lh(30px, var(--line-height-lg)); //var(--font-size-lg)
+  @include fs-lh(var(--font-size-lg), var(--line-height-lg));
+  font-family: var(--font-family-title);
   font-weight: var(--fw-bold);
   color: var(--color-primary);
 }

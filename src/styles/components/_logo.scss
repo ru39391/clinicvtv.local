@@ -3,13 +3,18 @@
 .logo {
   @extend %d-flex-ai-center;
   gap: 0 8px;
-  padding: 8px 30px;
   font-size: 64px;
   font-weight: var(--fw-bold);
   color: var(--color-primary);
-  background-color: var(--color-white);
   text-transform: uppercase;
   border-radius: 30px;
+
+  &.logo_bg_white {
+    @media #{$breakpoint-up-md} {
+      padding: 8px 30px;
+      background-color: var(--color-white);
+    }
+  }
 }
 
 .logo__caption {

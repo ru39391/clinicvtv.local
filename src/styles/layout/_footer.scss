@@ -1,40 +1,127 @@
 @use "../utils/helpers" as *;
 
 %footer-col {
-  @include border(0 1px 0 0,#0072BC);
-  padding: 30px 20px 24px 0;
+  @media #{$breakpoint-up-md} {
+    @include border(0 1px 0 0,#0072BC);
+    padding: 30px 20px 24px 0;
+  }
 }
 
 .footer {
-  padding-bottom: 15px;
-  gap: 0 20px;
-  display: grid;
+  @extend %d-flex-column;
+  gap: 5px 0;
+  padding-bottom: 20px;
   justify-content: flex-start;
-  grid-template-columns: repeat(4, auto);
   border-radius: 0 0 30px 30px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+  @media #{$breakpoint-up-xs} {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "logo logo"
+      "contacts contacts"
+      "nav search";
+  }
+
+  @media #{$breakpoint-up-sm} {
+    grid-template-areas:
+      "logo contacts"
+      "nav search";
+  }
+
+  @media #{$breakpoint-up-md} {
+    padding-bottom: 15px;
+    grid-template-columns: repeat(4, auto);
+  }
 }
 
 .footer__logo {
   @extend %footer-col;
-  @include border(0 1px 0 0,#0072BC);
+  grid-area: logo;
+  padding: 8px 15px;
+
+  @media #{$breakpoint-up-xs} {
+    padding: 0;
+  }
+
+  @media #{$breakpoint-up-md} {
+    grid-area: unset;
+    padding: 30px 20px 24px 0;
+  }
 }
 
 .footer__nav {
   @extend %footer-col;
-  @extend %d-flex-column;
+  display: none;
+  flex-direction: column;
+  grid-area: nav;
   max-width: 335px;
   gap: 10px 0;
+
+  @media #{$breakpoint-up-xs} {
+    display: flex;
+  }
+
+  @media #{$breakpoint-up-md} {
+    grid-area: unset;
+    padding-left: 10px;
+  }
+
+  &.footer__nav_type_search {
+    grid-area: search;
+
+    @media #{$breakpoint-up-md} {
+      grid-area: unset;
+    }
+  }
+
+  &.footer__nav_type_copyright {
+    display: flex;
+    padding: 0;
+    gap: 5px 0;
+
+    @media #{$breakpoint-up-xs} {
+      display: none;
+    }
+  }
 }
 
 .footer__nav-item {
-  padding: 5px 0 5px 10px;
+  @include fs-lh(var(--font-size-xs),18px);
   color: var(--color-black);
-  font-weight: var(--fw-medium);
+  font-weight: var(--fw-light);
+
+  @media #{$breakpoint-up-md} {
+    @include fs-lh(var(--font-size-body),1);
+    font-weight: var(--fw-medium);
+    padding: 5px 0;
+  }
 }
 
 .footer__contacts {
   @extend %d-flex-column;
+  grid-area: contacts;
   gap: 10px 0;
-  padding: 30px 0 24px 30px;
+  padding: 0 5px;
+
+  @media #{$breakpoint-up-xs} {
+    padding: 0;
+  }
+
+  @media #{$breakpoint-up-md} {
+    grid-area: unset;
+    padding: 30px 0 24px;
+  }
+
+  @media #{$breakpoint-up-lg} {
+    grid-area: unset;
+    padding-left: 30px;
+  }
+}
+
+.footer__text {
+  @include fs-lh(var(--font-size-xs),18px);
+  font-weight: var(--fw-light);
 }
