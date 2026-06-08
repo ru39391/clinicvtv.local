@@ -1,0 +1,31 @@
+@use "../utils/helpers" as *;
+
+.content {
+  h1 {
+    margin-bottom: 30px;
+  }
+
+  ul {
+    list-style: disc;
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  p, li {
+    line-height: var(--line-height-body);
+  }
+
+  li {
+    list-style-position: inside;
+  }
+
+  &.content_type_col {
+    max-width: 735px;
+  }
+
+  &.content_offset_px {
+    @include px(30px);
+  }
+}

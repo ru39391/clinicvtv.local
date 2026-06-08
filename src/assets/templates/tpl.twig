@@ -53,21 +53,23 @@
       </div>
     </div>
 
-    <div class="content content_type_col">
-      <h1>Почему нам доверяют поколения пациентов:</h1>
-      <ul>
-        <li>Клиника с 20-летней историей</li>
-        <li>Врачи работают в ВТВ долгие годы</li>
-        <li>Спокойная семейная атмосфера</li>
-        <li>Индивидуальный подход без спешки</li>
-        <li>Понятные рекомендации и план лечения</li>
-        <li>Удобное расположение в Москве</li>
-      </ul>
+    <div class="section">
+      <div class="content content_offset_px content_type_col">
+        <h1>Почему нам доверяют поколения пациентов:</h1>
+        <ul>
+          <li>Клиника с 20-летней историей</li>
+          <li>Врачи работают в ВТВ долгие годы</li>
+          <li>Спокойная семейная атмосфера</li>
+          <li>Индивидуальный подход без спешки</li>
+          <li>Понятные рекомендации и план лечения</li>
+          <li>Удобное расположение в Москве</li>
+        </ul>
+      </div>
     </div>
 
     <div class="section">
       <div class="section-title">Услуги</div>
-      <div class="services">
+      <div class="cards-wrapper">
         <div class="card">
           <div class="card__title">Лечение</div>
           <div class="card__desc">Терапия. Лечение кариеса и его осложнений: пульпита, периодонтита</div>
@@ -229,14 +231,9 @@
 
 <footer class="footer container">
   <div class="footer__logo">
-    <a class="logo" href="/">
-      <span class="logo__caption">
-        Стоматология
-      </span>
-      ВТВ
-    </a>
+    <a class="logo" href="/"><img src="src/assets/icons/logo-icon.svg" alt="" /></a>
   </div>
-  <nav class="footer__nav footer__nav_type_col">
+  <nav class="footer__nav">
     <a class="footer__nav-item" href="#">Услуги</a>
     <a class="footer__nav-item" href="#">Специалисты</a>
     <a class="footer__nav-item" href="#">Стоимость</a>
@@ -244,27 +241,39 @@
     <a class="footer__nav-item" href="#">Контакты</a>
     <a class="footer__nav-item" href="#">Вакансии</a>
   </nav>
-  <div class="footer__col">
+  <div class="footer__nav">
     <form class="search-form">
-      <button class="search-form__btn" type="button"></button>
+      <button class="search-form__btn" type="button"><img src="src/assets/icons/search-icon.svg" alt="" /></button>
       <input class="search-form__field" type="text" />
     </form>
-    <nav class="footer__nav">
-      <a class="footer__nav-item" href="#">Новости</a>
-      <a class="footer__nav-item" href="#">Лицензии и юридическая информация</a>
-      <a class="footer__nav-item" href="#">Вакансии</a>
-      <a class="footer__nav-item" href="#">Политика конфиденциальности</a>
-    </nav>
+
+    <a class="footer__nav-item" href="#">Новости</a>
+    <a class="footer__nav-item" href="#">Лицензии и юридическая информация</a>
+    <a class="footer__nav-item" href="#">Вакансии</a>
+    <a class="footer__nav-item" href="#">Политика конфиденциальности</a>
   </div>
-  <div class="footer__col">
+  <div class="footer__contacts">
     <ul class="contacts">
-      <li><a class="contacts__item" href="tel:+79169519951">+7 (916) 951-99-51</a></li>
-      <li class="contacts__item">м. Тушинская, Волоколамское ш., 94</li>
-      <li><a class="contacts__item" href="tel:+74954919341">+7 (495) 491-93-41</a></li>
+      <li>
+        <a class="contacts__item" href="tel:+79169519951">
+          <img src="src/assets/icons/phone-icon.svg" alt="" />
+          +7 (916) 951-99-51
+        </a>
+      </li>
+      <li class="contacts__item contacts__item_fs_sm">
+        <img src="src/assets/icons/placemark-icon.svg" alt="" />
+        м. Тушинская, Волоколамское ш., 94
+      </li>
+      <li>
+        <a class="contacts__item" href="tel:+74954919341">
+          <img src="src/assets/icons/phone-icon.svg" alt="" />
+          +7 (495) 491-93-41
+        </a>
+      </li>
     </ul>
     <div class="social">
       <button class="btn" type="button">Записаться</button>
-      <a class="social__item" href="#"></a>
+      <a class="social__item" href="#"><img src="src/assets/icons/max-icon.svg" alt="" /></a>
     </div>
   </div>
 </footer>

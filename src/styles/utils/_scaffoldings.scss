@@ -1,3 +1,4 @@
+@use './breakpoints' as *;
 @use './mixins' as *;
 
 html {
@@ -11,10 +12,11 @@ html {
 }
 
 body {
-  @extend %full-height-col;
   @include fs-lh(var(--font-size-body),1);
-  font-family: var(--font-family-body), sans-serif;
+  font-family: var(--font-family-body);
   color: var(--color-basic);
+  background-color: var(--color-light-blue);
+  padding-bottom: 10px;
 }
 
 .wrapper {
@@ -24,7 +26,11 @@ body {
 .container {
   @include px(10px);
   @include mx(auto);
-  max-width: 1280px;
+  max-width: 1310px;
+
+  @media #{$breakpoint-up-md} {
+    @include px(15px);
+  }
 }
 
 .td-underline {

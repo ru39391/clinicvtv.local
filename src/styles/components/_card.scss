@@ -1,0 +1,32 @@
+@use "../utils/helpers" as *;
+
+.cards-wrapper {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(4,minmax(min-content,1fr));
+  gap: 46px 42px;
+}
+
+.card {
+  @extend %d-flex-column;
+  gap: 20px 0;
+  text-align: center;
+  padding: 30px 16px;
+  border-radius: 30px;
+  background-color: var(--color-white);
+}
+
+.card__title {
+  @include fs-lh(30px, var(--line-height-lg)); //var(--font-size-lg)
+  font-weight: var(--fw-bold);
+  color: var(--color-primary);
+}
+
+.card__desc {
+  @include fs-lh(var(--font-size-md), var(--line-height-md));
+  color: var(--color-black);
+}
+
+.card__link {
+
+}

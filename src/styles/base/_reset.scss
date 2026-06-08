@@ -54,9 +54,12 @@ textarea {
   background: none;
 }
 
+html {
+  height: 100%;
+}
+
 html,
 body {
-  height: 100%;
   line-height: 1.5;
   font-size: 100%;
 }

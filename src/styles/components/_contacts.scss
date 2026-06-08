@@ -1,0 +1,16 @@
+@use "../utils/helpers" as *;
+
+.contacts {
+  @extend %d-flex-column;
+  gap: 10px 0;
+}
+
+.contacts__item {
+  @extend %d-flex-ai-center;
+  @include fs-lh(var(--font-size-md),var(--line-height-body));
+  gap: 0 8px;
+
+  &.contacts__item_fs_sm {
+    @include fs-lh(var(--font-size-sm),18px);
+  }
+}

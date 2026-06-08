@@ -1,0 +1,25 @@
+@use "../utils/helpers" as *;
+
+.search-form {
+  @extend %d-flex-ai-center;
+  max-width: 216px;
+  border-radius: 14px;
+  border: 1px solid var(--color-dark);
+  background-color: var(--color-white);
+}
+
+.search-form__btn {
+  @extend %d-flex-column;
+  @extend %d-flex-centered;
+  @include wh(28px);
+  @include fw(28px);
+  border-radius: 50%;
+  border: 1px solid var(--color-dark);
+  transform: translateX(-2px);
+}
+
+.search-form__field {
+  width: 100%;
+  padding: 0 16px 0 8px;
+  font-size: var(--font-size-sm);
+}
