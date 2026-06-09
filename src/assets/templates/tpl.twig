@@ -1,38 +1,66 @@
 <header class="header container">
   <div class="header__aside">
-    <a class="logo" href="/">
-      <span class="logo__caption">
-        Стоматология
-      </span>
-      ВТВ
-    </a>
+    <a class="logo" href="/"><img src="src/assets/icons/logo-icon.svg" alt="" /></a>
+  </div>
+  <div class="header__social">
+    <div class="social social_jc_end social_hidden">
+      <button class="btn" type="button">Записаться</button>
+      <a class="social__item" href="#"><img src="src/assets/icons/max-icon.svg" alt="" /></a>
+    </div>
   </div>
   <div class="header__wrapper">
-    <div class="social">
-      <button class="btn" type="button">Записаться</button>
-      <a class="social__item" href="#"></a>
-    </div>
-    <ul class="contacts contacts_border_right">
-      <li><a class="contacts__item" href="tel:+79169519951">+7 (916) 951-99-51</a></li>
-      <li><a class="contacts__item" href="tel:+74954919341">+7 (495) 491-93-41</a></li>
+    <ul class="contacts contacts_jc_around contacts_border_right">
+      <li>
+        <a class="contacts__item contacts__item_color_secondary" href="tel:+79169519951">
+          <img src="src/assets/icons/phone-icon.svg" alt="" />
+          +7 (916) 951-99-51
+        </a>
+      </li>
+      <li>
+        <a class="contacts__item contacts__item_color_secondary" href="tel:+74954919341">
+          <img src="src/assets/icons/phone-icon.svg" alt="" />
+          +7 (495) 491-93-41
+        </a>
+      </li>
     </ul>
-    <ul class="contacts">
-      <li class="contacts__item">м. Тушинская, Волоколамское ш., 94</li>
-      <li class="contacts__item">Пн-Сб: 9-21 | Вс: 10-18</li>
+    <ul class="contacts contacts_jc_around">
+      <li class="contacts__item contacts__item_color_secondary contacts__item_fs_sm">
+        <img src="src/assets/icons/placemark-icon.svg" alt="" />
+        <span>м. Тушинская<span class="contacts__item-address">Волоколамское ш., 94</span></span>
+      </li>
+      <li class="contacts__item contacts__item_color_secondary">
+        <img src="src/assets/icons/hours-icon.svg" alt="" />
+        Пн-Сб: 9-21 | Вс: 10-18
+      </li>
     </ul>
   </div>
 </header>
 
 <div class="nav-wrapper container">
   <nav class="nav">
-    <a class="nav__item" href="#">Услуги</a>
-    <a class="nav__item" href="#">Наша команда</a>
-    <a class="nav__item" href="#">Стоимость</a>
-    <a class="nav__item" href="#">Акции</a>
-    <a class="nav__item" href="#">Контакты</a>
+    <a class="nav__item is-active" href="#">
+      <img src="src/assets/icons/tooth-icon.svg" alt="" />
+      Услуги
+    </a>
+    <a class="nav__item" href="#">
+      <img src="src/assets/icons/heart-icon.svg" alt="" />
+      Наша команда
+    </a>
+    <a class="nav__item" href="#">
+      <img src="src/assets/icons/drop-icon.svg" alt="" />
+      Стоимость
+    </a>
+    <a class="nav__item" href="#">
+      <img src="src/assets/icons/pills-icon.svg" alt="" />
+      Акции
+    </a>
+    <a class="nav__item" href="#">
+      <img src="src/assets/icons/cross-icon.svg" alt="" />
+      Контакты
+    </a>
   </nav>
   <form class="search-form">
-    <button class="search-form__btn" type="button"></button>
+    <button class="search-form__btn" type="button"><img src="src/assets/icons/search-icon.svg" alt="" /></button>
     <input class="search-form__field" type="text" />
   </form>
 </div>
@@ -253,7 +281,7 @@
     <a class="footer__nav-item" href="#">Политика конфиденциальности</a>
   </div>
   <div class="footer__contacts">
-    <ul class="contacts">
+    <ul class="contacts contacts_offset_none">
       <li>
         <a class="contacts__item" href="tel:+79169519951">
           <img src="src/assets/icons/phone-icon.svg" alt="" />

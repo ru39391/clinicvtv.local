@@ -2,7 +2,7 @@
 
 %footer-col {
   @media #{$breakpoint-up-md} {
-    @include border(0 1px 0 0,#0072BC);
+    @include border(0 1px 0 0,var(--color-secondary));
     padding: 30px 20px 24px 0;
   }
 }

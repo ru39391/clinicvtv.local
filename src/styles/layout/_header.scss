@@ -1,5 +1,25 @@
 @use "../utils/helpers" as *;
 
 .header {
+  @include py(18px,8px);
+  gap: 0 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
 
+.header__aside {
+  display: flex;
+  flex-grow: 1;
+  padding: 8px 0 0;
+}
+
+.header__social {
+  flex-grow: 1;
+}
+
+.header__wrapper {
+  display: flex;
+  gap: 0 20px;
+  padding: 8px 0 0;
 }

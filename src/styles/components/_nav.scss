@@ -1,0 +1,33 @@
+@use "../utils/helpers" as *;
+
+.nav-wrapper {
+  @extend %d-flex-ai-center;
+  @include py(5px);
+  gap: 0 32px;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+.nav {
+  @extend %d-flex-ai-center;
+  justify-content: space-between;
+  flex-grow: 1;
+  gap: 0 16px;
+}
+
+.nav__item {
+  @extend %d-flex-ai-center;
+  justify-content: center;
+  flex-grow: 1;
+  gap: 0 10px;
+  padding: 5px 16px;
+  font-weight: var(--fw-medium);
+  line-height: var(--line-height-body);
+  border-radius: 15px;
+  transition: all .3s ease;
+
+  &:hover,
+  &.is-active {
+    background: rgba(168, 200, 214, 0.21);
+  }
+}
