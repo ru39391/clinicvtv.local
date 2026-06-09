@@ -2,10 +2,19 @@
 
 .search-form {
   @extend %d-flex-ai-center;
-  max-width: 216px;
   border-radius: 14px;
   border: 1px solid var(--color-dark);
   background-color: var(--color-white);
+
+  @media #{$breakpoint-up-md} {
+    max-width: 216px;
+  }
+
+  &.search-form_hidden {
+    @media #{$breakpoint-only-sm} {
+      display: none;
+    }
+  }
 }
 
 .search-form__btn {

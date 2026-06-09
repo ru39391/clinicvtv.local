@@ -1,5 +1,5 @@
 <header class="header container">
-  <div class="header__aside">
+  <div class="header__logo">
     <a class="logo" href="/"><img src="src/assets/icons/logo-icon.svg" alt="" /></a>
   </div>
   <div class="header__social">
@@ -8,31 +8,30 @@
       <a class="social__item" href="#"><img src="src/assets/icons/max-icon.svg" alt="" /></a>
     </div>
   </div>
-  <div class="header__wrapper">
-    <ul class="contacts contacts_jc_around contacts_border_right">
-      <li>
-        <a class="contacts__item contacts__item_color_secondary" href="tel:+79169519951">
-          <img src="src/assets/icons/phone-icon.svg" alt="" />
-          +7 (916) 951-99-51
-        </a>
-      </li>
-      <li>
-        <a class="contacts__item contacts__item_color_secondary" href="tel:+74954919341">
-          <img src="src/assets/icons/phone-icon.svg" alt="" />
-          +7 (495) 491-93-41
-        </a>
-      </li>
-    </ul>
-    <ul class="contacts contacts_jc_around">
-      <li class="contacts__item contacts__item_color_secondary contacts__item_fs_sm">
+  <div class="header__contacts">
+    <button class="nav-toggler" type="button"><img src="src/assets/icons/nav-icon.svg" alt="" /></button>
+    <div class="contacts contacts_type_list contacts_border_right">
+      <a class="contacts__item contacts__item_color_secondary" href="tel:+79169519951">
+        <img src="src/assets/icons/phone-icon.svg" alt="" />
+        <span class="contacts__item-caption contacts__item-caption_hidden">+7 (916) 951-99-51</span>
+      </a>
+      <a class="contacts__item contacts__item_color_secondary" href="tel:+74954919341">
+        <img src="src/assets/icons/phone-icon.svg" alt="" />
+        <span class="contacts__item-caption contacts__item-caption_hidden">+7 (495) 491-93-41</span>
+      </a>
+    </div>
+    <div class="contacts contacts_type_list">
+      <div class="contacts__item contacts__item_color_secondary contacts__item_fs_sm">
         <img src="src/assets/icons/placemark-icon.svg" alt="" />
-        <span>м. Тушинская<span class="contacts__item-address">Волоколамское ш., 94</span></span>
-      </li>
-      <li class="contacts__item contacts__item_color_secondary">
+        <span class="contacts__item-caption">
+          м. Тушинская<span class="contacts__item-address">Волоколамское ш., 94</span>
+        </span>
+      </div>
+      <div class="contacts__item contacts__item_color_secondary">
         <img src="src/assets/icons/hours-icon.svg" alt="" />
         Пн-Сб: 9-21 | Вс: 10-18
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -59,7 +58,7 @@
       Контакты
     </a>
   </nav>
-  <form class="search-form">
+  <form class="search-form search-form_hidden">
     <button class="search-form__btn" type="button"><img src="src/assets/icons/search-icon.svg" alt="" /></button>
     <input class="search-form__field" type="text" />
   </form>
@@ -281,24 +280,20 @@
     <a class="footer__nav-item" href="#">Политика конфиденциальности</a>
   </div>
   <div class="footer__contacts">
-    <ul class="contacts contacts_offset_none">
-      <li>
-        <a class="contacts__item" href="tel:+79169519951">
-          <img src="src/assets/icons/phone-icon.svg" alt="" />
-          +7 (916) 951-99-51
-        </a>
-      </li>
-      <li class="contacts__item contacts__item_fs_sm">
+    <div class="contacts contacts_offset_none">
+      <a class="contacts__item" href="tel:+79169519951">
+        <img src="src/assets/icons/phone-icon.svg" alt="" />
+        +7 (916) 951-99-51
+      </a>
+      <div class="contacts__item contacts__item_fs_sm">
         <img src="src/assets/icons/placemark-icon.svg" alt="" />
         м. Тушинская, Волоколамское ш., 94
-      </li>
-      <li>
-        <a class="contacts__item" href="tel:+74954919341">
-          <img src="src/assets/icons/phone-icon.svg" alt="" />
-          +7 (495) 491-93-41
-        </a>
-      </li>
-    </ul>
+      </div>
+      <a class="contacts__item" href="tel:+74954919341">
+        <img src="src/assets/icons/phone-icon.svg" alt="" />
+        +7 (495) 491-93-41
+      </a>
+    </div>
     <div class="social social_hidden">
       <button class="btn" type="button">Записаться</button>
       <a class="social__item" href="#"><img src="src/assets/icons/max-icon.svg" alt="" /></a>

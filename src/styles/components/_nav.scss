@@ -1,33 +1,80 @@
 @use "../utils/helpers" as *;
 
 .nav-wrapper {
-  @extend %d-flex-ai-center;
-  @include py(5px);
-  gap: 0 32px;
+  @extend %d-flex-column;
+  gap: 16px 32px;
   margin-bottom: 10px;
   justify-content: space-between;
+
+  @media #{$breakpoint-up-md} {
+    @include py(5px);
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 .nav {
-  @extend %d-flex-ai-center;
+  @extend %d-flex-column;
   justify-content: space-between;
   flex-grow: 1;
   gap: 0 16px;
+
+  @media #{$breakpoint-up-sm} {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 .nav__item {
   @extend %d-flex-ai-center;
-  justify-content: center;
+  @include before;
+  flex-wrap: nowrap;
   flex-grow: 1;
   gap: 0 10px;
-  padding: 5px 16px;
+  padding: 12px 0;
   font-weight: var(--fw-medium);
   line-height: var(--line-height-body);
-  border-radius: 15px;
   transition: all .3s ease;
+
+  @media #{$breakpoint-up-sm} {
+    font-size: var(--font-size-sm);
+    position: static;
+    padding: 5px 8px;
+    justify-content: center;
+    border-radius: 15px;
+  }
+
+  @media #{$breakpoint-up-lg} {
+    font-size: var(--font-size-body);
+  }
+
+  &:before {
+    @include pos(0,-10px);
+    right: -10px;
+    height: 100%;
+    transition: all .3s ease;
+
+    @media #{$breakpoint-up-sm} {
+      display: none;
+    }
+  }
 
   &:hover,
   &.is-active {
-    background: rgba(168, 200, 214, 0.21);
+    @media #{$breakpoint-up-sm} {
+      background: rgba(168, 200, 214, 0.21);
+    }
+
+    &:before {
+      background: rgba(168, 200, 214, 0.21);
+    }
+  }
+}
+
+.nav-toggler {
+  display: block;
+
+  @media #{$breakpoint-up-sm} {
+    display: none;
   }
 }

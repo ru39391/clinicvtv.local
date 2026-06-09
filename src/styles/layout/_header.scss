@@ -1,25 +1,72 @@
 @use "../utils/helpers" as *;
 
 .header {
-  @include py(18px,8px);
-  gap: 0 20px;
+  @include py(5px);
+  gap: 10px 20px;
   display: flex;
-  align-items: flex-start;
   justify-content: space-between;
+
+  @media #{$breakpoint-up-sm} {
+    @include py(16px);
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "logo contacts contacts"
+      "social contacts contacts";
+  }
+
+  @media #{$breakpoint-up-md} {
+    @include py(18px,8px);
+    display: flex;
+    align-items: flex-start;
+  }
 }
 
-.header__aside {
+.header__logo {
+  max-width: 108px;
   display: flex;
   flex-grow: 1;
-  padding: 8px 0 0;
+
+  @media #{$breakpoint-up-sm} {
+    max-width: unset;
+    grid-area: logo;
+  }
+
+  @media #{$breakpoint-up-md} {
+    padding: 8px 0 0;
+  }
 }
 
 .header__social {
+  display: none;
   flex-grow: 1;
+
+  @media #{$breakpoint-up-sm} {
+    display: flex;
+    justify-content: flex-start;
+    grid-area: social;
+  }
+
+  @media #{$breakpoint-up-md} {
+    display: block;
+  }
 }
 
-.header__wrapper {
+.header__contacts {
+  gap: 0 10px;
   display: flex;
-  gap: 0 20px;
-  padding: 8px 0 0;
+  flex-direction: row-reverse;
+  grid-area: contacts;
+
+  @media #{$breakpoint-up-sm} {
+    gap: 0 10px;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  @media #{$breakpoint-up-md} {
+    gap: 0 20px;
+    padding: 8px 0 0;
+  }
 }
