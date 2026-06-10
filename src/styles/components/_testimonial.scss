@@ -1,0 +1,44 @@
+@use "../utils/helpers" as *;
+
+.testimonial-wrapper {
+  display: flex;
+  gap: 0 18px;
+}
+
+.testimonial-item {
+  @extend %d-flex-column;
+  gap: 15px 0;
+  max-width: 272px;
+  padding: 30px 20px;
+  border-radius: 20px;
+  color: var(--color-black);
+  background-color: var(--color-white);
+
+  @media #{$breakpoint-up-md} {
+    max-width: 390px;
+  }
+}
+
+.testimonial-item__header {
+  @extend %d-flex-ai-center;
+  gap: 0 30px;
+}
+
+.testimonial-item__caption {
+  @include fs-lh(var(--font-size-lg),26px);
+  font-family: var(--font-family-title);
+
+  @media #{$breakpoint-up-md} {
+    flex-grow: 1;
+    text-align: center;
+  }
+}
+
+.testimonial-item__text {
+  @include fs-lh(var(--font-size-xs),var(--line-height-sm));
+  font-weight: var(--fw-light);
+
+  @media #{$breakpoint-up-md} {
+    @include fs-lh(var(--font-size-md),var(--line-height-body));
+  }
+}

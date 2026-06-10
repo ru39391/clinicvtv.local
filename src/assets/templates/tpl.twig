@@ -214,13 +214,23 @@
     <div class="section">
       <div class="section-title">Отзывы наших пацентов</div>
       <div class="swiper js-slides">
-        <div class="testimonials swiper-wrapper">
+        <div class="testimonial-wrapper swiper-wrapper">
+          {% for item in [1,2,3] %}
           <div class="swiper-slide w-auto">
-            <div class="testimonials__item">
-              <div class="testimonials__item-caption">Елена</div>
-              <div class="testimonials__item-text">Обратилась в клинику Стоматология ВТВ к стоматологу Наталье Владимировне. Она чётко и понятно объяснила мне мою проблему и предложила план лечения.</div>
+            <div class="testimonial-item">
+              <div class="testimonial-item__header">
+                <img src="src/assets/icons/blockquote-icon.svg" alt="" />
+                <div class="testimonial-item__caption">Елена</div>
+              </div>
+              <div class="testimonial-item__text">Обратилась в клинику Стоматология ВТВ к стоматологу Наталье Владимировне. Она чётко и понятно объяснила мне мою проблему и предложила план лечения.</div>
             </div>
           </div>
+          {% endfor %}
+        </div>
+        <div class="swiper-pagination js-slides-pagination">
+          <div class="swiper-pagination-bullet is-active"></div>
+          <div class="swiper-pagination-bullet"></div>
+          <div class="swiper-pagination-bullet"></div>
         </div>
       </div>
     </div>
