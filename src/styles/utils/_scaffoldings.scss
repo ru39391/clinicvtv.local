@@ -37,6 +37,10 @@ body {
   text-decoration: underline;
 }
 
+.img-cover {
+  @include object-fit();
+}
+
 .icon-fluid {
   @include object-fit();
   pointer-events: none;

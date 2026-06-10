@@ -1,5 +1,45 @@
 @use "../utils/helpers" as *;
 
-.swiper-pagination {
+.swiper {
+  @extend %d-flex-column;
+  gap: 24px 0;
+}
 
+.swiper-footer {
+  @extend %d-flex-ai-center;
+  display: none;
+  gap: 0 16px;
+
+  @media #{$breakpoint-up-md} {
+    display: flex;
+  }
+}
+
+.swiper-pagination {
+  @extend %d-flex-centered;
+  position: static;
+  padding: 4px 0;
+  gap: 0 10px;
+  flex-grow: 1;
+
+  .swiper-pagination-bullet {
+    opacity: 1;
+  }
+}
+
+.swiper-pagination-bullet {
+  @include fw(18px);
+  @include wh(18px);
+  cursor: pointer;
+  background-color: var(--color-grey);
+
+  &.is-active {
+    background-color: var(--color-primary);
+  }
+}
+
+.swiper-readmore {
+  @include fs-lh(var(--font-size-lg),26px);
+  font-family: var(--font-family-title);
+  color: var(--color-primary);
 }

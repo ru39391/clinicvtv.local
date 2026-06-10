@@ -1,0 +1,108 @@
+@use "../utils/helpers" as *;
+
+.examples-nav {
+  @extend %d-flex-wrap;
+  align-items: center;
+  margin: 0 0 20px;
+  gap: 5px;
+
+  @media #{$breakpoint-up-md} {
+    gap: 8px 20px;
+  }
+}
+
+.examples-wrapper {
+  display: flex;
+  gap: 0 10px;
+}
+
+.examples-item {
+  max-width: 300px;
+  height: 340px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: all .3s ease;
+
+  @media #{$breakpoint-up-md} {
+    max-width: 215px;
+    border-radius: 30px;
+  }
+
+  &.is-active {
+    @media #{$breakpoint-up-md} {
+      max-width: 500px;
+    }
+
+    .examples-item__footer {
+      transform: translateY(0);
+    }
+  }
+}
+
+.examples-item__pic {
+  @include pos(0);
+  @include wh(100%);
+  opacity: 0;
+  transition: all .3s ease;
+
+  &.is-active {
+    opacity: 1;
+  }
+}
+
+.examples-item__footer {
+  @include fs-lh(var(--font-size-xxs),var(--line-height-xs));
+  font-weight: var(--fw-medium);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 8px 10px;
+  display: flex;
+  gap: 0 10px;
+  color: var(--color-white);
+  background-color: rgba(50, 50, 50, 0.34);
+  transform: translateY(100%);
+  transition: all .3s ease .3s;
+
+  @media #{$breakpoint-up-md} {
+    @include px(20px);
+    @include fs-lh(var(--font-size-body),20px);
+    font-weight: var(--fw-normal);
+    gap: 0 20px;
+  }
+}
+
+.examples-item__togglers {
+  @extend %d-flex-column;
+  @include border(0 2px 0 0,var(--color-white));
+  justify-content: space-around;
+  padding: 0 10px 0 0;
+  gap: 5px 0;
+
+  @media #{$breakpoint-up-md} {
+    gap: 10px 0;
+  }
+}
+
+.examples-item__btn {
+  @include fs-lh(var(--font-size-xs),var(--line-height-sm));
+  @include border(1px,var(--color-grey));
+  padding: 5px 10px;
+  color: var(--color-grey);
+  font-weight: var(--fw-light);
+  border-radius: 20px;
+  transition: all .3s ease;
+
+  @media #{$breakpoint-up-md} {
+    @include px(15px);
+    font-size: var(--font-size-body);
+    font-weight: var(--fw-medium);
+  }
+
+  &.is-active {
+    color: var(--color-basic);
+    background-color: var(--color-grey);
+  }
+}

@@ -3,13 +3,36 @@
 .btn {
   min-height: 38px;
   padding: 6px 32px;
-  color: var(--color-white);
   font-weight: var(--fw-medium);
   line-height: var(--line-height-body);
   border-radius: 25px;
-  background-color: var(--color-primary);
+
+  &.btn-primary {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+  }
 
   &.btn-md {
     @include py(14px);
+  }
+}
+
+.btn-toggler {
+  @include border(2px,var(--color-grey));
+  @include fs-lh(var(--font-size-xs),var(--line-height-sm));
+  font-weight: var(--fw-light);
+  padding: 5px 10px;
+  border-radius: 30px;
+  transition: all .3s ease;
+
+  &.is-active {
+    background-color: var(--color-grey);
+  }
+
+  @media #{$breakpoint-up-md} {
+    @include fs-lh(var(--font-size-body),var(--line-height-body));
+    font-weight: var(--fw-normal);
+    padding: 10px 25px;
+    text-align: left;
   }
 }

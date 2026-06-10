@@ -8,7 +8,7 @@
     gap: 0 50px;
     flex-wrap: nowrap;
     flex-direction: row;
-    padding: 10px 0 0 45px;
+    padding: 10px 0 0 30px;
   }
 }
 
@@ -22,26 +22,6 @@
     padding: 20px 0;
     flex-wrap: nowrap;
     flex-direction: column;
-  }
-}
-
-.tab-btn {
-  @include border(2px,var(--color-grey));
-  @include fs-lh(var(--font-size-xs),var(--line-height-sm));
-  font-weight: var(--fw-light);
-  padding: 5px 10px;
-  border-radius: 30px;
-  transition: all .3s ease;
-
-  &.is-active {
-    background-color: var(--color-grey);
-  }
-
-  @media #{$breakpoint-up-md} {
-    @include fs-lh(var(--font-size-body),var(--line-height-body));
-    font-weight: var(--fw-normal);
-    padding: 10px 25px;
-    text-align: left;
   }
 }
 

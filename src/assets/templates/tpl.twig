@@ -4,7 +4,7 @@
   </div>
   <div class="header__social">
     <div class="social social_jc_end social_hidden">
-      <button class="btn" type="button">Записаться</button>
+      <button class="btn btn-primary" type="button">Записаться</button>
       <a class="social__item" href="#"><img src="src/assets/icons/max-icon.svg" alt="" /></a>
     </div>
   </div>
@@ -65,21 +65,25 @@
 </div>
 
 <div class="wrapper wrapper_bg_right">
-  <div class="container">
+  <div class="promo container">
     <div class="swiper js-slides">
-      <div class="promo swiper-wrapper">
+      <div class="swiper-wrapper">
         <div class="promo__item swiper-slide w-auto">
-          <img class="promo__img" src="" alt="" />
+          <div class="promo__img">
+            <img class="img-cover" src="src/assets/images/promo.png" alt="" />
+          </div>
           <div class="promo__wrapper">
             <div class="promo__subtitle">Стоматология ВТВ</div>
             <div class="promo__title">ваша улыбка - наша история</div>
             <div class="promo__desc">Многолетний опыт и забота о каждом пациенте</div>
-            <button class="btn" type="button">Записаться на сайте</button>
+            <button class="btn btn-primary" type="button">Записаться на сайте</button>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
+  <div class="container">
     <div class="section content content_offset_px content_type_col">
       <h1>Почему нам доверяют поколения пациентов:</h1>
       <p>Кариес зубов является очень распространенной болезнью. Он заключается в деминерализации и распаде твердых тканей зуба. Требует соответствующего лечения, а если такие действия не будут приняты, может распространяться и достигать даже внутренних частей зуба, вызывая их полное разрушение.</p>
@@ -158,7 +162,7 @@
         <div class="content">
           <p>Здравствуйте!<br />Меня зовут Симонова Юлия Павловна.<br />Я - главный врач клиники Стоматология ВТВ уже более 10 лет.<br />Я гарантирую: в наших клиниках вы получите своевременную и безопасную медицинскую помощь!</p>
         </div>
-        <button class="btn btn-md" type="button">Записаться на сайте</button>
+        <button class="btn btn-primary btn-md" type="button">Записаться на сайте</button>
       </div>
       <div class="section__aside">
         <img class="section__img img-fluid" src="src/assets/images/section-img.png" alt="" />
@@ -169,11 +173,11 @@
       <div class="section-title">Наша команда</div>
       <div class="tab-section js-tabs">
         <div class="tab-nav">
-          <button class="tab-btn js-tabs-link is-active" data-pane="price-tab-1" type="button">Терапевты</button>
-          <button class="tab-btn js-tabs-link" data-pane="price-tab-2" type="button">Хирурги-имплантологи</button>
-          <button class="tab-btn js-tabs-link" data-pane="price-tab-3" type="button">Ортодонты</button>
-          <button class="tab-btn js-tabs-link" data-pane="price-tab-4" type="button">Ортопеды</button>
-          <button class="tab-btn js-tabs-link" data-pane="price-tab-5" type="button">Детские стоматологи</button>
+          <button class="btn-toggler js-tabs-link is-active" data-pane="price-tab-1" type="button">Терапевты</button>
+          <button class="btn-toggler js-tabs-link" data-pane="price-tab-2" type="button">Хирурги-имплантологи</button>
+          <button class="btn-toggler js-tabs-link" data-pane="price-tab-3" type="button">Ортодонты</button>
+          <button class="btn-toggler js-tabs-link" data-pane="price-tab-4" type="button">Ортопеды</button>
+          <button class="btn-toggler js-tabs-link" data-pane="price-tab-5" type="button">Детские стоматологи</button>
         </div>
         <div class="tab-content">
           <div class="tab-pane js-tabs-pane is-active" data-id="price-tab-1">
@@ -198,11 +202,19 @@
                     </div>
                     <div class="team__item-footer">
                       <a class="team__item-link" href="#">Отзывы о докторе</a>
-                      <button class="btn btn-sm" type="button">Записаться</button>
+                      <button class="btn btn-primary btn-sm" type="button">Записаться</button>
                     </div>
                   </div>
                 </div>
                 {% endfor %}
+              </div>
+              <div class="swiper-footer">
+                <div class="swiper-pagination js-slides-pagination">
+                  <div class="swiper-pagination-bullet is-active"></div>
+                  <div class="swiper-pagination-bullet"></div>
+                  <div class="swiper-pagination-bullet"></div>
+                </div>
+                <a class="swiper-readmore" href="#">все специалисты</a>
               </div>
             </div>
           </div>
@@ -214,41 +226,65 @@
     <div class="section">
       <div class="section-title">Отзывы наших пацентов</div>
       <div class="swiper js-slides">
-        <div class="testimonial-wrapper swiper-wrapper">
+        <div class="testimonials-wrapper swiper-wrapper">
           {% for item in [1,2,3] %}
           <div class="swiper-slide w-auto">
-            <div class="testimonial-item">
-              <div class="testimonial-item__header">
+            <div class="testimonials-item">
+              <div class="testimonials-item__header">
                 <img src="src/assets/icons/blockquote-icon.svg" alt="" />
-                <div class="testimonial-item__caption">Елена</div>
+                <div class="testimonials-item__caption">Елена</div>
               </div>
-              <div class="testimonial-item__text">Обратилась в клинику Стоматология ВТВ к стоматологу Наталье Владимировне. Она чётко и понятно объяснила мне мою проблему и предложила план лечения.</div>
+              <div class="testimonials-item__text">Обратилась в клинику Стоматология ВТВ к стоматологу Наталье Владимировне. Она чётко и понятно объяснила мне мою проблему и предложила план лечения.</div>
             </div>
           </div>
           {% endfor %}
         </div>
-        <div class="swiper-pagination js-slides-pagination">
-          <div class="swiper-pagination-bullet is-active"></div>
-          <div class="swiper-pagination-bullet"></div>
-          <div class="swiper-pagination-bullet"></div>
+        <div class="swiper-footer">
+          <div class="swiper-pagination js-slides-pagination">
+            <div class="swiper-pagination-bullet is-active"></div>
+            <div class="swiper-pagination-bullet"></div>
+            <div class="swiper-pagination-bullet"></div>
+          </div>
+          <a class="swiper-readmore" href="#">читать все отзывы</a>
         </div>
       </div>
     </div>
 
     <div class="section section_bg_white">
       <div class="section-title">Примеры работ</div>
+      <div class="examples-nav">
+        <button class="btn-toggler is-active" type="button">Лечение зубов (терапия)</button>
+        <button class="btn-toggler" type="button">Протезирование зубов</button>
+        <button class="btn-toggler" type="button">Исправление прикуса</button>
+        <button class="btn-toggler" type="button">Имплантация</button>
+        <button class="btn-toggler" type="button">Детская стоматология</button>
+      </div>
       <div class="swiper js-slides">
-        <div class="examples-nav">
-          <button class="examples-nav__btn" type="button">Лечение зубов (терапия)</button>
-          <button class="examples-nav__btn" type="button">Протезирование зубов</button>
-          <button class="examples-nav__btn" type="button">Исправление прикуса</button>
-          <button class="examples-nav__btn" type="button">Имплантация</button>
-          <button class="examples-nav__btn" type="button">Детская стоматология</button>
-        </div>
-        <div class="examples swiper-wrapper">
+        <div class="examples-wrapper swiper-wrapper">
           <div class="swiper-slide w-auto">
-            <img class="examples__item" src="" alt="" />
+            <div class="examples-item">
+              <img class="img-cover" src="src/assets/images/example.png" alt="" />
+              <div class="examples-item__pic">
+                <img class="img-cover" src="src/assets/images/example-2.png" alt="" />
+              </div>
+              <div class="examples-item__footer">
+                <div class="examples-item__togglers">
+                  <button class="examples-item__btn is-active" type="button">после</button>
+                  <button class="examples-item__btn" type="button">до</button>
+                </div>
+                <div class="examples-item__content">
+                  <p>Пациент 37 лет</p>
+                  <p>Доктор Гарькуша А.А.</p>
+                  <p>Исправление прикуса с помощью лингвальной брекет-системы.</p>
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
+        <div class="swiper-pagination js-slides-pagination">
+          <div class="swiper-pagination-bullet is-active"></div>
+          <div class="swiper-pagination-bullet"></div>
+          <div class="swiper-pagination-bullet"></div>
         </div>
       </div>
     </div>
@@ -261,11 +297,11 @@
       <div class="section-title">Прейскурант</div>
       <div class="tab-section js-tabs">
         <div class="tab-nav">
-          <button class="tab-btn js-tabs-link is-active" data-pane="price-tab-1" type="button">Ортодонтия</button>
-          <button class="tab-btn js-tabs-link" data-pane="price-tab-2" type="button">Хирургия и имплантология</button>
-          <button class="tab-btn js-tabs-link" data-pane="price-tab-3" type="button">Терапия</button>
-          <button class="tab-btn js-tabs-link" data-pane="price-tab-4" type="button">Ортопедия</button>
-          <button class="tab-btn js-tabs-link" data-pane="price-tab-5" type="button">Детская стоматология</button>
+          <button class="btn-toggler js-tabs-link is-active" data-pane="price-tab-1" type="button">Ортодонтия</button>
+          <button class="btn-toggler js-tabs-link" data-pane="price-tab-2" type="button">Хирургия и имплантология</button>
+          <button class="btn-toggler js-tabs-link" data-pane="price-tab-3" type="button">Терапия</button>
+          <button class="btn-toggler js-tabs-link" data-pane="price-tab-4" type="button">Ортопедия</button>
+          <button class="btn-toggler js-tabs-link" data-pane="price-tab-5" type="button">Детская стоматология</button>
         </div>
         <div class="tab-content">
           <div class="tab-pane js-tabs-pane is-active" data-id="price-tab-1">
@@ -335,7 +371,7 @@
       </a>
     </div>
     <div class="social social_hidden">
-      <button class="btn" type="button">Записаться</button>
+      <button class="btn btn-primary" type="button">Записаться</button>
       <a class="social__item" href="#"><img src="src/assets/icons/max-icon.svg" alt="" /></a>
     </div>
     <nav class="footer__nav footer__nav_type_copyright">
