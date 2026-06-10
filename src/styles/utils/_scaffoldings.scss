@@ -28,7 +28,7 @@ body {
   @include mx(auto);
   max-width: 1310px;
 
-  @media #{$breakpoint-up-md} {
+  @media #{$breakpoint-up-sm} {
     @include px(15px);
   }
 }

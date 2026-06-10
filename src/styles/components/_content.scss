@@ -5,6 +5,10 @@
     margin-bottom: 30px;
   }
 
+  p, ul, ol {
+    margin-bottom: 24px;
+  }
+
   ul {
     list-style: disc;
   }
@@ -14,7 +18,13 @@
   }
 
   p, li {
-    line-height: var(--line-height-body);
+    @include fs-lh(var(--font-size-xs),var(--line-height-sm));
+    font-weight: var(--fw-light);
+
+    @media #{$breakpoint-up-sm} {
+      @include fs-lh(var(--font-size-body),var(--line-height-body));
+      font-weight: var(--fw-normal);
+    }
   }
 
   li {
@@ -26,6 +36,10 @@
   }
 
   &.content_offset_px {
-    @include px(30px);
+    @include px(5px);
+
+    @media #{$breakpoint-up-sm} {
+      @include px(30px);
+    }
   }
 }

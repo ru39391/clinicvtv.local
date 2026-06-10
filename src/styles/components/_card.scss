@@ -1,33 +1,119 @@
 @use "../utils/helpers" as *;
 
 .cards-wrapper {
-  display: grid;
+  @extend %d-flex-column;
+  gap: 30px 0;
   justify-content: center;
-  grid-template-columns: repeat(4,1fr);
-  gap: 46px 42px;
+
+  @media #{$breakpoint-up-sm} {
+    gap: 46px 44px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media #{$breakpoint-up-md} {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media #{$breakpoint-up-lg} {
+    gap: 46px 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
 }
 
 .card {
   @extend %d-flex-column;
+  @include before;
   gap: 20px 0;
-  text-align: center;
-  padding: 30px 16px;
-  border-radius: 30px;
+  padding: 20px 15px;
+  overflow: hidden;
+  border-radius: 20px;
   background-color: var(--color-white);
+
+  @media #{$breakpoint-up-sm} {
+    text-align: center;
+    padding: 30px 16px;
+    border-radius: 30px;
+  }
+
+  @media #{$breakpoint-up-lg} {
+    @include fw(calc(100%/4));
+    padding: 30px 38px;
+    border-radius: 0;
+    background-color: var(--color-transp);
+  }
+
+  &:before {
+    @media #{$breakpoint-up-lg} {
+      @include pos(0,22px);
+      right: 22px;
+      bottom: 0;
+      z-index: 1;
+      border-radius: 30px;
+      background-color: var(--color-white);
+    }
+  }
+}
+
+.card__header {
+  display: flex;
+  align-items: center;
+  gap: 0 15px;
+
+  @media #{$breakpoint-up-sm} {
+    gap: 20px 0;
+    flex-direction: column;
+  }
+
+  @media #{$breakpoint-up-lg} {
+    @include zi(2);
+  }
+}
+
+.card__media {
+  @include fw(50px);
+
+  @media #{$breakpoint-up-sm} {
+    @include fw(auto);
+    max-width: unset;
+  }
 }
 
 .card__title {
-  @include fs-lh(var(--font-size-lg), var(--line-height-lg));
+  @include fs-lh(var(--font-size-lg), 26px);
   font-family: var(--font-family-title);
   font-weight: var(--fw-bold);
   color: var(--color-primary);
+
+  @media #{$breakpoint-up-sm} {
+    @include fs-lh(32px, var(--line-height-lg));
+  }
 }
 
 .card__desc {
-  @include fs-lh(var(--font-size-md), var(--line-height-md));
+  @include fs-lh(var(--font-size-xs), var(--line-height-sm));
+  font-weight: var(--fw-light);
   color: var(--color-black);
+
+  @media #{$breakpoint-up-sm} {
+    @include fs-lh(var(--font-size-md), var(--line-height-body));
+  }
+
+  @media #{$breakpoint-up-lg} {
+    @include zi(2);
+  }
 }
 
 .card__link {
+  @include zi(3);
+  @include pos(0,0);
+  right: 0;
+  bottom: 0;
 
+  @media #{$breakpoint-up-lg} {
+    @include pos(0,22px);
+    right: 22px;
+  }
 }

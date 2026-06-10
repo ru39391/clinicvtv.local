@@ -1,4 +1,5 @@
 @use './mixins' as *;
+@use './breakpoints' as *;
 
 %d-flex-wrap {
   display: flex;
@@ -26,7 +27,11 @@
 }
 
 %section-title {
-  @include fs-lh(var(--font-size-xl),var(--line-height-xl));
+  @include fs-lh(var(--font-size-xl),var(--line-height-lg));
   font-family: var(--font-family-title);
   font-weight: var(--fw-bold);
+
+  @media #{$breakpoint-up-md} {
+    @include fs-lh(var(--font-size-xxl),var(--line-height-xl));
+  }
 }

@@ -1,11 +1,38 @@
 @use "../utils/helpers" as *;
 
 .section {
-  @include py(50px);
+  @include py(40px);
+
+  &.section_type_row {
+    @extend %d-flex-column;
+    gap: 40px;
+
+    @media #{$breakpoint-up-md} {
+      @include px(45px,40px);
+      align-items: center;
+      flex-direction: row;
+    }
+
+    .section-title {
+      text-align: left;
+    }
+  }
+
+  @media #{$breakpoint-up-md} {
+    @include py(50px);
+  }
 }
 
 .section-title {
   @extend %section-title;
   text-align: center;
-  margin-bottom: 36px;
+  margin-bottom: 20px;
+
+  @media #{$breakpoint-up-md} {
+    margin-bottom: 36px;
+  }
+}
+
+.section__img {
+  border-radius: 30px;
 }

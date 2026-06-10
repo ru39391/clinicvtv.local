@@ -1,0 +1,35 @@
+@use "../utils/helpers" as *;
+
+.price {
+  @extend %d-flex-column;
+  gap: 5px 0;
+
+  @media #{$breakpoint-up-md} {
+    gap: 12px 0;
+  }
+}
+
+.price__row {
+  @include fs-lh(var(--font-size-xs),var(--line-height-sm));
+  display: grid;
+  grid-template-columns: repeat(2, minmax(min-content,auto));
+  font-weight: var(--fw-light);
+  color: var(--color-black);
+
+  @media #{$breakpoint-up-md} {
+    font-size: var(--font-size-body);
+    font-weight: var(--fw-medium);
+    grid-template-columns: repeat(2, minmax(min-content,50%));
+  }
+}
+
+.price__row-value {
+  padding: 0 10px;
+  text-align: center;
+
+  @media #{$breakpoint-up-md} {
+    @include fs-lh(var(--font-size-lg),26px);
+    font-family: var(--font-family-title);
+    font-weight: var(--fw-normal);
+  }
+}
