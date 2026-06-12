@@ -102,6 +102,36 @@
     </div>
 
     <div class="section">
+      <div class="section-intro">
+        <div class="section-title">Блок с карточками</div>
+        <div class="section-desc">Это блок с карточками с белым фотом, иконками, заголовком, подзхаголовком и текстом.</div>
+      </div>
+      <div class="features-wrapper features-wrapper_type_grid">
+        <div class="feature feature_type_card">
+          <div class="feature__icon feature__icon_rounded"><img class="img-fluid" src="src/assets/images/serv-2.png" alt="" /></div>
+          <div class="feature__wrapper">
+            <div class="feature__title">Ранний кариес</div>
+            <div class="feature__desc">Возникает на молочных зубах вскоре после их формирования. Развивается очень быстро и в короткое время разрушает поверхность зубов.</div>
+          </div>
+        </div>
+        <div class="feature feature_type_card">
+          <div class="feature__icon feature__icon_rounded"><img class="img-fluid" src="src/assets/images/serv-2.png" alt="" /></div>
+          <div class="feature__wrapper">
+            <div class="feature__title">Острый кариес</div>
+            <div class="feature__desc">Чаще всего появляется у молодых людей. Имеет яркий цвет и мягкую консистенцию.</div>
+          </div>
+        </div>
+        <div class="feature feature_type_card">
+          <div class="feature__icon feature__icon_rounded"><img class="img-fluid" src="src/assets/images/serv-2.png" alt="" /></div>
+          <div class="feature__wrapper">
+            <div class="feature__title">Хронический кариес</div>
+            <div class="feature__desc">Возникает в основном у взрослых и пожилых людей, действует медленнее, чем острый кариес. Имеет темный цвет и твердую консистенцию.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
       <div class="section-title">Услуги</div>
       <div class="cards-wrapper">
         <div class="card">
@@ -171,6 +201,18 @@
         <img class="section__img img-fluid" src="src/assets/images/section-img.png" alt="" />
       </div>
     </div>
+    <div class="section section_type_row section_dir_reverse">
+      <div class="section__wrapper">
+        <div class="section-title">Стоматология ВТВ</div>
+        <div class="content">
+          <p>Здравствуйте!<br />Меня зовут Симонова Юлия Павловна.<br />Я - главный врач клиники Стоматология ВТВ уже более 10 лет.<br />Я гарантирую: в наших клиниках вы получите своевременную и безопасную медицинскую помощь!</p>
+        </div>
+        <button class="btn btn-primary btn-md" type="button">Записаться на сайте</button>
+      </div>
+      <div class="section__aside">
+        <img class="section__img img-fluid" src="src/assets/images/section-img.png" alt="" />
+      </div>
+    </div>
 
     <div class="section">
       <div class="section-title">Наша команда</div>
@@ -185,7 +227,7 @@
         <div class="tab-content">
           <div class="tab-pane js-tabs-pane is-active" data-id="price-tab-1">
             <div class="swiper js-slides">
-              <div class="team swiper-wrapper">
+              <div class="team-wrapper swiper-wrapper">
                 {% for item in [1,2] %}
                 <div class="swiper-slide w-auto">
                   <div class="team__item">
@@ -296,6 +338,28 @@
 
 <div class="wrapper wrapper_bg_right">
   <div class="container">
+    <div class="section">
+      <div class="section-title">Почему пациенты выбирают нас</div>
+      <div class="features-wrapper">
+        <div class="feature">
+          <div class="feature__icon"><img class="img-fluid" src="src/assets/icons/tooth-icon.svg" alt="" /></div>
+          <div class="feature__desc">Понятный план лечения без лишних процедур</div>
+        </div>
+        <div class="feature">
+          <div class="feature__icon"><img class="img-fluid" src="src/assets/icons/cross-icon.svg" alt="" /></div>
+          <div class="feature__desc">Опытные врачи и сопровождение пациентов</div>
+        </div>
+        <div class="feature">
+          <div class="feature__icon"><img class="img-fluid" src="src/assets/icons/pills-icon.svg" alt="" /></div>
+          <div class="feature__desc">Современные материалы и методы лечения</div>
+        </div>
+        <div class="feature">
+          <div class="feature__icon"><img class="img-fluid" src="src/assets/icons/heart-icon.svg" alt="" /></div>
+          <div class="feature__desc">Внимательное отношение и спокойная атмосфера</div>
+        </div>
+      </div>
+    </div>
+
     <div class="section">
       <div class="section-title">Прейскурант</div>
       <div class="tab-section js-tabs">

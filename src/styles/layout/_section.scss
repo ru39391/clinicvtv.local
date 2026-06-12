@@ -18,6 +18,12 @@
     }
   }
 
+  &.section_dir_reverse {
+    @media #{$breakpoint-up-md} {
+      flex-direction: row-reverse;
+    }
+  }
+
   &.section_bg_white {
     padding: 20px 10px;
     margin-bottom: 40px;
@@ -35,6 +41,16 @@
   }
 }
 
+.section-intro {
+  @extend %d-flex-column;
+  gap: 20px 0;
+  margin-bottom: 20px;
+
+  .section-title {
+    margin-bottom: 0;
+  }
+}
+
 .section-title {
   @extend %section-title;
   text-align: left;
@@ -43,6 +59,19 @@
   @media #{$breakpoint-up-md} {
     text-align: center;
     margin-bottom: 36px;
+  }
+}
+
+.section-desc {
+  @include fs-lh(var(--font-size-xs),var(--line-height-sm));
+  font-weight: var(--fw-light);
+  max-width: 470px;
+
+  @media #{$breakpoint-up-md} {
+    @include fs-lh(var(--font-size-lg),26px);
+    @include mx(auto);
+    text-align: center;
+    font-family: var(--font-family-title);
   }
 }
 

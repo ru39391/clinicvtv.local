@@ -1,0 +1,109 @@
+@use "../utils/helpers" as *;
+
+.features-wrapper {
+  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+
+  @media #{$breakpoint-up-sm} {
+    grid-template-columns: repeat(4, minmax(0,210px));
+  }
+
+  &.features-wrapper_type_grid {
+    @extend %d-flex-column;
+
+    @media #{$breakpoint-up-sm} {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media #{$breakpoint-up-md} {
+      gap: 25px;
+    }
+  }
+}
+
+.feature {
+  @extend %d-flex-column;
+  @include border(2px,var(--color-grey));
+  align-items: center;
+  text-align: center;
+  gap: 10px 0;
+  padding: 20px 16px;
+  border-radius: 20px;
+  background-color: var(--color-light-blue);
+
+  @media #{$breakpoint-up-sm} {
+    @include px(20px);
+  }
+
+  @media #{$breakpoint-up-md} {
+    @include py(30px);
+    gap: 20px 0;
+  }
+
+  &.feature_type_card {
+    padding: 30px 10px;
+    gap: 20px 0;
+    border: 0;
+    background-color: var(--color-white);
+
+    @media #{$breakpoint-up-md} {
+      gap: 50px 0;
+    }
+
+    .feature__wrapper {
+      @extend %d-flex-column;
+      gap: 20px 0;
+      color: var(--color-black);
+
+      @media #{$breakpoint-up-md} {
+        gap: 50px 0;
+      }
+    }
+
+    .feature__desc {
+      @media #{$breakpoint-up-md} {
+        @include fs-lh(var(--font-size-md),var(--line-height-body));
+        font-family: var(--font-family-body);
+        font-weight: var(--fw-light);
+      }
+    }
+  }
+}
+
+.feature__icon {
+  max-width: 90px;
+
+  &.feature__icon_rounded {
+    @extend %d-flex-centered;
+    @extend %d-flex-column;
+    @include wh(108px);
+    max-width: unset;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: var(--color-light-blue);
+  }
+}
+
+.feature__title {
+  @include fs-lh(var(--font-size-lg),26px);
+  font-family: var(--font-family-title);
+  font-weight: var(--fw-bold);
+
+  @media #{$breakpoint-up-md} {
+    @include fs-lh(32px,var(--line-height-lg));
+  }
+}
+
+.feature__desc {
+  @include fs-lh(var(--font-size-xs),var(--line-height-sm));
+  font-weight: var(--fw-light);
+
+  @media #{$breakpoint-up-md} {
+    @include fs-lh(var(--font-size-lg),26px);
+    font-family: var(--font-family-title);
+    gap: 20px 0;
+  }
+}
