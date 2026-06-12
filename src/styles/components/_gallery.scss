@@ -1,0 +1,42 @@
+@use "../utils/helpers" as *;
+
+.gallery {
+  gap: 0 15px;
+
+  @media #{$breakpoint-up-md} {
+    justify-content: stretch;
+  }
+}
+
+.gallery__item {
+  max-width: 300px;
+  overflow: hidden;
+  border-radius: 20px;
+  transition: all .3s ease;
+
+  @media #{$breakpoint-up-md} {
+    height: 100%;
+    border-radius: 30px;
+  }
+
+  &.is-active {
+    @media #{$breakpoint-up-md} {
+      max-width: 585px;
+    }
+
+    .gallery__item-img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.gallery__item-img {
+  max-width: 100%;
+  height: auto;
+
+  @media #{$breakpoint-up-md} {
+    @include wh(100%);
+    object-fit: cover;
+  }
+}

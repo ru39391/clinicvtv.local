@@ -2,12 +2,20 @@
 
 .promo {
   @include px(0);
+
+  @media #{$breakpoint-up-md} {
+    @include px(15px);
+  }
 }
 
 .promo__item {
   overflow: hidden;
   position: relative;
   border-radius: 0 0 10px 10px;
+
+  @media #{$breakpoint-up-md} {
+    border-radius: 30px;
+  }
 }
 
 .promo__img {
@@ -15,11 +23,19 @@
     @include pos(0);
     @include wh(100%);
     object-fit: cover;
+
+    @media #{$breakpoint-up-sm} {
+      display: none;
+    }
   }
 
   &.promo__img_type_desktop {
     max-width: unset;
     height: 100%;
+
+    @media #{$breakpoint-up-sm} {
+      max-width: 100%;
+    }
   }
 }
 
@@ -29,6 +45,12 @@
   @include wh(100%);
   padding: 5px;
   justify-content: flex-end;
+
+  @media #{$breakpoint-up-md} {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 30px 45px;
+  }
 }
 
 .promo__content {
@@ -38,12 +60,24 @@
   padding: 10px;
   border-radius: 10px;
   background-color: rgba(255,255,255,.8);
+
+  @media #{$breakpoint-up-md} {
+    @include fw(575px);
+    gap: 24px;
+    padding: 30px 45px;
+    border-radius: 30px;
+    justify-content: space-between;
+  }
 }
 
 .promo__subtitle {
   @include fs-lh(var(--font-size-lg),26px);
   font-weight: var(--fw-bold);
   font-family: var(--font-family-title);
+
+  @media #{$breakpoint-up-md} {
+    @include fs-lh(32px,var(--line-height-lg));
+  }
 }
 
 .promo__title {
@@ -52,6 +86,10 @@
   font-family: var(--font-family-title);
   color: var(--color-primary);
   text-transform: uppercase;
+
+  @media #{$breakpoint-up-md} {
+    @include fs-lh(var(--font-size-xxl),var(--line-height-xl));
+  }
 }
 
 .promo__desc {
@@ -62,6 +100,10 @@
     @media #{$breakpoint-up-sm} {
       @include fs-lh(var(--font-size-body),var(--line-height-body));
       font-weight: var(--fw-normal);
+    }
+
+    @media #{$breakpoint-up-md} {
+      max-width: 380px;
     }
   }
 
