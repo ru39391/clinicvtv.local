@@ -1,0 +1,52 @@
+@use "../utils/helpers" as *;
+
+.articles-wrapper {
+  display: flex;
+  gap: 0 16px;
+}
+
+.article-item {
+  @extend %d-flex-column;
+  gap: 10px 0;
+  padding: 20px 10px;
+  max-width: 320px;
+  position: relative;
+  border-radius: 20px;
+  color: var(--color-black);
+  background-color: var(--color-white);
+
+  @media #{$breakpoint-up-md} {
+    @include px(20px);
+    max-width: 375px;
+    border-radius: 30px;
+  }
+}
+
+.article-item__img {
+  border-radius: 20px;
+
+  @media #{$breakpoint-up-md} {
+    border-radius: 30px;
+    margin-bottom: 10px;
+  }
+}
+
+.article-item__title {
+  @include fs-lh(var(--font-size-lg),26px);
+  font-family: var(--font-family-title);
+
+  &:after {
+    @include wh(100%);
+    @include pos(0);
+    content: '';
+  }
+}
+
+.article-item__desc {
+  @include fs-lh(var(--font-size-xs),var(--line-height-sm));
+  font-weight: var(--fw-light);
+
+  @media #{$breakpoint-up-md} {
+    @include fs-lh(var(--font-size-md),var(--line-height-body));
+  }
+}

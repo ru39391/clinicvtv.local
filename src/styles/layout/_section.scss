@@ -29,6 +29,7 @@
 
     @media #{$breakpoint-up-md} {
       padding-right: 0;
+      align-items: flex-start;
     }
 
     .section__aside {

@@ -227,6 +227,44 @@
       </div>
     </div>
 
+    <div class="section section_bg_white section_type_row section_type_cols">
+      <div class="section__aside">
+        <div class="section-title section-title_mb_md">Часто задаваемые вопросы</div>
+        <div class="section-desc section-desc_type_plain">Собрали ответы на самые частые вопросы о лечении кариеса у взрослых и детей.</div>
+      </div>
+      <div class="section__wrapper">
+        <div class="faq-wrapper">
+          {% for item in [
+            {
+              title: 'Больно ли лечить кариес?',
+              content: 'Современное лечение кариеса обычно проходит комфортно. При необходимости врач использует местную анестезию, поэтому пациент не чувствует боли во время лечения.',
+            },
+            {
+              title: 'Можно ли вылечить кариес за одно посещение?',
+              content: 'Да, можно',
+            },
+            {
+              title: 'Сколько длится лечение кариеса?',
+              content: 'Меньше, чем ожидаете',
+            },
+            {
+              title: 'Нужно ли лечить кариес, если зуб не болит?',
+              content: 'Нужно, лечите',
+            },
+            {
+              title: 'От чего зависит стоимость лечения кариеса?',
+              content: 'От сложности',
+            }
+          ] %}
+          <div class="faq-item accordion-item">
+            <div class="faq-item__title accordion-title">{{ item.title }}</div>
+            <div class="faq-item__content accordion-content">{{ item.content }}</div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
     <div class="section section_type_row section_type_cols">
       <div class="section__aside">
         <div class="section-title section-title_mb_md">Полезно знать</div>
