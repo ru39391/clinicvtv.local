@@ -1,0 +1,39 @@
+@use "../utils/helpers" as *;
+
+.faq-wrapper {
+  @extend %d-flex-column;
+  gap: 5px 0;
+}
+
+.faq-item {
+  border-radius: 20px;
+  border: 2px solid var(--color-grey);
+
+  @media #{$breakpoint-up-md} {
+    border-radius: 30px;
+  }
+}
+
+.faq-item__title {
+  @include fs-lh(var(--font-size-lg),26px);
+  font-family: var(--font-family-title);
+  color: var(--color-primary);
+  padding: 10px;
+
+  @media #{$breakpoint-up-md} {
+    padding: 20px 30px;
+  }
+}
+
+.faq-item__content {
+  @include fs-lh(var(--font-size-xs),var(--line-height-sm));
+  font-weight: var(--fw-light);
+  color: var(--color-block);
+  padding: 0 10px 10px;
+
+  @media #{$breakpoint-up-md} {
+    @include fs-lh(var(--font-size-body),var(--line-height-body));
+    font-weight: var(--fw-normal);
+    padding: 0 30px 20px;
+  }
+}
