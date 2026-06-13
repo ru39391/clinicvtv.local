@@ -37,9 +37,3 @@
     background-color: var(--color-primary);
   }
 }
-
-.swiper-readmore {
-  @include fs-lh(var(--font-size-lg),26px);
-  font-family: var(--font-family-title);
-  color: var(--color-primary);
-}

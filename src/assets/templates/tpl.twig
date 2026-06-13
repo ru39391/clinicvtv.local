@@ -102,6 +102,19 @@
     </div>
 
     <div class="section">
+      <div class="section-card">
+        <div class="section-intro">
+          <div class="section-title">Записаться на приём</div>
+          <div class="section-desc">Если вы хотите записаться на прием или у Вас остались вопросы</div>
+        </div>
+        <div class="section-card__wrapper">
+          <a class="readmore-link readmore-link_fs_lg" href="#">+7 (495) 491-93-41</a>
+          <button class="btn btn-primary btn-md" type="button">Записаться на сайте</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
       <div class="section-intro">
         <div class="section-title">Блок с карточками</div>
         <div class="section-desc">Это блок с карточками с белым фотом, иконками, заголовком, подзхаголовком и текстом.</div>
@@ -214,6 +227,36 @@
       </div>
     </div>
 
+    <div class="section section_type_row section_type_cols">
+      <div class="section__aside">
+        <div class="section-title section-title_mb_md">Полезно знать</div>
+        <div class="section-desc section-desc_type_plain">Делимся рекомендациями врачей, новостями клиники и понятными ответами на частые вопросы пациентов.</div>
+      </div>
+      <div class="section__wrapper">
+        <div class="swiper js-slides">
+          <div class="articles-wrapper swiper-wrapper">
+            {% for item in [1,2] %}
+            <div class="swiper-slide w-auto">
+              <div class="article-item">
+                <img class="article-item__img img-fluid" src="src/assets/images/team.png" alt="" />
+                <a class="article-item__title" href="#">Когда стоит записаться к ортодонту: признаки, которые важно не игнорировать</a>
+                <div class="article-item__desc">Неровное положение зубов, скученность, щели или изменения прикуса могут влиять не только на эстетику, но и на здоровье зубочелюстной системы. В статье рассказываем, в каких случаях стоит обратиться к ортодонту и почему ранняя консультация помогает выбрать оптимальное лечение.</div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="swiper-footer">
+            <div class="swiper-pagination js-slides-pagination">
+              <div class="swiper-pagination-bullet is-active"></div>
+              <div class="swiper-pagination-bullet"></div>
+              <div class="swiper-pagination-bullet"></div>
+            </div>
+            <a class="readmore-link" href="#">читать все статьи</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="section">
       <div class="section-title">Наша команда</div>
       <div class="tab-section js-tabs">
@@ -230,23 +273,23 @@
               <div class="team-wrapper swiper-wrapper">
                 {% for item in [1,2] %}
                 <div class="swiper-slide w-auto">
-                  <div class="team__item">
-                    <img class="team__item-img img-fluid" src="src/assets/images/team.png" alt="" />
-                    <div class="team__item-wrapper">
-                      <div class="team__item-title">ГАРЬКУША Алина Алексеевна</div>
-                      <ul class="team__item-list">
-                        <li class="team__item-feature">
+                  <div class="team-item">
+                    <img class="team-item__img img-fluid" src="src/assets/images/team.png" alt="" />
+                    <div class="team-item__wrapper">
+                      <div class="team-item__title">ГАРЬКУША Алина Алексеевна</div>
+                      <ul class="team-item__list">
+                        <li class="team-item__feature">
                           <img src="src/assets/icons/checked-icon.svg" alt="" />
                           стоматолог-терапевт, хирург
                         </li>
-                        <li class="team__item-feature">
+                        <li class="team-item__feature">
                           <img src="src/assets/icons/checked-icon.svg" alt="" />
                           опыт работы с 2022 года
                         </li>
                       </ul>
                     </div>
-                    <div class="team__item-footer">
-                      <a class="team__item-link" href="#">Отзывы о докторе</a>
+                    <div class="team-item__footer">
+                      <a class="team-item__link" href="#">Отзывы о докторе</a>
                       <button class="btn btn-primary btn-sm" type="button">Записаться</button>
                     </div>
                   </div>
@@ -259,7 +302,7 @@
                   <div class="swiper-pagination-bullet"></div>
                   <div class="swiper-pagination-bullet"></div>
                 </div>
-                <a class="swiper-readmore" href="#">все специалисты</a>
+                <a class="readmore-link" href="#">все специалисты</a>
               </div>
             </div>
           </div>
@@ -290,7 +333,7 @@
             <div class="swiper-pagination-bullet"></div>
             <div class="swiper-pagination-bullet"></div>
           </div>
-          <a class="swiper-readmore" href="#">читать все отзывы</a>
+          <a class="readmore-link" href="#">читать все отзывы</a>
         </div>
       </div>
     </div>
