@@ -1,67 +1,78 @@
-<header class="header container">
-  <div class="header__logo">
-    <a class="logo" href="/"><img src="src/assets/icons/logo-icon.svg" alt="" /></a>
-  </div>
-  <div class="header__social">
-    <div class="social social_jc_end social_hidden">
-      <button class="btn btn-primary" type="button">Записаться</button>
-      <a class="social__item" href="#"><img src="src/assets/icons/max-icon.svg" alt="" /></a>
+<div class="container">
+  <header class="header">
+    <div class="header__logo">
+      <a class="logo" href="/"><img src="src/assets/icons/logo-icon.svg" alt="" /></a>
     </div>
-  </div>
-  <div class="header__contacts">
-    <button class="nav-toggler" type="button"><img src="src/assets/icons/nav-icon.svg" alt="" /></button>
-    <div class="contacts contacts_type_list contacts_border_right">
-      <a class="contacts__item contacts__item_color_secondary" href="tel:+79169519951">
-        <img src="src/assets/icons/phone-icon.svg" alt="" />
-        <span class="contacts__item-caption contacts__item-caption_hidden">+7 (916) 951-99-51</span>
-      </a>
-      <a class="contacts__item contacts__item_color_secondary" href="tel:+74954919341">
-        <img src="src/assets/icons/phone-icon.svg" alt="" />
-        <span class="contacts__item-caption contacts__item-caption_hidden">+7 (495) 491-93-41</span>
-      </a>
-    </div>
-    <div class="contacts contacts_type_list">
-      <div class="contacts__item contacts__item_color_secondary contacts__item_fs_sm">
-        <img src="src/assets/icons/placemark-icon.svg" alt="" />
-        <span class="contacts__item-caption">
-          м. Тушинская<span class="contacts__item-address">Волоколамское ш., 94</span>
-        </span>
-      </div>
-      <div class="contacts__item contacts__item_color_secondary">
-        <img src="src/assets/icons/hours-icon.svg" alt="" />
-        Пн-Сб: 9-21 | Вс: 10-18
+    <div class="header__social">
+      <div class="social social_jc_end social_hidden">
+        <button class="btn btn-primary" type="button">Записаться</button>
+        <a class="social__item" href="#"><img src="src/assets/icons/max-icon.svg" alt="" /></a>
       </div>
     </div>
-  </div>
-</header>
+    <div class="header__contacts">
+      <button class="nav-toggler" type="button"><img src="src/assets/icons/nav-icon.svg" alt="" /></button>
+      <div class="contacts contacts_type_list contacts_border_right">
+        <a class="contacts__item contacts__item_color_secondary" href="tel:+79169519951">
+          <img src="src/assets/icons/phone-icon.svg" alt="" />
+          <span class="contacts__item-caption contacts__item-caption_hidden">+7 (916) 951-99-51</span>
+        </a>
+        <a class="contacts__item contacts__item_color_secondary" href="tel:+74954919341">
+          <img src="src/assets/icons/phone-icon.svg" alt="" />
+          <span class="contacts__item-caption contacts__item-caption_hidden">+7 (495) 491-93-41</span>
+        </a>
+      </div>
+      <div class="contacts contacts_type_list">
+        <div class="contacts__item contacts__item_color_secondary contacts__item_fs_sm">
+          <img src="src/assets/icons/placemark-icon.svg" alt="" />
+          <span class="contacts__item-caption">
+            м. Тушинская<span class="contacts__item-address">Волоколамское ш., 94</span>
+          </span>
+        </div>
+        <div class="contacts__item contacts__item_color_secondary">
+          <img src="src/assets/icons/hours-icon.svg" alt="" />
+          Пн-Сб: 9-21 | Вс: 10-18
+        </div>
+      </div>
+    </div>
+  </header>
 
-<div class="nav-wrapper container">
-  <nav class="nav">
-    <a class="nav__item is-active" href="#">
-      <img src="src/assets/icons/tooth-icon.svg" alt="" />
-      Услуги
+  <div class="nav-wrapper">
+    <nav class="nav">
+      <a class="nav__item is-active" href="#">
+        <img src="src/assets/icons/tooth-icon.svg" alt="" />
+        Услуги
+      </a>
+      <a class="nav__item" href="#">
+        <img src="src/assets/icons/heart-icon.svg" alt="" />
+        Наша команда
+      </a>
+      <a class="nav__item" href="#">
+        <img src="src/assets/icons/drop-icon.svg" alt="" />
+        Стоимость
+      </a>
+      <a class="nav__item" href="#">
+        <img src="src/assets/icons/pills-icon.svg" alt="" />
+        Акции
+      </a>
+      <a class="nav__item" href="#">
+        <img src="src/assets/icons/cross-icon.svg" alt="" />
+        Контакты
+      </a>
+    </nav>
+    <form class="search-form search-form_hidden">
+      <button class="search-form__btn" type="button"><img src="src/assets/icons/search-icon.svg" alt="" /></button>
+      <input class="search-form__field" type="text" />
+    </form>
+  </div>
+
+  <nav class="pathway">
+    <a class="pathway__item" href="#">
+      <img src="src/assets/icons/home-icon.svg" alt="" />
+      Главная
     </a>
-    <a class="nav__item" href="#">
-      <img src="src/assets/icons/heart-icon.svg" alt="" />
-      Наша команда
-    </a>
-    <a class="nav__item" href="#">
-      <img src="src/assets/icons/drop-icon.svg" alt="" />
-      Стоимость
-    </a>
-    <a class="nav__item" href="#">
-      <img src="src/assets/icons/pills-icon.svg" alt="" />
-      Акции
-    </a>
-    <a class="nav__item" href="#">
-      <img src="src/assets/icons/cross-icon.svg" alt="" />
-      Контакты
-    </a>
-  </nav>
-  <form class="search-form search-form_hidden">
-    <button class="search-form__btn" type="button"><img src="src/assets/icons/search-icon.svg" alt="" /></button>
-    <input class="search-form__field" type="text" />
-  </form>
+    <a class="pathway__item" href="#">Услуги</a>
+    <a class="pathway__item pathway__item_type_current" href="#">Лечение кариеса</a>
+  </div>
 </div>
 
 <div class="wrapper wrapper_bg_right">
@@ -99,6 +110,13 @@
         <li>Понятные рекомендации и план лечения</li>
         <li>Удобное расположение в Москве</li>
       </ul>
+    </div>
+
+    <div class="section">
+      <blockquote class="blockquote">
+        <img src="src/assets/icons/blockquote-icon.svg" alt="" />
+        Не ждите пока кариес перерастет в пульпит и Вам будут лечить каналы. Намного легче и дешевле купировать кариес на стадии черной точки, не дожидаясь боли. Если при ежегодном осмотре врач находит у вас начальный кариес, нужно сразу его лечить. Для примера: лечение жевательного зуба в стадии кариозного пятна обойдется вам в 4 700 руб, а лечение пульпита этого же зуба в 14 000 руб.
+      </blockquote>
     </div>
 
     <div class="section">
@@ -144,57 +162,62 @@
       </div>
     </div>
 
+    {% set cards = [
+      {
+        title: 'Лечение',
+        desc: 'Терапия. Лечение кариеса и его осложнений: пульпита, периодонтита',
+      },
+      {
+        title: 'Детская стоматология',
+        desc: 'Лечение зубов детям любого возраста',
+      },
+      {
+        title: 'Протезирование',
+        desc: 'Ортопедия. Съемное и несъемное протезирование. На своих зубах и на имплантах.',
+      },
+      {
+        title: 'Исправление прикуса',
+        desc: 'Ортодонтия. Коррекция прикуса взрослым и детям.',
+      },
+      {
+        title: 'Хирургия и имплантация',
+        desc: 'Все виды имплантации: от одиночных имплантов до восстановления полностью беззубой челюсти. Удаление зубов любой сложности.',
+      },
+      {
+        title: 'Профилактика',
+        desc: 'Все мероприятия для профилактики: профилактические осмотры, профессиональная гигиена полости рта и отбеливание.',
+      }
+    ] %}
+    <div class="section">
+      <div class="section-title">Услуги</div>
+      <div class="cards-wrapper cards-wrapper_type_grid">
+        {% for item in cards %}
+        <div class="card card_type_row">
+          <a class="card__media" href="#"><img class="img-fluid" src="src/assets/images/serv-{{ loop.index }}.png" alt="" /></a>
+          <a class="card__title" href="#">{{ item.title }}</a>
+          <div class="card__list">
+            <a class="card__list-item" href="#">Лечение кариеса</a>
+            <a class="card__list-item" href="#">Лечение кист зубов</a>
+            <a class="card__list-item" href="#">Лечение клиновидного деффекта</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
     <div class="section">
       <div class="section-title">Услуги</div>
       <div class="cards-wrapper">
+        {% for item in cards %}
         <div class="card">
           <div class="card__header">
-            <div class="card__media"><img class="img-fluid" src="src/assets/images/serv-1.png" alt="" /></div>
-            <div class="card__title">Лечение</div>
+            <div class="card__media"><img class="img-fluid" src="src/assets/images/serv-{{ loop.index }}.png" alt="" /></div>
+            <div class="card__title">{{ item.title }}</div>
           </div>
-          <div class="card__desc">Терапия. Лечение кариеса и его осложнений: пульпита, периодонтита</div>
+          <div class="card__desc">{{ item.desc }}</div>
           <a class="card__link" href="#"></a>
         </div>
-        <div class="card">
-          <div class="card__header">
-            <div class="card__media"><img class="img-fluid" src="src/assets/images/serv-2.png" alt="" /></div>
-            <div class="card__title">Детская стоматология</div>
-          </div>
-          <div class="card__desc">Лечение зубов детям любого возраста</div>
-          <a class="card__link" href="#"></a>
-        </div>
-        <div class="card">
-          <div class="card__header">
-            <div class="card__media"><img class="img-fluid" src="src/assets/images/serv-3.png" alt="" /></div>
-            <div class="card__title">Протезирование</div>
-          </div>
-          <div class="card__desc">Ортопедия. Съемное и несъемное протезирование. На своих зубах и на имплантах.</div>
-          <a class="card__link" href="#"></a>
-        </div>
-        <div class="card">
-          <div class="card__header">
-            <div class="card__media"><img class="img-fluid" src="src/assets/images/serv-4.png" alt="" /></div>
-            <div class="card__title">Исправление прикуса</div>
-          </div>
-          <div class="card__desc">Ортодонтия. Коррекция прикуса взрослым и детям.</div>
-          <a class="card__link" href="#"></a>
-        </div>
-        <div class="card">
-          <div class="card__header">
-            <div class="card__media"><img class="img-fluid" src="src/assets/images/serv-5.png" alt="" /></div>
-            <div class="card__title">Хирургия и имплантация</div>
-          </div>
-          <div class="card__desc">Все виды имплантации: от одиночных имплантов до восстановления полностью беззубой челюсти. Удаление зубов любой сложности.</div>
-          <a class="card__link" href="#"></a>
-        </div>
-        <div class="card">
-          <div class="card__header">
-            <div class="card__media"><img class="img-fluid" src="src/assets/images/serv-6.png" alt="" /></div>
-            <div class="card__title">Профилактика</div>
-          </div>
-          <div class="card__desc">Все мероприятия для профилактики: профилактические осмотры, профессиональная гигиена полости рта и отбеливание.</div>
-          <a class="card__link" href="#"></a>
-        </div>
+        {% endfor %}
       </div>
     </div>
   </div>

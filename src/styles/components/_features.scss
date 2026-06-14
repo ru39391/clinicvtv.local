@@ -50,6 +50,7 @@
     background-color: var(--color-white);
 
     @media #{$breakpoint-up-md} {
+      @include px(20px);
       gap: 50px 0;
     }
 

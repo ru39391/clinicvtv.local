@@ -21,6 +21,10 @@
     display: flex;
     align-items: flex-start;
   }
+
+  @media #{$breakpoint-up-lg} {
+    @include px(30px);
+  }
 }
 
 .header__logo {

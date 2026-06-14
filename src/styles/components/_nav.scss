@@ -11,6 +11,10 @@
     flex-direction: row;
     align-items: center;
   }
+
+  @media #{$breakpoint-up-lg} {
+    @include px(30px);
+  }
 }
 
 .nav {

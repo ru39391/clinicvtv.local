@@ -1,0 +1,31 @@
+@use "../utils/helpers" as *;
+
+.pathway {
+  @extend %d-flex-ai-center;
+  @extend %d-flex-wrap;
+  @include px(30px);
+  margin: 0 0 10px;
+  gap: 10px;
+}
+
+.pathway__item {
+  @extend %d-flex-ai-center;
+  @include fs-lh(var(--font-size-xs),var(--line-height-sm));
+  font-weight: var(--fw-light);
+  color: var(--color-black);
+  gap: 0 10px;
+
+  @media #{$breakpoint-up-md} {
+    @include fs-lh(var(--font-size-md),var(--line-height-body));
+  }
+
+  &:after {
+    content: '/';
+  }
+
+  &.pathway__item_type_current {
+    &:after {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@use "../utils/helpers" as *;
+
+.blockquote {
+  @include fs-lh(var(--font-size-body),var(--line-height-body));
+  font-family: var(--font-family-title);
+  display: flex;
+  align-items: flex-start;
+  max-width: 960px;
+  margin: 0 auto;
+  gap: 0 24px;
+
+  @media #{$breakpoint-up-md} {
+    @include fs-lh(var(--font-size-lg),26px);
+    gap: 0 50px;
+  }
+}
