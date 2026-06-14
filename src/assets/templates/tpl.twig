@@ -79,6 +79,7 @@
   <div class="promo container">
     <div class="swiper js-slides">
       <div class="swiper-wrapper">
+        {% for item in [1,2,3,4] %}
         <div class="promo__item swiper-slide">
           <img class="promo__img promo__img_type_mobile" src="src/assets/images/promo-mobile.png" alt="" />
           <img class="promo__img promo__img_type_desktop" src="src/assets/images/promo.png" alt="" />
@@ -93,6 +94,7 @@
             </div>
           </div>
         </div>
+        {% endfor %}
       </div>
     </div>
   </div>
@@ -292,8 +294,8 @@
               content: 'От сложности',
             }
           ] %}
-          <div class="faq-item accordion-item">
-            <div class="faq-item__title accordion-title">{{ item.title }}</div>
+          <div class="faq-item accordion-item js-accordion">
+            <div class="faq-item__title accordion-title js-accordion-btn">{{ item.title }}</div>
             <div class="faq-item__content accordion-content">{{ item.content }}</div>
           </div>
           {% endfor %}
@@ -307,9 +309,9 @@
         <div class="section-desc section-desc_type_plain">Делимся рекомендациями врачей, новостями клиники и понятными ответами на частые вопросы пациентов.</div>
       </div>
       <div class="section__wrapper">
-        <div class="swiper js-slides">
+        <div class="swiper js-carousel">
           <div class="articles-wrapper swiper-wrapper">
-            {% for item in [1,2] %}
+            {% for item in [1,2,3,4,5,6] %}
             <div class="swiper-slide w-auto">
               <div class="article-item">
                 <img class="article-item__img img-fluid" src="src/assets/images/team.png" alt="" />
@@ -320,11 +322,7 @@
             {% endfor %}
           </div>
           <div class="swiper-footer">
-            <div class="swiper-pagination js-slides-pagination">
-              <div class="swiper-pagination-bullet is-active"></div>
-              <div class="swiper-pagination-bullet"></div>
-              <div class="swiper-pagination-bullet"></div>
-            </div>
+            <div class="swiper-pagination"></div>
             <a class="readmore-link" href="#">читать все статьи</a>
           </div>
         </div>
@@ -343,9 +341,9 @@
         </div>
         <div class="tab-content">
           <div class="tab-pane js-tabs-pane is-active" data-id="price-tab-1">
-            <div class="swiper js-slides">
+            <div class="swiper js-carousel">
               <div class="team-wrapper swiper-wrapper">
-                {% for item in [1,2] %}
+                {% for item in [1,2,3,4,5,6] %}
                 <div class="swiper-slide w-auto">
                   <div class="team-item">
                     <img class="team-item__img img-fluid" src="src/assets/images/team.png" alt="" />
@@ -371,11 +369,7 @@
                 {% endfor %}
               </div>
               <div class="swiper-footer">
-                <div class="swiper-pagination js-slides-pagination">
-                  <div class="swiper-pagination-bullet is-active"></div>
-                  <div class="swiper-pagination-bullet"></div>
-                  <div class="swiper-pagination-bullet"></div>
-                </div>
+                <div class="swiper-pagination"></div>
                 <a class="readmore-link" href="#">все специалисты</a>
               </div>
             </div>
@@ -387,9 +381,9 @@
 
     <div class="section">
       <div class="section-title">Отзывы наших пацентов</div>
-      <div class="swiper js-slides">
+      <div class="swiper js-carousel" data-loop="0">
         <div class="testimonials-wrapper swiper-wrapper">
-          {% for item in [1,2,3] %}
+          {% for item in [1,2,3,5,6,7,8] %}
           <div class="swiper-slide w-auto">
             <div class="testimonials-item">
               <div class="testimonials-item__header">
@@ -402,11 +396,7 @@
           {% endfor %}
         </div>
         <div class="swiper-footer">
-          <div class="swiper-pagination js-slides-pagination">
-            <div class="swiper-pagination-bullet is-active"></div>
-            <div class="swiper-pagination-bullet"></div>
-            <div class="swiper-pagination-bullet"></div>
-          </div>
+          <div class="swiper-pagination"></div>
           <a class="readmore-link" href="#">читать все отзывы</a>
         </div>
       </div>
@@ -421,8 +411,9 @@
         <button class="btn-toggler" type="button">Имплантация</button>
         <button class="btn-toggler" type="button">Детская стоматология</button>
       </div>
-      <div class="swiper js-slides">
+      <div class="swiper js-carousel">
         <div class="examples-wrapper swiper-wrapper">
+          {% for item in [1,2,3,4,5,6] %}
           <div class="swiper-slide w-auto">
             <div class="examples-item">
               <img class="img-cover" src="src/assets/images/example.png" alt="" />
@@ -442,12 +433,9 @@
               </div>
             </div>
           </div>
+          {% endfor %}
         </div>
-        <div class="swiper-pagination js-slides-pagination">
-          <div class="swiper-pagination-bullet is-active"></div>
-          <div class="swiper-pagination-bullet"></div>
-          <div class="swiper-pagination-bullet"></div>
-        </div>
+        <div class="swiper-pagination"></div>
       </div>
     </div>
   </div>
@@ -505,23 +493,15 @@
 
     <div class="section section_bg_white">
       <div class="section-title">Наша галерея</div>
-      <div class="swiper js-slides">
+      <div class="swiper js-carousel" data-loop="1">
         <div class="gallery swiper-wrapper">
-          <div class="swiper-slide w-auto h-auto">
-            <div class="gallery__item is-active"><img class="gallery__item-img" src="src/assets/images/section-img.png" alt="" /></div>
-          </div>
+          {% for item in [1,2,3,4,5,6] %}
           <div class="swiper-slide w-auto h-auto">
             <div class="gallery__item"><img class="gallery__item-img" src="src/assets/images/section-img.png" alt="" /></div>
           </div>
-          <div class="swiper-slide w-auto h-auto">
-            <div class="gallery__item"><img class="gallery__item-img" src="src/assets/images/section-img.png" alt="" /></div>
-          </div>
+          {% endfor %}
         </div>
-        <div class="swiper-pagination js-slides-pagination">
-          <div class="swiper-pagination-bullet is-active"></div>
-          <div class="swiper-pagination-bullet"></div>
-          <div class="swiper-pagination-bullet"></div>
-        </div>
+        <div class="swiper-pagination"></div>
       </div>
     </div>
   </div>

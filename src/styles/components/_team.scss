@@ -2,7 +2,11 @@
 
 .team-wrapper {
   display: flex;
-  gap: 0 36px;
+  gap: 0 10px;
+
+  @media #{$breakpoint-up-md} {
+    gap: 0 36px;
+  }
 }
 
 .team-item {

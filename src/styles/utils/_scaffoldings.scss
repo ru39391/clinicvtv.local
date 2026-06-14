@@ -45,6 +45,7 @@ body {
   @include fs-lh(var(--font-size-lg),26px);
   font-family: var(--font-family-title);
   color: var(--color-primary);
+  white-space: nowrap;
 
   &.readmore-link_fs_lg {
     @include fs-lh(32px,44px);

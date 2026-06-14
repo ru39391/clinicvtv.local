@@ -1,5 +1,7 @@
 // @ts-ignore
 import Twig, { Template } from 'twig';
+import { initSlides } from './modules/slides';
+import Accordion from './modules/accordion';
 
 const parseData = (tpl: Template): Node[] => {
   const parser = new DOMParser();
@@ -24,7 +26,12 @@ const fetchTemplate = async (): Promise<Template | undefined> => {
 }
 
 const initApp = () => {
-  console.log('initApp');
+  new Accordion();
+
+  initSlides({
+    sliderSel: '.js-slides',
+    carouselSel: '.js-carousel'
+  });
 };
 
 const renderData = async () => {

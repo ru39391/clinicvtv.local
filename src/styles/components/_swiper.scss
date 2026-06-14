@@ -2,12 +2,14 @@
 
 .swiper {
   @extend %d-flex-column;
+  width: 100%;
   gap: 24px 0;
 }
 
 .swiper-footer {
   @extend %d-flex-ai-center;
   display: none;
+  width: 100%;
   gap: 0 16px;
 
   @media #{$breakpoint-up-md} {

@@ -5,6 +5,8 @@
   gap: 10px 0;
 
   @media #{$breakpoint-up-md} {
+    display: grid;
+    grid-template-columns: 320px minmax(0,100%);
     gap: 0 50px;
     flex-wrap: nowrap;
     flex-direction: row;
@@ -17,14 +19,9 @@
   gap: 5px;
 
   @media #{$breakpoint-up-md} {
-    @include fw(320px);
     gap: 20px 0;
     padding: 20px 0;
     flex-wrap: nowrap;
     flex-direction: column;
   }
-}
-
-.tab-content {
-  flex-grow: 1;
 }
