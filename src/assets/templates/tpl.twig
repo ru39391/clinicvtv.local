@@ -214,10 +214,9 @@
         <div class="card">
           <div class="card__header">
             <div class="card__media"><img class="img-fluid" src="src/assets/images/serv-{{ loop.index }}.png" alt="" /></div>
-            <div class="card__title">{{ item.title }}</div>
+            <a class="card__title card__title_type_link" href="#">{{ item.title }}</a>
           </div>
           <div class="card__desc">{{ item.desc }}</div>
-          <a class="card__link" href="#"></a>
         </div>
         {% endfor %}
       </div>
@@ -329,8 +328,38 @@
       </div>
     </div>
 
+    {% set doctor = {
+      pic: 'src/assets/images/team.png',
+      name: 'ГАРЬКУША Алина Алексеевна'
+    } %}
     <div class="section">
       <div class="section-title">Наша команда</div>
+
+      <div class="team-wrapper team-wrapper_type_grid">
+      {% for item in [1,2,3,4,5,6,7] %}
+        <div class="team-item">
+          <img class="team-item__img img-fluid" src="{{ doctor.pic }}" alt="" />
+          <div class="team-item__wrapper">
+            <a class="team-item__title" href="#">{{ doctor.name }}</a>
+            <ul class="team-item__list">
+              <li class="team-item__feature">
+                <span class="color-grey"><img src="src/assets/icons/checked-icon.svg" alt="" /></span>
+                стоматолог-терапевт, хирург
+              </li>
+              <li class="team-item__feature">
+                <span class="color-grey"><img src="src/assets/icons/checked-icon.svg" alt="" /></span>
+                опыт работы с 2022 года
+              </li>
+            </ul>
+          </div>
+          <div class="team-item__footer">
+            <a class="team-item__link" href="#">Отзывы о докторе</a>
+            <button class="btn btn-primary btn-sm" type="button">Записаться</button>
+          </div>
+        </div>
+      {% endfor %}
+      </div>
+
       <div class="tab-section js-tabs">
         <div class="tab-nav">
           <button class="btn-toggler js-tabs-link is-active" data-pane="price-tab-1" type="button">Терапевты</button>
@@ -346,9 +375,9 @@
                 {% for item in [1,2,3,4,5,6] %}
                 <div class="swiper-slide w-auto">
                   <div class="team-item">
-                    <img class="team-item__img img-fluid" src="src/assets/images/team.png" alt="" />
+                    <img class="team-item__img img-fluid" src="{{ doctor.pic }}" alt="" />
                     <div class="team-item__wrapper">
-                      <div class="team-item__title">ГАРЬКУША Алина Алексеевна</div>
+                      <div class="team-item__title">{{ doctor.name }}</div>
                       <ul class="team-item__list">
                         <li class="team-item__feature">
                           <img src="src/assets/icons/checked-icon.svg" alt="" />

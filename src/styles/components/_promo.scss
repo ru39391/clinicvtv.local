@@ -93,18 +93,24 @@
 }
 
 .promo__desc {
-  p, li {
-    @include fs-lh(var(--font-size-xs),var(--line-height-sm));
-    font-weight: var(--fw-light);
+  @include fs-lh(var(--font-size-xs),var(--line-height-sm));
+  font-weight: var(--fw-light);
 
-    @media #{$breakpoint-up-sm} {
-      @include fs-lh(var(--font-size-body),var(--line-height-body));
-      font-weight: var(--fw-normal);
-    }
+  @media #{$breakpoint-up-sm} {
+    @include fs-lh(var(--font-size-body),var(--line-height-body));
+    font-weight: var(--fw-normal);
+  }
 
-    @media #{$breakpoint-up-md} {
-      max-width: 380px;
-    }
+  @media #{$breakpoint-up-md} {
+    max-width: 380px;
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  ul {
+    list-style: disc;
   }
 
   li {

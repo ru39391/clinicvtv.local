@@ -3,6 +3,7 @@
 .logo {
   @extend %d-flex-ai-center;
   gap: 0 8px;
+  max-width: 276px;
   font-size: 64px;
   font-weight: var(--fw-bold);
   color: var(--color-primary);
@@ -11,6 +12,7 @@
 
   &.logo_bg_white {
     @media #{$breakpoint-up-md} {
+      max-width: 336px;
       padding: 8px 30px;
       background-color: var(--color-white);
     }

@@ -3,6 +3,16 @@
 .section {
   @include py(40px);
 
+  @media #{$breakpoint-up-md} {
+    @include py(50px);
+  }
+
+  &.section_offset_md {
+    @media #{$breakpoint-up-md} {
+      @include py(30px);
+    }
+  }
+
   &.section_type_row {
     @extend %d-flex-column;
     gap: 40px;
@@ -45,10 +55,6 @@
       padding: 50px 30px;
       margin-bottom: 50px;
     }
-  }
-
-  @media #{$breakpoint-up-md} {
-    @include py(50px);
   }
 }
 
