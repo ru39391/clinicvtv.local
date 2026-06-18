@@ -361,14 +361,15 @@
       </div>
 
       <div class="tab-section js-tabs">
-        <div class="tab-nav">
-          <button class="btn-toggler js-tabs-link is-active" data-pane="price-tab-1" type="button">Терапевты</button>
-          <button class="btn-toggler js-tabs-link" data-pane="price-tab-2" type="button">Хирурги-имплантологи</button>
-          <button class="btn-toggler js-tabs-link" data-pane="price-tab-3" type="button">Ортодонты</button>
-          <button class="btn-toggler js-tabs-link" data-pane="price-tab-4" type="button">Ортопеды</button>
-          <button class="btn-toggler js-tabs-link" data-pane="price-tab-5" type="button">Детские стоматологи</button>
+        <div class="tab-nav js-tab-nav">
+          <button class="btn-toggler js-tabs-link" data-pane="team-tab-12" data-action="team" data-id="12" type="button">Терапевты</button>
+          <button class="btn-toggler js-tabs-link" data-pane="team-tab-13" data-action="team" data-id="13" type="button">Детские стоматологи</button>
+          <button class="btn-toggler js-tabs-link" data-pane="team-tab-14" data-action="team" data-id="14" type="button">Ортопеды</button>
+          <button class="btn-toggler js-tabs-link" data-pane="team-tab-15" data-action="team" data-id="15" type="button">Ортодонты</button>
+          <button class="btn-toggler js-tabs-link" data-pane="team-tab-16" data-action="team" data-id="16" type="button">Хирурги-имплантологи</button>
         </div>
-        <div class="tab-content">
+        <div class="tab-content js-tab-content">
+          {#
           <div class="tab-pane js-tabs-pane is-active" data-id="price-tab-1">
             <div class="swiper js-carousel">
               <div class="team-wrapper swiper-wrapper">
@@ -404,6 +405,7 @@
             </div>
           </div>
           <div class="tab-pane js-tabs-pane" data-id="price-tab-2"></div>
+          #}
         </div>
       </div>
     </div>

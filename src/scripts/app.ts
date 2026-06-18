@@ -2,6 +2,7 @@
 import Twig, { Template } from 'twig';
 import { initSlides } from './modules/slides';
 import Accordion from './modules/accordion';
+import Tabs from './modules/tabs';
 
 const parseData = (tpl: Template): Node[] => {
   const parser = new DOMParser();
@@ -27,6 +28,15 @@ const fetchTemplate = async (): Promise<Template | undefined> => {
 
 const initApp = () => {
   new Accordion();
+
+  Array.from(document.querySelectorAll('.js-tabs')).forEach(wrapper => {
+    new Tabs({
+      tabsWrapper: wrapper as HTMLElement,
+      tabsHolderSel: '.js-tab-content',
+      tabLinkSel: '.js-tabs-link',
+      tabPaneSel: '.js-tabs-pane',
+    });
+  });
 
   initSlides({
     sliderSel: '.js-slides',

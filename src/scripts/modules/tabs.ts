@@ -1,4 +1,4 @@
-type TTabsOptions = Record<'tabsWrapperSel' | 'tabLinkSel' | 'tabPaneSel', string> & { handleCaption?: (value: string) => void };
+type TTabsOptions = Record<'tabsHolderSel' | 'tabLinkSel' | 'tabPaneSel', string> & { tabsWrapper: HTMLElement | null; };
 
 class Tabs {
   activeClass: string = "is-active";
@@ -8,35 +8,30 @@ class Tabs {
   togglers: HTMLElement[] = [];
   panes: HTMLElement[] = [];
   tabData: { tab: HTMLElement; id: string; } | null = null;
-  handleCaption?: (value: string) => void = undefined;
 
   constructor(options: TTabsOptions) {
     this.init(options);
   }
 
   init(options: TTabsOptions) {
-    const { tabsWrapperSel, tabLinkSel, tabPaneSel, handleCaption } = options;
+    const {
+      tabsWrapper,
+      tabsHolderSel,
+      tabLinkSel,
+      tabPaneSel,
+    } = options;
 
-    this.tabsWrapper = document.querySelector(tabsWrapperSel);
+    this.tabsWrapper = tabsWrapper;
 
     if (!this.tabsWrapper) {
       return;
     }
 
     this.togglers = Array.from(this.tabsWrapper.querySelectorAll(tabLinkSel));
-    this.tabsHolder = this.tabsWrapper.dataset.content ? this.tabsWrapper.querySelector(`.${this.tabsWrapper.dataset.content}`) : this.tabsWrapper;
-    this.panes = Array.from((this.tabsHolder || this.tabsWrapper).querySelectorAll(tabPaneSel));
-    this.handleCaption = handleCaption;
+    this.tabsHolder = this.tabsWrapper.querySelector(tabsHolderSel);
+    this.panes = Array.from((this.tabsWrapper).querySelectorAll(tabPaneSel));
 
     this.bindEvents();
-  }
-
-  setCaption(activeTab: HTMLElement) {
-    if(!this.handleCaption) return;
-
-    const idx = this.togglers.indexOf(activeTab);
-
-    this.handleCaption(idx === this.togglers.length - 1 ? this.togglers[0].textContent : this.togglers[idx + 1].textContent);
   }
 
   bindEvents() {
@@ -49,8 +44,6 @@ class Tabs {
     this.panes.forEach((item, index) => {
       if(index === 0) item.classList.add(this.activeClass);
     });
-
-    this.setCaption(this.togglers[0]);
   }
 
   toggleTab(event: Event) {
@@ -95,8 +88,6 @@ class Tabs {
         item.dataset.id === this.tabData?.id
       );
     });
-
-    this.setCaption(this.tabData?.tab as HTMLElement);
   }
 }
 

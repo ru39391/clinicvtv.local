@@ -1,0 +1,17 @@
+<div class="swiper-slide w-auto">
+	<div class="team-item">
+		<picture>
+			<source type="image/webp" srcset="{{ webp }}"/>
+			<source type="image/jpeg" srcset="{{ thumb }}"/>
+			<img class="team-item__img" src="{{ thumb }}" alt="{$pagetitle}"/>
+		</picture>
+		<div class="team-item__wrapper">
+			<a class="team-item__title" href="{{ url }}">{{ title }}</a>
+			<ul class="team-item__list js-item-content"></ul>
+		</div>
+		<div class="team-item__footer">
+			<a class="team-item__link" href="{{ url }}">Отзывы о докторе</a>
+			<button class="btn btn-primary btn-sm" type="button">Записаться</button>
+		</div>
+	</div>
+</div>
