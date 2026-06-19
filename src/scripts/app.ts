@@ -3,6 +3,7 @@ import Twig, { Template } from 'twig';
 import { initSlides } from './modules/slides';
 import Accordion from './modules/accordion';
 import Tabs from './modules/tabs';
+import TabsRenderer from './modules/tabs-renderer';
 
 const parseData = (tpl: Template): Node[] => {
   const parser = new DOMParser();
@@ -27,20 +28,29 @@ const fetchTemplate = async (): Promise<Template | undefined> => {
 }
 
 const initApp = () => {
-  new Accordion();
+  const tabs = Array.from(document.querySelectorAll('.js-tabs'));
 
-  Array.from(document.querySelectorAll('.js-tabs')).forEach(wrapper => {
+  tabs.forEach(wrapper => {
     new Tabs({
       tabsWrapper: wrapper as HTMLElement,
-      tabsHolderSel: '.js-tab-content',
-      tabLinkSel: '.js-tabs-link',
-      tabPaneSel: '.js-tabs-pane',
     });
   });
 
   initSlides({
     sliderSel: '.js-slides',
     carouselSel: '.js-carousel'
+  });
+
+  new Accordion();
+  new TabsRenderer({
+    tabsWrapper: document.querySelector('.js-team-tabs'),
+    itemHolderSel: '.js-items-wrapper',
+    itemSel: '.js-item',
+    itemContentSel: '.js-item-content',
+    featureSel: '.js-item-feature',
+    itemFeatureTpl: 'team-item-feature',
+    itemTpl: 'team-carousel-item',
+    paneTpl: 'team-carousel-wrapper'
   });
 };
 

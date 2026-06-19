@@ -1,8 +1,11 @@
-type TTabsOptions = Record<'tabsHolderSel' | 'tabLinkSel' | 'tabPaneSel', string> & { tabsWrapper: HTMLElement | null; };
+export type TTabsOptions = { tabsWrapper: HTMLElement | null; };
 
 class Tabs {
   activeClass: string = "is-active";
   disabledClass: string = "is-disabled";
+  tabsHolderSel: string = '.js-tab-content';
+  tabLinkSel: string = '.js-tabs-link';
+  tabPaneSel: string = '.js-tabs-pane';
   tabsWrapper: HTMLElement | null = null;
   tabsHolder: HTMLElement | null = null;
   togglers: HTMLElement[] = [];
@@ -14,12 +17,7 @@ class Tabs {
   }
 
   init(options: TTabsOptions) {
-    const {
-      tabsWrapper,
-      tabsHolderSel,
-      tabLinkSel,
-      tabPaneSel,
-    } = options;
+    const { tabsWrapper } = options;
 
     this.tabsWrapper = tabsWrapper;
 
@@ -27,9 +25,9 @@ class Tabs {
       return;
     }
 
-    this.togglers = Array.from(this.tabsWrapper.querySelectorAll(tabLinkSel));
-    this.tabsHolder = this.tabsWrapper.querySelector(tabsHolderSel);
-    this.panes = Array.from((this.tabsWrapper).querySelectorAll(tabPaneSel));
+    this.togglers = Array.from(this.tabsWrapper.querySelectorAll(this.tabLinkSel));
+    this.tabsHolder = this.tabsWrapper.querySelector(this.tabsHolderSel);
+    this.panes = Array.from((this.tabsWrapper).querySelectorAll(this.tabPaneSel));
 
     this.bindEvents();
   }
@@ -46,19 +44,6 @@ class Tabs {
     });
   }
 
-  toggleTab(event: Event) {
-    event.preventDefault();
-
-    const tab = event.currentTarget as HTMLElement;
-
-    if (tab.classList.contains(this.disabledClass)) {
-      return;
-    }
-
-    this.setData(tab);
-    this.handleTabs();
-  }
-
   setData(activeTab: HTMLElement) {
     this.tabData = {
       tab: activeTab,
@@ -70,7 +55,7 @@ class Tabs {
     return this.tabData?.tab.classList.contains(this.disabledClass);
   }
 
-  handleTabs() {
+  setItemsActive() {
     if (this.isDisabledTab()) {
       return;
     }
@@ -88,6 +73,23 @@ class Tabs {
         item.dataset.id === this.tabData?.id
       );
     });
+  }
+
+  handleTabs(tab: HTMLElement) {
+    this.setData(tab);
+    this.setItemsActive();
+  }
+
+  toggleTab(event: Event) {
+    event.preventDefault();
+
+    const tab = event.currentTarget as HTMLElement;
+
+    if (tab.classList.contains(this.disabledClass) || tab.classList.contains(this.activeClass)) {
+      return;
+    }
+
+    this.handleTabs(tab);
   }
 }
 

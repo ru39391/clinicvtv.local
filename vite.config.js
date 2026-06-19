@@ -2,6 +2,7 @@ import { defineConfig, loadEnv } from "vite";
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd());
+  const isDev = mode === 'development';
 
   return {
     css: {
@@ -11,5 +12,14 @@ export default defineConfig(({ mode }) => {
         },
       },
     },
+    server: {
+      proxy: isDev ? {
+        '/api': {
+          target: env.VITE_SITE_URL,
+          changeOrigin: true,
+          secure: false,
+        }
+      } : {}
+    }
   };
 });
