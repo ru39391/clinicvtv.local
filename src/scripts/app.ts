@@ -1,5 +1,6 @@
 // @ts-ignore
 import Twig, { Template } from 'twig';
+import { apiHandler, type TTeamItemData } from './utils';
 import { handleCarousel, initSlides } from './modules/slides';
 import Accordion from './modules/accordion';
 import Tabs from './modules/tabs';
@@ -50,23 +51,29 @@ const initApp = () => {
   initSlides(slidesConfig);
 
   new Accordion();
-  new TabsRenderer({
+  new TabsRenderer<TTeamItemData>({
     ...tabsRendererConfig,
     tabsWrapper: document.querySelector('.js-team-tabs'),
     itemTpl: 'team-carousel-item',
     paneTpl: 'team-carousel-wrapper',
+    fetchData: async <TTeamItemData>(
+      { action, id }: Record<'action' | 'id', string>
+    ) => await apiHandler.fetch<TTeamItemData[]>(`/${action}/${id}`),
     handlePane: (pane) => {
       const paneCarousel = pane.querySelector(slidesConfig.carouselSel);
 
       if(paneCarousel) handleCarousel(slidesConfig.carouselSel);
     }
   });
-  new TabsRenderer({
+  new TabsRenderer<TTeamItemData>({
     ...tabsRendererConfig,
     tabsWrapper: document.querySelector('.js-team-grid'),
     itemTpl: 'team-grid-item',
     paneTpl: 'team-grid-wrapper',
-    isActiveTabUnset: true
+    isActiveTabUnset: true,
+    fetchData: async <TTeamItemData>(
+      { action, id }: Record<'action' | 'id', string>
+    ) => await apiHandler.fetch<TTeamItemData[]>(`/${action}/${id}`)
   });
 };
 

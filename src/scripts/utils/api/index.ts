@@ -44,3 +44,5 @@ export const apiHandler = {
   fetch: async <T>(url: string) =>
     handleApiClient<null, T>({ url, method: "GET" }),
 };
+
+export * from './types';

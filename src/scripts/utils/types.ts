@@ -3,3 +3,5 @@ export type TTeamItemData = {
   depts_id: number[];
 } & Record<"id" | "menuindex", number> &
   Record<"url" | "introtext" | "pagetitle" | "depts", string>;
+
+  export type TCommonData = Partial<TTeamItemData>;
