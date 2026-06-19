@@ -3,7 +3,7 @@ import Utils, { type TCommonData, type TResponseData } from '../utils';
 // @ts-ignore
 import { Template } from 'twig';
 
-type TExtTabsOptions = Record<'itemHolderSel' | 'itemSel' | 'itemContentSel' | 'featureSel' | 'itemFeatureTpl' | 'itemTpl' | 'paneTpl', string> & { handlePane?: (item: HTMLElement) => void; fetchData?: <T>(data: Record<'action' | 'id', string>) => Promise<TResponseData<T[]>>; };
+export type TExtTabsOptions = Record<'itemHolderSel' | 'itemSel' | 'itemContentSel' | 'featureSel' | 'itemFeatureTpl' | 'itemTpl' | 'paneTpl', string> & { handlePane?: (item: HTMLElement) => void; fetchData?: <T>(data: Record<'action' | 'id', string>) => Promise<TResponseData<T[]>>; };
 
 class TabsRenderer<T extends TCommonData> extends Tabs {
   loadingClass: string = "is-loading";

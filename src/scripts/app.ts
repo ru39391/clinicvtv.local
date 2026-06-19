@@ -1,10 +1,11 @@
 // @ts-ignore
 import Twig, { Template } from 'twig';
-import { apiHandler, type TTeamItemData } from './utils';
+import { apiHandler, type TTeamItemData, type TPriceItemData } from './utils';
 import { handleCarousel, initSlides } from './modules/slides';
 import Accordion from './modules/accordion';
 import Tabs from './modules/tabs';
 import TabsRenderer from './modules/tabs-renderer';
+import PriceTabsRenderer from './modules/price-tabs-renderer';
 
 const parseData = (tpl: Template): Node[] => {
   const parser = new DOMParser();
@@ -74,6 +75,19 @@ const initApp = () => {
     fetchData: async <TTeamItemData>(
       { action, id }: Record<'action' | 'id', string>
     ) => await apiHandler.fetch<TTeamItemData[]>(`/${action}/${id}`)
+  });
+  new PriceTabsRenderer<TPriceItemData>({
+    ...tabsRendererConfig,
+    tabsWrapper: document.querySelector('.js-price-tabs'),
+    itemTpl: 'price-list-item',
+    paneTpl: 'price-list-wrapper',
+    fetchData: async <TPriceItemData>(
+      { action, id }: Record<'action' | 'id', string>
+    ) => {
+      const { data } = await apiHandler.fetch<{ data: TPriceItemData[] }>(`/${action}?all=1&dept_id=${id}&sortby=name&sortdir=ASC`);
+
+      return data;
+    }
   });
 };
 

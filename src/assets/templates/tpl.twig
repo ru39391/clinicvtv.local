@@ -460,15 +460,28 @@
 
     <div class="section">
       <div class="section-title">Прейскурант</div>
-      <div class="tab-section js-tabs">
-        <div class="tab-nav">
-          <button class="btn-toggler js-tabs-link is-active" data-pane="price-tab-1" type="button">Ортодонтия</button>
-          <button class="btn-toggler js-tabs-link" data-pane="price-tab-2" type="button">Хирургия и имплантология</button>
-          <button class="btn-toggler js-tabs-link" data-pane="price-tab-3" type="button">Терапия</button>
-          <button class="btn-toggler js-tabs-link" data-pane="price-tab-4" type="button">Ортопедия</button>
-          <button class="btn-toggler js-tabs-link" data-pane="price-tab-5" type="button">Детская стоматология</button>
+      <div class="tab-section js-price-tabs">
+        <div class="tab-nav js-tab-nav">
+          {% for item in [
+            { id: '12', name: 'Ортодонтия' },
+            { id: '13', name: 'Хирургия и имплантология' },
+            { id: '14', name: 'Терапия' },
+            { id: '15', name: 'Ортопедия' },
+            { id: '16', name: 'Детская стоматология' }
+          ] %}
+            <button
+              class="btn-toggler js-tabs-link"
+              data-action="pricelist"
+              data-id="{{ item.id }}"
+              data-pane="price-tab-{{ item.id }}"
+              type="button"
+            >
+              {{ item.name }}
+            </button>
+          {% endfor %}
         </div>
-        <div class="tab-content">
+        <div class="tab-content js-tab-content">
+          {#
           <div class="tab-pane js-tabs-pane is-active" data-id="price-tab-1">
             <div class="price">
               {% for item in [1,2,3,4,5,6] %}
@@ -479,7 +492,7 @@
               {% endfor %}
             </div>
           </div>
-          <div class="tab-pane js-tabs-pane" data-id="price-tab-2"></div>
+          #}
         </div>
       </div>
     </div>
