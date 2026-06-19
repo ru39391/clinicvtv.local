@@ -1,4 +1,4 @@
-export type TTabsOptions = { tabsWrapper: HTMLElement | null; };
+export type TTabsOptions = { isActiveTabUnset?: boolean; tabsWrapper: HTMLElement | null; };
 
 class Tabs {
   activeClass: string = "is-active";
@@ -11,13 +11,14 @@ class Tabs {
   togglers: HTMLElement[] = [];
   panes: HTMLElement[] = [];
   tabData: { tab: HTMLElement; id: string; } | null = null;
+  isActiveTabUnset: boolean | undefined = undefined;
 
   constructor(options: TTabsOptions) {
     this.init(options);
   }
 
   init(options: TTabsOptions) {
-    const { tabsWrapper } = options;
+    const { isActiveTabUnset, tabsWrapper } = options;
 
     this.tabsWrapper = tabsWrapper;
 
@@ -25,6 +26,7 @@ class Tabs {
       return;
     }
 
+    this.isActiveTabUnset = Boolean(isActiveTabUnset);
     this.togglers = Array.from(this.tabsWrapper.querySelectorAll(this.tabLinkSel));
     this.tabsHolder = this.tabsWrapper.querySelector(this.tabsHolderSel);
     this.panes = Array.from((this.tabsWrapper).querySelectorAll(this.tabPaneSel));
@@ -36,11 +38,11 @@ class Tabs {
     this.togglers.forEach((item, index) => {
       item.addEventListener("click", this.toggleTab.bind(this));
 
-      if(index === 0) item.classList.add(this.activeClass);
+      if(index === 0 && !this.isActiveTabUnset) item.classList.add(this.activeClass);
     });
 
     this.panes.forEach((item, index) => {
-      if(index === 0) item.classList.add(this.activeClass);
+      if(index === 0 && !this.isActiveTabUnset) item.classList.add(this.activeClass);
     });
   }
 

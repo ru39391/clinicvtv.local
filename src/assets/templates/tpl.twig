@@ -368,45 +368,7 @@
           <button class="btn-toggler js-tabs-link" data-pane="team-tab-15" data-action="team" data-id="15" type="button">Ортодонты</button>
           <button class="btn-toggler js-tabs-link" data-pane="team-tab-16" data-action="team" data-id="16" type="button">Хирурги-имплантологи</button>
         </div>
-        <div class="tab-content js-tab-content">
-          {#
-          <div class="tab-pane js-tabs-pane is-active" data-id="price-tab-1">
-            <div class="swiper js-carousel">
-              <div class="team-wrapper swiper-wrapper">
-                {% for item in [1,2,3,4,5,6] %}
-                <div class="swiper-slide w-auto">
-                  <div class="team-item">
-                    <img class="team-item__img img-fluid" src="{{ doctor.pic }}" alt="" />
-                    <div class="team-item__wrapper">
-                      <div class="team-item__title">{{ doctor.name }}</div>
-                      <ul class="team-item__list">
-                        <li class="team-item__feature">
-                          <img src="src/assets/icons/checked-icon.svg" alt="" />
-                          стоматолог-терапевт, хирург
-                        </li>
-                        <li class="team-item__feature">
-                          <img src="src/assets/icons/checked-icon.svg" alt="" />
-                          опыт работы с 2022 года
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="team-item__footer">
-                      <a class="team-item__link" href="#">Отзывы о докторе</a>
-                      <button class="btn btn-primary btn-sm" type="button">Записаться</button>
-                    </div>
-                  </div>
-                </div>
-                {% endfor %}
-              </div>
-              <div class="swiper-footer">
-                <div class="swiper-pagination"></div>
-                <a class="readmore-link" href="#">все специалисты</a>
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane js-tabs-pane" data-id="price-tab-2"></div>
-          #}
-        </div>
+        <div class="tab-content js-tab-content" data-href="nasha-komanda/"></div>
       </div>
     </div>
 

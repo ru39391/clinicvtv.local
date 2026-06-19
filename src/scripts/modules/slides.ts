@@ -1,47 +1,42 @@
 import Swiper from "swiper";
 import { Autoplay, Pagination } from 'swiper/modules';
 
-const initSlides = ({ sliderSel, carouselSel }: Record<string, string>) => {
+export const handleSlider = (sel: string): Swiper => new Swiper(sel, {
+  modules: [Autoplay],
+  loop: true,
+  slidesPerView: 1,
+  spaceBetween: 0,
+  grabCursor: true,
+  speed: 1000,
+  autoplay: {
+    delay: 7000,
+    pauseOnMouseEnter: true,
+    disableOnInteraction: false
+  },
+});
+
+export const handleCarousel = (sel: string): Swiper => new Swiper(sel, {
+  modules: [Pagination],
+  loop: false,
+  slidesPerView: "auto",
+  spaceBetween: 0,
+  grabCursor: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    bulletActiveClass: "is-active"
+  },
+});
+
+export const initSlides = ({ sliderSel, carouselSel }: Record<string, string>) => {
   const sliderItems = Array.from(document.querySelectorAll(sliderSel));
   const carouselItems = Array.from(document.querySelectorAll(carouselSel));
 
-  const slider: Swiper[] = sliderItems.map(
-    () =>
-      new Swiper(sliderSel, {
-        modules: [Autoplay],
-        loop: true,
-        slidesPerView: 1,
-        spaceBetween: 0,
-        grabCursor: true,
-        speed: 1000,
-        autoplay: {
-          delay: 7000,
-          pauseOnMouseEnter: true,
-          disableOnInteraction: false
-        },
-      }),
-  );
-
-  const carousel: Swiper[] = carouselItems.map(
-    () =>
-      new Swiper(carouselSel, {
-        modules: [Pagination],
-        loop: false,
-        slidesPerView: "auto",
-        spaceBetween: 0,
-        grabCursor: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-          bulletActiveClass: "is-active"
-        },
-      }),
-  );
+  const slider: Swiper[] = sliderItems.map(() => handleSlider(sliderSel));
+  const carousel: Swiper[] = carouselItems.map(() => handleCarousel(carouselSel));
 
   return {
     carousel,
     slider
   };
 };
-
-export { initSlides };

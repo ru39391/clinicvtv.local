@@ -1,6 +1,6 @@
 // @ts-ignore
 import Twig, { Template } from 'twig';
-import { initSlides } from './modules/slides';
+import { handleCarousel, initSlides } from './modules/slides';
 import Accordion from './modules/accordion';
 import Tabs from './modules/tabs';
 import TabsRenderer from './modules/tabs-renderer';
@@ -28,6 +28,17 @@ const fetchTemplate = async (): Promise<Template | undefined> => {
 }
 
 const initApp = () => {
+  const slidesConfig = {
+    sliderSel: '.js-slides',
+    carouselSel: '.js-carousel'
+  };
+  const tabsRendererConfig = {
+    itemHolderSel: '.js-items-wrapper',
+    itemSel: '.js-item',
+    itemContentSel: '.js-item-content',
+    featureSel: '.js-item-feature',
+    itemFeatureTpl: 'team-item-feature'
+  };
   const tabs = Array.from(document.querySelectorAll('.js-tabs'));
 
   tabs.forEach(wrapper => {
@@ -36,21 +47,26 @@ const initApp = () => {
     });
   });
 
-  initSlides({
-    sliderSel: '.js-slides',
-    carouselSel: '.js-carousel'
-  });
+  initSlides(slidesConfig);
 
   new Accordion();
   new TabsRenderer({
+    ...tabsRendererConfig,
     tabsWrapper: document.querySelector('.js-team-tabs'),
-    itemHolderSel: '.js-items-wrapper',
-    itemSel: '.js-item',
-    itemContentSel: '.js-item-content',
-    featureSel: '.js-item-feature',
-    itemFeatureTpl: 'team-item-feature',
     itemTpl: 'team-carousel-item',
-    paneTpl: 'team-carousel-wrapper'
+    paneTpl: 'team-carousel-wrapper',
+    handlePane: (pane) => {
+      const paneCarousel = pane.querySelector(slidesConfig.carouselSel);
+
+      if(paneCarousel) handleCarousel(slidesConfig.carouselSel);
+    }
+  });
+  new TabsRenderer({
+    ...tabsRendererConfig,
+    tabsWrapper: document.querySelector('.js-team-grid'),
+    itemTpl: 'team-grid-item',
+    paneTpl: 'team-grid-wrapper',
+    isActiveTabUnset: true
   });
 };
 

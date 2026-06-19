@@ -1,8 +1,9 @@
 import Tabs, { type TTabsOptions } from './tabs';
-import Utils, { apiHandler } from '../utils';
+import Utils, { apiHandler, type TTeamItemData } from '../utils';
+// @ts-ignore
 import { Template } from 'twig';
 
-type TExtTabsOptions = Record<'itemHolderSel' | 'itemSel' | 'itemContentSel' | 'featureSel' | 'itemFeatureTpl' | 'itemTpl' | 'paneTpl', string>;
+type TExtTabsOptions = Record<'itemHolderSel' | 'itemSel' | 'itemContentSel' | 'featureSel' | 'itemFeatureTpl' | 'itemTpl' | 'paneTpl', string> & { handlePane?: (item: HTMLElement) => void };
 
 class TabsRenderer extends Tabs {
   loadingClass: string = "is-loading";
@@ -13,6 +14,7 @@ class TabsRenderer extends Tabs {
   paneRow: Template | null = null;
   itemRow: Template | null = null;
   featureRow: Template | null = null;
+  handlePane: TExtTabsOptions['handlePane'] = undefined;
 
   constructor(options: TTabsOptions & TExtTabsOptions) {
     super(options);
@@ -24,17 +26,29 @@ class TabsRenderer extends Tabs {
       featureSel,
       paneTpl,
       itemTpl,
-      itemFeatureTpl
+      itemFeatureTpl,
+      handlePane
     } = options;
 
     this.itemHolderSel = itemHolderSel;
     this.itemSel = itemSel;
     this.itemContentSel = itemContentSel;
     this.featureSel = featureSel;
+    this.handlePane = handlePane;
     this.setTemplates([paneTpl, itemTpl, itemFeatureTpl]);
   }
 
+  initActiveTab() {
+    const activeTab = this.togglers.find(({ classList }) => classList.contains(this.activeClass));
+
+    if(!activeTab || this.isActiveTabUnset) return;
+
+    this.handleTabs(activeTab);
+  }
+
   async setTemplates(arr: string[]) {
+    if(!this.tabsWrapper) return;
+
     const [
       paneRow,
       itemRow,
@@ -44,6 +58,8 @@ class TabsRenderer extends Tabs {
     this.paneRow = paneRow as Template;
     this.itemRow = itemRow as Template;
     this.featureRow = featureRow as Template;
+
+    this.initActiveTab();
   }
 
   isPaneExist(id: string) {
@@ -66,7 +82,7 @@ class TabsRenderer extends Tabs {
     }) as HTMLElement;
   }
 
-  renderItem({ pics, depts, pagetitle: title, introtext, url }): HTMLElement {
+  renderItem({ pics, depts, pagetitle: title, introtext, url }: TTeamItemData): HTMLElement {
     const { thumb, webp } = pics;
     const row = Utils.parseData({
       data: { webp, thumb, title, url },
@@ -88,11 +104,11 @@ class TabsRenderer extends Tabs {
     return row as HTMLElement;
   }
 
-  renderPane({ arr, pane: paneId }) {
+  renderPane({ arr, pane: paneId }: { arr: TTeamItemData[]; pane: string; }) {
     const pane = Utils.parseData({
       data: {
         paneId,
-        readmoreUrl: '/'
+        readmoreUrl: this.tabsHolder?.dataset?.href || ''
       },
       tpl: this.paneRow as Template,
       rowSel: this.tabPaneSel
@@ -112,6 +128,8 @@ class TabsRenderer extends Tabs {
 
     this.tabsHolder?.append(pane);
     this.setPanesList(pane);
+
+    if(this.handlePane) this.handlePane(pane);
   }
 
   async handleTabs(tab: HTMLElement) {
@@ -127,9 +145,9 @@ class TabsRenderer extends Tabs {
     this.tabsWrapper?.classList.add(this.loadingClass);
 
     try {
-      const { data } = await apiHandler.fetch<null>(`/${action}/${id}`);
+      const { data } = await apiHandler.fetch<TTeamItemData[]>(`/${action}/${id}`);
 
-      this.renderPane({ arr: data, pane });
+      this.renderPane({ arr: data, pane: String(pane) });
       this.setItemsActive();
     } finally {
       this.tabsWrapper?.classList.remove(this.loadingClass);
