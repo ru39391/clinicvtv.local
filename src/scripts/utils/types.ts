@@ -1,9 +1,15 @@
+export type TPicsData = Record<"thumb" | "webp", string>;
+
+export type TItemData = Record<'id' | 'dept_id' | 'subdept_id', number> & Record<"is_hidden", 1 | 0> & Record<"name" | "createdAt" | "updatedAt", string>;
+
 export type TTeamItemData = {
-  pics: Record<"thumb" | "webp", string>;
+  pics: TPicsData;
   depts_id: number[];
 } & Record<"id" | "menuindex", number> &
   Record<"url" | "introtext" | "pagetitle" | "depts", string>;
 
-export type TPriceItemData = Record<'id' | 'price' | 'dept_id' | 'subdept_id', number> & Record<"name" | "createdAt" | "updatedAt", string> & Record<"isMinValue" | "is_hidden", 1 | 0>;
+export type TPriceItemData = TItemData & Record<'price', number> & Record<"isMinValue", 1 | 0>;
 
-export type TCommonData = Partial<TTeamItemData & TPriceItemData>;
+export type TExampleItemData = TItemData & Record<'spec_id', number> & Record<"img_before" | "img_after", TPicsData> & Record<'desc' | 'introtext', string>;
+
+export type TCommonData = Partial<TTeamItemData & TPriceItemData & TExampleItemData>;

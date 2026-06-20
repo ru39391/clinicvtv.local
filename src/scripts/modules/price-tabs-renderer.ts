@@ -26,10 +26,7 @@ class PriceTabsRenderer<T extends TCommonData> extends TabsRenderer<T> {
 
   renderPane({ arr, pane: paneId }: { arr: T[]; pane: string; }) {
     const pane = Utils.parseData({
-      data: {
-        paneId,
-        readmoreUrl: this.tabsHolder?.dataset?.href || ''
-      },
+      data: { paneId },
       tpl: this.paneRow as Template,
       rowSel: this.tabPaneSel
     }) as HTMLElement;

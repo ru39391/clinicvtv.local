@@ -1,0 +1,23 @@
+<div class="swiper-slide w-auto js-item">
+	<div class="examples-item">
+		<picture>
+			<source type="image/webp" srcset="{{ webp_after }}"/>
+			<source type="image/jpeg" srcset="{{ thumb_after }}"/>
+			<img class="img-cover" src="{{ thumb_after }}" alt="{{ desc }}"/>
+		</picture>
+		<div class="examples-item__pic">
+			<picture>
+				<source type="image/webp" srcset="{{ webp_before }}"/>
+				<source type="image/jpeg" srcset="{{ thumb_before }}"/>
+				<img class="img-cover" src="{{ thumb_before }}" alt="{{ desc }}"/>
+			</picture>
+		</div>
+		<div class="examples-item__footer">
+			<div class="examples-item__togglers">
+				<button class="examples-item__btn js-toggler is-active" type="button">после</button>
+				<button class="examples-item__btn js-toggler" type="button">до</button>
+			</div>
+			<div class="examples-item__content js-item-content" data-start="Доктор"></div>
+		</div>
+	</div>
+</div>

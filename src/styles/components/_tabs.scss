@@ -24,6 +24,19 @@
     flex-wrap: nowrap;
     flex-direction: column;
   }
+
+  &.tab-nav_type_row {
+    align-items: center;
+    margin: 0 0 20px;
+    gap: 5px;
+
+    @media #{$breakpoint-up-md} {
+      gap: 8px 20px;
+      padding: 0;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+  }
 }
 
 .tab-pane {

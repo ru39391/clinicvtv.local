@@ -1,10 +1,11 @@
 // @ts-ignore
 import Twig, { Template } from 'twig';
-import { apiHandler, type TTeamItemData, type TPriceItemData } from './utils';
+import { apiHandler, type TTeamItemData, type TPriceItemData, type TExampleItemData } from './utils';
 import { handleCarousel, initSlides } from './modules/slides';
 import Accordion from './modules/accordion';
 import Tabs from './modules/tabs';
 import TabsRenderer from './modules/tabs-renderer';
+import ExampleTabsRenderer from './modules/example-tabs-renderer';
 import PriceTabsRenderer from './modules/price-tabs-renderer';
 
 const parseData = (tpl: Template): Node[] => {
@@ -87,6 +88,24 @@ const initApp = () => {
       const { data } = await apiHandler.fetch<{ data: TPriceItemData[] }>(`/${action}?all=1&dept_id=${id}&sortby=name&sortdir=ASC`);
 
       return data;
+    }
+  });
+  new ExampleTabsRenderer<TExampleItemData>({
+    ...tabsRendererConfig,
+    tabsWrapper: document.querySelector('.js-example-tabs'),
+    itemTpl: 'examples-carousel-item',
+    paneTpl: 'examples-carousel-wrapper',
+    fetchData: async <TExampleItemData>(
+      { action, id }: Record<'action' | 'id', string>
+    ) => {
+      const { data } = await apiHandler.fetch<{ data: TExampleItemData[] }>(`/${action}?all=1&dept_id=${id}&sortby=name&sortdir=ASC`);
+
+      return data;
+    },
+    handlePane: (pane: HTMLElement) => {
+      const paneCarousel = pane.querySelector(slidesConfig.carouselSel);
+
+      if(paneCarousel) handleCarousel(slidesConfig.carouselSel);
     }
   });
 };

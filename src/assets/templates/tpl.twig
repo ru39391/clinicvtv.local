@@ -395,41 +395,28 @@
       </div>
     </div>
 
-    <div class="section section_bg_white">
+    <div class="section section_bg_white js-example-tabs">
       <div class="section-title">Примеры работ</div>
-      <div class="examples-nav">
-        <button class="btn-toggler is-active" type="button">Лечение зубов (терапия)</button>
-        <button class="btn-toggler" type="button">Протезирование зубов</button>
-        <button class="btn-toggler" type="button">Исправление прикуса</button>
-        <button class="btn-toggler" type="button">Имплантация</button>
-        <button class="btn-toggler" type="button">Детская стоматология</button>
+      <div class="tab-nav tab-nav_type_row js-tab-nav">
+        {% for item in [
+          { id: '12', name: 'Лечение зубов (терапия)' },
+          { id: '13', name: 'Протезирование зубов' },
+          { id: '14', name: 'Исправление прикуса' },
+          { id: '15', name: 'Имплантация' },
+          { id: '16', name: 'Детская стоматология' }
+        ] %}
+          <button
+            class="btn-toggler js-tabs-link"
+            data-action="examples"
+            data-id="{{ item.id }}"
+            data-pane="examples-tab-{{ item.id }}"
+            type="button"
+          >
+            {{ item.name }}
+          </button>
+        {% endfor %}
       </div>
-      <div class="swiper js-carousel">
-        <div class="examples-wrapper swiper-wrapper">
-          {% for item in [1,2,3,4,5,6] %}
-          <div class="swiper-slide w-auto">
-            <div class="examples-item">
-              <img class="img-cover" src="src/assets/images/example.png" alt="" />
-              <div class="examples-item__pic">
-                <img class="img-cover" src="src/assets/images/example-2.png" alt="" />
-              </div>
-              <div class="examples-item__footer">
-                <div class="examples-item__togglers">
-                  <button class="examples-item__btn is-active" type="button">после</button>
-                  <button class="examples-item__btn" type="button">до</button>
-                </div>
-                <div class="examples-item__content">
-                  <p>Пациент 37 лет</p>
-                  <p>Доктор Гарькуша А.А.</p>
-                  <p>Исправление прикуса с помощью лингвальной брекет-системы.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-        <div class="swiper-pagination"></div>
-      </div>
+      <div class="tab-content js-tab-content">
     </div>
   </div>
 </div>
