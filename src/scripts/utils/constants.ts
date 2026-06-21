@@ -5,4 +5,10 @@ export const RESPONSE_DATA = {
   data: {},
   success: false,
   message: "Некорректный запрос",
-} as const;
+};
+export const STATE_MOD = {
+  active: 'is-active',
+  error: 'is-error',
+  hidden: 'is-hidden',
+  visible: 'is-visible',
+}

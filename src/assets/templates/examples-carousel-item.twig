@@ -1,5 +1,5 @@
 <div class="swiper-slide w-auto js-item">
-	<div class="examples-item">
+	<div class="examples-item js-example-{{ id }}">
 		<picture>
 			<source type="image/webp" srcset="{{ webp_after }}"/>
 			<source type="image/jpeg" srcset="{{ thumb_after }}"/>
@@ -14,8 +14,8 @@
 		</div>
 		<div class="examples-item__footer">
 			<div class="examples-item__togglers">
-				<button class="examples-item__btn js-toggler is-active" type="button">после</button>
-				<button class="examples-item__btn js-toggler" type="button">до</button>
+				<button class="examples-item__btn js-show-example is-active" data-target="js-example-{{ id }}" data-close="js-close-example-{{ id }}" type="button">после</button>
+				<button class="examples-item__btn js-close-example-{{ id }}" type="button">до</button>
 			</div>
 			<div class="examples-item__content js-item-content" data-start="Доктор"></div>
 		</div>

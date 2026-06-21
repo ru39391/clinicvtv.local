@@ -10,7 +10,10 @@
       </div>
     </div>
     <div class="header__contacts">
-      <button class="nav-toggler" type="button"><img src="src/assets/icons/nav-icon.svg" alt="" /></button>
+      <button class="nav-toggler js-nav-toggler" data-target="js-nav" type="button">
+        <span class="nav-toggler__show-icon"><img class="icon-fluid" src="src/assets/icons/nav-icon.svg" alt="" /></span>
+        <span class="nav-toggler__close-icon"><img class="icon-fluid" src="src/assets/icons/close-icon.svg" alt="" /></span>
+      </button>
       <div class="contacts contacts_type_list contacts_border_right">
         <a class="contacts__item contacts__item_color_secondary" href="tel:+79169519951">
           <img src="src/assets/icons/phone-icon.svg" alt="" />
@@ -36,7 +39,7 @@
     </div>
   </header>
 
-  <div class="nav-wrapper">
+  <div class="nav-wrapper js-nav">
     <nav class="nav">
       <a class="nav__item is-active" href="#">
         <img src="src/assets/icons/tooth-icon.svg" alt="" />
@@ -407,7 +410,7 @@
         ] %}
           <button
             class="btn-toggler js-tabs-link"
-            data-action="examples"
+            data-action="examples?spec_id=48"
             data-id="{{ item.id }}"
             data-pane="examples-tab-{{ item.id }}"
             type="button"

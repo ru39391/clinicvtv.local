@@ -20,7 +20,7 @@ class ExampleTabsRenderer<T extends TCommonData> extends TabsRenderer<T> {
     return featureRow;
   }
 
-  renderExampleItem({ name, desc, introtext, img_before, img_after }: T): HTMLElement {
+  renderExampleItem({ id, name, desc, introtext, img_before, img_after }: T): HTMLElement {
     const { webp_before, thumb_before } = {
       webp_before: img_before?.webp || '',
       thumb_before: img_before?.thumb || ''
@@ -30,7 +30,7 @@ class ExampleTabsRenderer<T extends TCommonData> extends TabsRenderer<T> {
       thumb_after: img_after?.thumb || ''
     };
     const row = Utils.parseData({
-      data: { webp_before, thumb_before, webp_after, thumb_after },
+      data: { id, webp_before, thumb_before, webp_after, thumb_after },
       tpl: this.itemRow as Template,
       rowSel: this.itemSel
     }) as HTMLElement;

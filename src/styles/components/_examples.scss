@@ -24,7 +24,14 @@
     }
 
     .examples-item__footer {
+      opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  &.is-visible {
+    .examples-item__pic {
+      opacity: 1;
     }
   }
 }
@@ -34,10 +41,6 @@
   @include wh(100%);
   opacity: 0;
   transition: all .3s ease;
-
-  &.is-active {
-    opacity: 1;
-  }
 }
 
 .examples-item__footer {
@@ -50,10 +53,11 @@
   padding: 8px 10px;
   display: flex;
   gap: 0 10px;
+  opacity: 0;
   color: var(--color-white);
   background-color: rgba(50, 50, 50, 0.34);
   transform: translateY(100%);
-  transition: all .3s ease .3s;
+  transition: transform .3s ease .2s;
 
   @media #{$breakpoint-up-md} {
     @include px(20px);

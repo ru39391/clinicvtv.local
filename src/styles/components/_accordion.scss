@@ -10,7 +10,6 @@
 
     .accordion-content {
       display: block;
-      animation: show 0.5s;
     }
   }
 }
@@ -30,6 +29,7 @@
 .accordion-content {
   display: none;
   transition: all .3s ease;
+  animation: show 0.5s;
 }
 
 @keyframes show {

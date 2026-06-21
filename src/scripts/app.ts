@@ -3,10 +3,12 @@ import Twig, { Template } from 'twig';
 import { apiHandler, type TTeamItemData, type TPriceItemData, type TExampleItemData } from './utils';
 import { handleCarousel, initSlides } from './modules/slides';
 import Accordion from './modules/accordion';
-import Tabs from './modules/tabs';
-import TabsRenderer from './modules/tabs-renderer';
 import ExampleTabsRenderer from './modules/example-tabs-renderer';
 import PriceTabsRenderer from './modules/price-tabs-renderer';
+import Tabs from './modules/tabs';
+import TabsRenderer from './modules/tabs-renderer';
+import Toggler from './modules/toggler';
+import TogglerExtended from './modules/toggler-extended';
 
 const parseData = (tpl: Template): Node[] => {
   const parser = new DOMParser();
@@ -98,15 +100,24 @@ const initApp = () => {
     fetchData: async <TExampleItemData>(
       { action, id }: Record<'action' | 'id', string>
     ) => {
-      const { data } = await apiHandler.fetch<{ data: TExampleItemData[] }>(`/${action}?all=1&dept_id=${id}&sortby=name&sortdir=ASC`);
+      const actionValue = `${action}${action.split('?').length > 1 ? '&' : '?'}`;
+      const { data } = await apiHandler.fetch<{ data: TExampleItemData[] }>(`/${actionValue}all=1&dept_id=${id}&sortby=name&sortdir=ASC`);
 
       return data;
     },
     handlePane: (pane: HTMLElement) => {
       const paneCarousel = pane.querySelector(slidesConfig.carouselSel);
+      const togglers = Array.from(pane.querySelectorAll('.js-show-example')) as HTMLElement[];
+
+      togglers.forEach(btn => new TogglerExtended({ btn }));
 
       if(paneCarousel) handleCarousel(slidesConfig.carouselSel);
     }
+  });
+  new Toggler({
+    btnSel: '.js-nav-toggler',
+    btn: document.querySelector('.js-nav-toggler') as HTMLElement,
+    bodyClassMod: 'overflow-hidden'
   });
 };
 

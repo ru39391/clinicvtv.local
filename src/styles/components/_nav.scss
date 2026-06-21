@@ -1,19 +1,26 @@
 @use "../utils/helpers" as *;
 
 .nav-wrapper {
-  @extend %d-flex-column;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
   gap: 16px 32px;
   margin-bottom: 10px;
-  justify-content: space-between;
+  animation: show 0.5s;
 
   @media #{$breakpoint-up-md} {
     @include py(5px);
+    display: flex;
     flex-direction: row;
     align-items: center;
   }
 
   @media #{$breakpoint-up-lg} {
     @include px(30px);
+  }
+
+  &.is-visible {
+    display: flex;
   }
 }
 
@@ -80,5 +87,31 @@
 
   @media #{$breakpoint-up-sm} {
     display: none;
+  }
+
+  &.is-active {
+    .nav-toggler__show-icon {
+      display: none;
+    }
+
+    .nav-toggler__close-icon {
+      display: block;
+    }
+  }
+}
+
+.nav-toggler__close-icon {
+  display: none;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
