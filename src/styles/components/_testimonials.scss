@@ -1,7 +1,11 @@
 @use "../utils/helpers" as *;
 
 .testimonials-wrapper {
-  gap: 0 18px;
+  display: flex;
+}
+
+.testimonials-slide {
+  @include px(9px);
 }
 
 .testimonials-item {

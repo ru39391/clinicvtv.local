@@ -67,6 +67,24 @@
     }
   }
 
+  &.card_type_plain {
+    align-items: center;
+
+    @media #{$breakpoint-up-sm} {
+      @include fw(auto);
+      max-width: unset;
+      flex-direction: row;
+      text-align: left;
+      gap: 20px;
+      padding: 0;
+      background-color: var(--color-transp);
+    }
+
+    &:before {
+      display: none;
+    }
+  }
+
   &.card_type_row {
     display: grid;
     align-items: center;
@@ -163,6 +181,12 @@
 
   @media #{$breakpoint-up-sm} {
     @include fs-lh(32px, var(--line-height-lg));
+  }
+
+  &.card__title_ta_center {
+    @media #{$breakpoint-up-sm} {
+      text-align: center;
+    }
   }
 
   &.card__title_type_link {

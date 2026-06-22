@@ -88,6 +88,11 @@
   }
 }
 
+.feature__icon-img {
+  height: 90px;
+  object-fit: cover;
+}
+
 .feature__title {
   @include fs-lh(var(--font-size-lg),26px);
   font-family: var(--font-family-title);

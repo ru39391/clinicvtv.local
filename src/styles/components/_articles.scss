@@ -2,7 +2,10 @@
 
 .articles-wrapper {
   display: flex;
-  gap: 0 16px;
+}
+
+.article-slide {
+  @include px(8px);
 }
 
 .article-item {

@@ -3,9 +3,12 @@
 .pathway {
   @extend %d-flex-ai-center;
   @extend %d-flex-wrap;
-  @include px(30px);
   margin: 0 0 10px;
   gap: 10px;
+
+  @media #{$breakpoint-up-md} {
+    @include px(30px);
+  }
 }
 
 .pathway__item {

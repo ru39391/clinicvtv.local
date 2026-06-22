@@ -2,7 +2,10 @@
 
 .examples-wrapper {
   display: flex;
-  gap: 0 10px;
+}
+
+.examples-slide {
+  @include px(5px);
 }
 
 .examples-item {

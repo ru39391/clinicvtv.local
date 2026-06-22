@@ -1,4 +1,5 @@
 @use './breakpoints' as *;
+@use './extends' as *;
 @use './mixins' as *;
 
 html {
@@ -12,11 +13,12 @@ html {
 }
 
 body {
+  @extend %d-flex-column;
   @include fs-lh(var(--font-size-body),1);
   font-family: var(--font-family-body);
   color: var(--color-basic);
   background-color: var(--color-light-blue);
-  padding-bottom: 10px;
+  height: 100%;
 }
 
 .wrapper {

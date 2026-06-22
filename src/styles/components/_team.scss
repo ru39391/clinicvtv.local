@@ -2,11 +2,6 @@
 
 .team-wrapper {
   display: flex;
-  gap: 0 10px;
-
-  @media #{$breakpoint-up-md} {
-    gap: 0 36px;
-  }
 
   &.team-wrapper_type_grid {
     @extend %d-flex-column;
@@ -24,6 +19,14 @@
     .team-item {
       max-width: unset;
     }
+  }
+}
+
+.team-slide {
+  @include px(5px);
+
+  @media #{$breakpoint-up-md} {
+    @include px(18px);
   }
 }
 

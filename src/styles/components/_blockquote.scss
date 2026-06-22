@@ -13,4 +13,17 @@
     @include fs-lh(var(--font-size-lg),26px);
     gap: 0 50px;
   }
+
+  &.blockquote_type_col {
+    @extend %d-flex-column;
+    gap: 24px 0;
+
+    @media #{$breakpoint-up-md} {
+      gap: 50px 0;
+    }
+  }
+}
+
+.blockquote__icon {
+  color: var(--color-grey);
 }

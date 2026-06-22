@@ -1,10 +1,14 @@
 @use "../utils/helpers" as *;
 
 .promo {
-  @include px(0);
+  @include mx(-10px);
+
+  @media #{$breakpoint-up-sm} {
+    @include mx(-15px);
+  }
 
   @media #{$breakpoint-up-md} {
-    @include px(15px);
+    @include mx(0);
   }
 }
 
