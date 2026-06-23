@@ -1,5 +1,16 @@
 @use "../utils/helpers" as *;
 
+.section-holder {
+  overflow: hidden;
+  margin-bottom: 40px;
+  border-radius: 20px;
+  background-color: var(--color-white);
+
+  @media #{$breakpoint-up-md} {
+    margin-bottom: 50px;
+  }
+}
+
 .section {
   @include py(40px);
 
@@ -15,6 +26,12 @@
 
   &.section_pb_none {
     padding-bottom: 0;
+  }
+
+  &.section_offset_px {
+    @media #{$breakpoint-up-md} {
+      @include px(30px);
+    }
   }
 
   &.section_type_row {

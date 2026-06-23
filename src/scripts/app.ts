@@ -129,6 +129,7 @@ const initApp = () => {
     fetchData: async <TTestimonialItemData>(
       { action, id }: Record<'action' | 'id', string>
     ) => {
+      // TODO: объединить два запроса в один
       const { data } = await apiHandler.fetch<TTeamItemData[]>(`/team/${id}`);
       const res = await apiHandler.fetch<TTestimonialItemData[]>(
         `/${action}?all=1&spec_ids=${data.reduce((acc, item, idx, arr) => `${acc}${idx === arr.length - 1 ? item.id : `${item.id},`}`, '')}`
