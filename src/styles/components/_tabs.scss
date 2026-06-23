@@ -25,6 +25,10 @@
     flex-direction: column;
   }
 
+  &.is-hidden {
+    display: none;
+  }
+
   &.tab-nav_type_row {
     align-items: center;
     margin: 0 0 20px;

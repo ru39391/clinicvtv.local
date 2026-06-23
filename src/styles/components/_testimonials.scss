@@ -20,6 +20,16 @@
   @media #{$breakpoint-up-md} {
     max-width: 390px;
   }
+
+  &.is-active {
+    .testimonials-item__text {
+      display: block;
+    }
+
+    .testimonials-item__text_type_intro {
+      display: none;
+    }
+  }
 }
 
 .testimonials-item__header {

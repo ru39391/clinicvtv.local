@@ -12,4 +12,6 @@ export type TPriceItemData = TItemData & Record<'price', number> & Record<"isMin
 
 export type TExampleItemData = TItemData & Record<'spec_id', number> & Record<"img_before" | "img_after", TPicsData> & Record<'desc' | 'introtext', string>;
 
-export type TCommonData = Partial<TTeamItemData & TPriceItemData & TExampleItemData>;
+export type TTestimonialItemData = Omit<TItemData, 'dept_id' | 'subdept_id'> & Pick<TExampleItemData, 'desc' | 'spec_id'> & { rating: number; };
+
+export type TCommonData = Partial<TTeamItemData & TPriceItemData & TExampleItemData & TTestimonialItemData>;

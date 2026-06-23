@@ -1,10 +1,17 @@
 // @ts-ignore
 import Twig, { Template } from 'twig';
-import { apiHandler, type TTeamItemData, type TPriceItemData, type TExampleItemData } from './utils';
+import {
+  apiHandler,
+  type TTeamItemData,
+  type TPriceItemData,
+  type TExampleItemData,
+  type TTestimonialItemData
+} from './utils';
 import { handleCarousel, initSlides } from './modules/slides';
 import Accordion from './modules/accordion';
 import ExampleTabsRenderer from './modules/example-tabs-renderer';
 import PriceTabsRenderer from './modules/price-tabs-renderer';
+import TestimonialTabsRenderer from './modules/testimonial-tabs-renderer';
 import Tabs from './modules/tabs';
 import TabsRenderer from './modules/tabs-renderer';
 import Toggler from './modules/toggler';
@@ -112,6 +119,30 @@ const initApp = () => {
       togglers.forEach(btn => new TogglerExtended({ btn }));
 
       if(paneCarousel) handleCarousel(slidesConfig.carouselSel);
+    }
+  });
+  new TestimonialTabsRenderer<TTestimonialItemData>({
+    ...tabsRendererConfig,
+    tabsWrapper: document.querySelector('.js-testimonials-list'),
+    itemTpl: 'testimonial-carousel-item',
+    paneTpl: 'testimonial-carousel-wrapper',
+    fetchData: async <TTestimonialItemData>(
+      { action, id }: Record<'action' | 'id', string>
+    ) => {
+      const { data } = await apiHandler.fetch<TTeamItemData[]>(`/team/${id}`);
+      const res = await apiHandler.fetch<TTestimonialItemData[]>(
+        `/${action}?all=1&spec_ids=${data.reduce((acc, item, idx, arr) => `${acc}${idx === arr.length - 1 ? item.id : `${item.id},`}`, '')}`
+      );
+
+      return res.data;
+    },
+    handlePane: (pane: HTMLElement) => {
+      if(!pane) return;
+
+      new Accordion({
+        holder: pane
+      });
+      handleCarousel(slidesConfig.carouselSel);
     }
   });
   new Toggler({

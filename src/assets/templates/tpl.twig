@@ -375,27 +375,12 @@
       </div>
     </div>
 
-    <div class="section">
+    <div class="section js-testimonials-list">
       <div class="section-title">Отзывы наших пацентов</div>
-      <div class="swiper js-carousel" data-loop="0">
-        <div class="testimonials-wrapper swiper-wrapper">
-          {% for item in [1,2,3,5,6,7,8] %}
-          <div class="swiper-slide w-auto">
-            <div class="testimonials-item">
-              <div class="testimonials-item__header">
-                <img src="src/assets/icons/blockquote-icon.svg" alt="" />
-                <div class="testimonials-item__caption">Елена</div>
-              </div>
-              <div class="testimonials-item__text">Обратилась в клинику Стоматология ВТВ к стоматологу Наталье Владимировне. Она чётко и понятно объяснила мне мою проблему и предложила план лечения.</div>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-        <div class="swiper-footer">
-          <div class="swiper-pagination"></div>
-          <a class="readmore-link" href="#">читать все отзывы</a>
-        </div>
+      <div class="tab-nav is-hidden js-tab-nav">
+        <button class="btn-toggler js-tabs-link is-active" data-pane="testimonial-tab-12" data-action="testimonials" data-id="12" type="button"></button>
       </div>
+      <div class="tab-content js-tab-content" data-href="testimonials"></div>
     </div>
 
     <div class="section section_bg_white js-example-tabs">

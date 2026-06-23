@@ -1,16 +1,18 @@
 class Accordion {
+  holder: HTMLElement | null | undefined = null;
   wrapperSel: string = '.js-accordion';
   togglerSel: string = '.js-accordion-btn';
   visibleClassMod: string = 'is-active';
   itemsList: HTMLElement[] = [];
   togglersList: HTMLElement[] = [];
 
-  constructor() {
-    this.init();
+  constructor(options: { holder?: Accordion['holder']; } = {}) {
+    this.init(options);
   }
 
-  init() {
-    this.itemsList = Array.from(document.querySelectorAll(this.wrapperSel));
+  init(options: { holder?: Accordion['holder']; }) {
+    this.holder = options.holder;
+    this.itemsList = Array.from((this.holder || document).querySelectorAll(this.wrapperSel));
 
     if (!this.itemsList.length) {
       return;
