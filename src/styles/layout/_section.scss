@@ -1,16 +1,5 @@
 @use "../utils/helpers" as *;
 
-.section-holder {
-  overflow: hidden;
-  margin-bottom: 40px;
-  border-radius: 20px;
-  background-color: var(--color-white);
-
-  @media #{$breakpoint-up-md} {
-    margin-bottom: 50px;
-  }
-}
-
 .section {
   @include py(40px);
 
@@ -68,13 +57,55 @@
 
   &.section_bg_white {
     padding: 20px 10px;
-    margin-bottom: 40px;
-    border-radius: 20px;
     background-color: var(--color-white);
 
     @media #{$breakpoint-up-md} {
       padding: 50px 30px;
+    }
+
+    .section-card {
+      padding: 0;
+      box-shadow: none;
+    }
+  }
+
+  &.section_type_rounded {
+    margin-bottom: 40px;
+    border-radius: 20px;
+
+    @media #{$breakpoint-up-md} {
       margin-bottom: 50px;
+    }
+  }
+
+  &.section_type_start {
+    border-radius: 20px 20px 0 0;
+
+    @media #{$breakpoint-up-md} {
+      padding-bottom: 30px;
+    }
+  }
+
+  &.section_type_end {
+    border-radius: 0 0 20px 20px;
+
+    @media #{$breakpoint-up-md} {
+      padding-top: 30px;
+      margin-bottom: 50px;
+    }
+
+    &.section_type_start {
+      border-radius: 20px;
+
+      @media #{$breakpoint-up-md} {
+        @include py(50px);
+      }
+    }
+  }
+
+  &.section_type_inner {
+    @media #{$breakpoint-up-md} {
+      @include py(30px);
     }
   }
 

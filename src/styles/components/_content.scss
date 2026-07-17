@@ -35,18 +35,18 @@
     max-width: 735px;
   }
 
+  &.content_type_columned {
+    @media #{$breakpoint-up-md} {
+      column-count: 2;
+      column-gap: 30px;
+    }
+  }
+
   &.content_offset_px {
     @include px(5px);
 
     @media #{$breakpoint-up-sm} {
       @include px(30px);
     }
-  }
-}
-
-.content__cols {
-  @media #{$breakpoint-up-md} {
-    column-count: 2;
-    column-gap: 30px;
   }
 }
