@@ -66,6 +66,10 @@
     .section-card {
       padding: 0;
       box-shadow: none;
+
+      @media #{$breakpoint-up-md} {
+        padding-top: 30px;
+      }
     }
   }
 
@@ -73,8 +77,16 @@
     margin-bottom: 40px;
     border-radius: 20px;
 
+    &.section_bg_white {
+      @media #{$breakpoint-up-md} {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &.section_type_blockquote {
     @media #{$breakpoint-up-md} {
-      margin-bottom: 50px;
+      @include px(30px);
     }
   }
 
@@ -90,8 +102,7 @@
     border-radius: 0 0 20px 20px;
 
     @media #{$breakpoint-up-md} {
-      padding-top: 30px;
-      margin-bottom: 50px;
+      padding-top: 0;
     }
 
     &.section_type_start {
@@ -101,11 +112,29 @@
         @include py(50px);
       }
     }
+
+    & + .section_type_start {
+      margin-top: 40px;
+
+      @media #{$breakpoint-up-md} {
+        margin-top: 50px;
+      }
+    }
+
+    & + .section_type_end {
+      margin-top: 0;
+    }
   }
 
   &.section_type_inner {
     @media #{$breakpoint-up-md} {
-      @include py(30px);
+      @include py(0,30px);
+    }
+
+    &.section_type_blockquote {
+      @media #{$breakpoint-up-md} {
+        @include py(30px,50px);
+      }
     }
   }
 
