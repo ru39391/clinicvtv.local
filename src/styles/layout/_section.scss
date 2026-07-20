@@ -7,6 +7,15 @@
     @include py(50px);
   }
 
+  &.section_margin_bottom {
+    @include py(0);
+    margin-bottom: 40px;
+
+    @media #{$breakpoint-up-md} {
+      margin-bottom: 50px;
+    }
+  }
+
   &.section_offset_md {
     @media #{$breakpoint-up-md} {
       @include py(30px);
@@ -35,6 +44,12 @@
 
     .section-title {
       text-align: left;
+    }
+  }
+
+  &.section_title_centered {
+    .section-title {
+      text-align: center;
     }
   }
 
@@ -74,14 +89,7 @@
   }
 
   &.section_type_rounded {
-    margin-bottom: 40px;
     border-radius: 20px;
-
-    &.section_bg_white {
-      @media #{$breakpoint-up-md} {
-        margin-bottom: 50px;
-      }
-    }
   }
 
   &.section_type_blockquote {

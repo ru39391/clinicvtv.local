@@ -2,6 +2,24 @@
 
 .testimonials-wrapper {
   display: flex;
+
+  &.testimonials-wrapper_type_grid {
+    flex-direction: column;
+    gap: 24px 16;
+
+    @media #{$breakpoint-up-md} {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .testimonials-item {
+      max-width: unset;
+    }
+
+    .testimonials-item__caption {
+      text-align: left;
+    }
+  }
 }
 
 .testimonials-slide {

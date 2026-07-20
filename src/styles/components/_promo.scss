@@ -10,6 +10,46 @@
   @media #{$breakpoint-up-md} {
     @include mx(0);
   }
+
+  &.promo_type_grid {
+    @extend %d-flex-column;
+    @include mx(0);
+    gap: 24px;
+
+    @media #{$breakpoint-up-sm} {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media #{$breakpoint-up-md} {
+      gap: 30px;
+    }
+
+    .promo__item {
+      &:nth-child(3n) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+
+      &.promo__item_type_col {
+        .promo__wrapper {
+          flex-direction: column;
+          position: static;
+          padding: 0;
+        }
+
+        .promo__content {
+          flex: 0 0 auto;
+          flex-grow: 1;
+          max-width: unset;
+        }
+
+        .promo__img {
+          display: none;
+        }
+      }
+    }
+  }
 }
 
 .promo__item {
