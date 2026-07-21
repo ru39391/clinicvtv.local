@@ -11,7 +11,14 @@
 		</div>
 		<div class="team-item__footer">
 			<a class="team-item__link" href="{{ url }}">Отзывы о докторе</a>
-			<button class="btn btn-primary btn-sm" type="button">Записаться</button>
+			<button
+        class="btn btn-primary btn-sm js-modal-btn"
+        type="button"
+        data-target="form"
+        data-title="{{ title }}, запись к специалисту - скроллер"
+      >
+        Записаться
+      </button>
 		</div>
 	</div>
 </div>

@@ -43,11 +43,15 @@ const fetchTemplate = async (): Promise<Template | undefined> => {
 }
 
 const initApp = () => {
-  const modals = new Modal({
+  const modalsConfig = {
     btnSel: '.js-modal-btn',
     overlayClass: 'popup-overlay',
     titleSel: FORM_SELECTORS.formTitle,
     inputSel: FORM_SELECTORS.inputTitle,
+  };
+  const { btnSel, ...modalParams } = modalsConfig;
+  const modals = new Modal({
+    ...modalsConfig,
     handleOpen: (item) => showFormItems(item)
   });
   const slidesConfig = {
@@ -83,6 +87,14 @@ const initApp = () => {
     ) => await apiHandler.fetch<TTeamItemData[]>(`/${action}/${id}`),
     handlePane: (pane) => {
       const paneCarousel = pane.querySelector(slidesConfig.carouselSel);
+      const modalBtns = Array.from(pane.querySelectorAll(btnSel)) as HTMLElement[];
+      const modals = new Modal({
+        ...modalParams,
+        modalBtns,
+        handleOpen: (item) => showFormItems(item)
+      });
+
+      submitForm(modals);
 
       if(paneCarousel) handleCarousel(slidesConfig.carouselSel);
     }
@@ -95,7 +107,17 @@ const initApp = () => {
     isActiveTabUnset: true,
     fetchData: async <TTeamItemData>(
       { action, id }: Record<'action' | 'id', string>
-    ) => await apiHandler.fetch<TTeamItemData[]>(`/${action}/${id}`)
+    ) => await apiHandler.fetch<TTeamItemData[]>(`/${action}/${id}`),
+    handlePane: (pane) => {
+      const modalBtns = Array.from(pane.querySelectorAll(btnSel)) as HTMLElement[];
+      const modals = new Modal({
+        ...modalParams,
+        modalBtns,
+        handleOpen: (item) => showFormItems(item)
+      });
+
+      submitForm(modals);
+    }
   });
   new PriceTabsRenderer<TPriceItemData>({
     ...tabsRendererConfig,

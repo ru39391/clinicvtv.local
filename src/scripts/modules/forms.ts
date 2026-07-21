@@ -1,6 +1,5 @@
 import { apiHandler } from "../utils/api";
 import {
-  API_URL,
   STATE_MOD,
   FORM_SELECTORS,
   INPUT_CLASSNAMES,
@@ -267,9 +266,7 @@ const validateForm = (form: HTMLFormElement): boolean => {
   const { input, select, checkbox, textarea: textareaSel } = FORM_SELECTORS;
   const { phoneInput, emailInput, defaultInput } = INPUT_CLASSNAMES;
 
-  const inputsArr = Array.from(
-    form.querySelectorAll(input),
-  ) as HTMLInputElement[];
+  const inputsArr = Array.from(form.querySelectorAll(input)) as HTMLInputElement[];
   const selectsArr = Array.from(
     form.querySelectorAll(select),
   ) as HTMLSelectElement[];
@@ -281,7 +278,7 @@ const validateForm = (form: HTMLFormElement): boolean => {
   const validFieldsStatus: boolean[] = [];
   let isValid = true;
 
-  inputsArr.forEach((input) => {
+  inputsArr.filter(({ type }) => type !== "hidden").forEach((input) => {
     if (input.classList.contains(phoneInput)) {
       checkPhoneField(input);
       validFieldsStatus.push(checkPhoneField(input));
@@ -401,7 +398,7 @@ const submitForm = (modals: TModal) => {
         return;
       }
 
-      const { message, success } = await apiHandler.create<Record<string,string>, { message: string; success: boolean }>(action, payload);
+      const { data: { message, success } } = await apiHandler.create<Record<string,string>, { message: string; success: boolean }>(action, payload);
 
       if (success) {
         formNode.reset();
@@ -417,7 +414,7 @@ const submitForm = (modals: TModal) => {
       } else {
         console.error(message);
         formFailure?.classList.remove(STATE_MOD.hidden);
-        if(formFailure) formFailure.textContent = String(message);
+        if(formFailure && message) formFailure.textContent = message;
       }
 
       submitBtn.disabled = false;

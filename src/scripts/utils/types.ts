@@ -24,7 +24,8 @@ export type TTemplateData = {
 };
 
 export type TModalOptions<T> = {
-  btnSel: string;
+  btnSel?: string;
+  modalBtns?: T[];
   overlayClass: string;
   titleSel: string;
   inputSel: string;

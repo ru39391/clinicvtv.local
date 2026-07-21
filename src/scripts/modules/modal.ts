@@ -25,16 +25,18 @@ class Modal {
   init(options: TModalOptions<HTMLElement>) {
     const {
       btnSel,
+      modalBtns,
       overlayClass,
       titleSel,
       inputSel
     } = options;
 
+    if(btnSel) this.btnSel = btnSel;
+
     this.titleSel = titleSel;
     this.inputSel = inputSel;
-    this.btnSel = btnSel;
     this.overlayClass = overlayClass;
-    this.modalBtns = Array.from(document.querySelectorAll(this.btnSel));
+    this.modalBtns = modalBtns || Array.from(document.querySelectorAll(this.btnSel));
 
     this.revealModals();
 
@@ -64,10 +66,12 @@ class Modal {
       return;
     }
 
+    /*
     const title = this.titleSel ? modal.querySelector(this.titleSel) as HTMLElement : null;
-    const input = this.inputSel ? modal.querySelector(this.inputSel) as HTMLInputElement : null;
 
     if(title && caption) title.textContent = caption;
+    */
+    const input = this.inputSel ? modal.querySelector(this.inputSel) as HTMLInputElement : null;
 
     if(input && caption) input.value = caption;
   }
