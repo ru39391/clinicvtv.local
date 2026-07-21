@@ -2,6 +2,7 @@
 import Twig, { Template } from 'twig';
 import {
   apiHandler,
+  FORM_SELECTORS,
   type TTeamItemData,
   type TPriceItemData,
   type TExampleItemData,
@@ -10,6 +11,7 @@ import {
 import { handleCarousel, initSlides } from './modules/slides';
 import Accordion from './modules/accordion';
 import ExampleTabsRenderer from './modules/example-tabs-renderer';
+import Modal from './modules/modal';
 import PriceTabsRenderer from './modules/price-tabs-renderer';
 import TestimonialTabsRenderer from './modules/testimonial-tabs-renderer';
 import Tabs from './modules/tabs';
@@ -62,6 +64,12 @@ const initApp = () => {
   initSlides(slidesConfig);
 
   new Accordion();
+  new Modal({
+    btnSel: '.js-modal-btn',
+    overlayClass: 'modal-overlay',
+    titleSel: FORM_SELECTORS.formTitle,
+    inputSel: FORM_SELECTORS.inputTitle
+  });
   new TabsRenderer<TTeamItemData>({
     ...tabsRendererConfig,
     tabsWrapper: document.querySelector('.js-team-tabs'),

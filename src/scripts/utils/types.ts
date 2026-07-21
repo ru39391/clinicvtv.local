@@ -1,3 +1,5 @@
+import { type Template } from 'twig';
+
 export type TPicsData = Record<"thumb" | "webp", string>;
 
 export type TItemData = Record<'id' | 'dept_id' | 'subdept_id', number> & Record<"is_hidden", 1 | 0> & Record<"name" | "createdAt" | "updatedAt", string>;
@@ -15,3 +17,16 @@ export type TExampleItemData = TItemData & Record<'spec_id', number> & Record<"i
 export type TTestimonialItemData = Omit<TItemData, 'dept_id' | 'subdept_id'> & Pick<TExampleItemData, 'desc' | 'spec_id'> & { rating: number; };
 
 export type TCommonData = Partial<TTeamItemData & TPriceItemData & TExampleItemData & TTestimonialItemData>;
+
+export type TTemplateData = {
+  tpl: Template | undefined;
+  isSucceed: boolean;
+};
+
+export type TModalOptions<T> = {
+  btnSel: string;
+  overlayClass: string;
+  titleSel: string;
+  inputSel: string;
+  handleOpen: ((data: T) => void) | null;
+};

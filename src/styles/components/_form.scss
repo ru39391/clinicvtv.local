@@ -1,0 +1,159 @@
+@use "../utils/helpers" as *;
+
+.form-header {
+  @extend %d-flex-column;
+  align-items: center;
+  text-align: center;
+  gap: 8px 0;
+
+  &.is-hidden {
+    display: none;
+  }
+}
+
+.form-container {
+  @extend %d-flex-column;
+  gap: 40px 0;
+}
+
+.form-title {
+  @include fs-lh(30px,34px);
+  flex-grow: 1;
+  text-align: center;
+
+  &.is-hidden {
+    display: none;
+  }
+
+  &.form-title_type_error {
+    color: var(--color-danger);
+  }
+
+  &.form-title_type_subtitle {
+    @include fs-lh(20px,23px);
+    margin: 0 0 40px;
+  }
+}
+
+.form-desc {
+  @include fs-lh(18px,21px);
+  font-weight: var(--fw-light);
+
+  &.is-hidden {
+    display: none;
+  }
+}
+
+.form-toggler-row {
+  &.is-error {
+    position: relative;
+
+    .form-error {
+      left: 0;
+      padding: 0;
+      transform: translateY(-100%);
+    }
+  }
+}
+
+.form-toggler {
+  @include wh(0);
+  position: absolute;
+  pointer-events: none;
+  visibility: hidden;
+
+  &:checked {
+    & + .form-toggler-label {
+      .form-toggler-icon {
+        color: var(--color-white);
+        border-color: var(--color-basic);
+        background-color: var(--color-basic);
+
+        .icon-fluid {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.form-toggler-label {
+  @extend %d-flex-ai-center;
+  font-size: var(--font-size-xs);
+  font-weight: var(--fw-light);
+  gap: 0 12px;
+  cursor: pointer;
+}
+
+.form-toggler-icon {
+  @extend %d-flex-column;
+  @extend %d-flex-centered;
+  @include fw(24px);
+  @include border(1px,var(--color-basic));
+  height: 24px;
+  padding: 2px;
+  color: var(--color-white);
+  transition: all .3s ease;
+
+  .icon-fluid {
+    display: none;
+  }
+}
+
+.form-toggler-caption {
+  text-align: center;
+}
+
+.form-error {
+  @include pos(0,12px);
+  padding: 4px 6px;
+  font-size: 12px;
+  color: var(--color-danger);
+  display: none;
+  transform: translateY(-50%);
+  background-color: var(--color-white);
+}
+
+.is-error {
+  .form-error {
+    display: block;
+  }
+}
+
+.form {
+  @extend %d-flex-column;
+  gap: 40px 0;
+
+  &.is-hidden {
+    display: none;
+  }
+}
+
+.form__fieldset {
+  @extend %d-flex-column;
+  gap: 16px 0;
+  border: 0;
+}
+
+.form__item {
+  @extend %d-flex-column;
+  position: relative;
+  gap: 8px 0;
+}
+
+.form__field {
+  @include border(1px,var(--color-basic));
+  height: 46px;
+  padding: 12px 8px;
+  border-radius: 10px;
+
+  &:focus {
+    outline: 0;;
+  }
+}
+
+.form__label {
+  font-size: var(--font-size-xs);
+  text-align: center;
+  margin-bottom: 0;
+}

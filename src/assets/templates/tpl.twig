@@ -5,7 +5,7 @@
     </div>
     <div class="header__social">
       <div class="social social_jc_end social_hidden">
-        <button class="btn btn-primary" type="button">Записаться</button>
+        <button class="btn btn-primary js-modal-btn" type="button">Записаться</button>
         <a class="social__item" href="#"><img src="src/assets/icons/max-icon.svg" alt="" /></a>
       </div>
     </div>
@@ -93,7 +93,7 @@
               <div class="promo__desc">
                 <p>Многолетний опыт и забота о каждом пациенте</p>
               </div>
-              <button class="btn btn-primary btn-md" type="button">Записаться на сайте</button>
+              <button class="btn btn-primary js-modal-btn btn-md" data-target="form" type="button">Записаться на сайте</button>
             </div>
           </div>
         </div>
@@ -147,7 +147,7 @@
         </div>
         <div class="section-card__wrapper">
           <a class="readmore-link readmore-link_fs_lg" href="#">+7 (495) 491-93-41</a>
-          <button class="btn btn-primary btn-md" type="button">Записаться на сайте</button>
+          <button class="btn btn-primary js-modal-btn btn-md" type="button">Записаться на сайте</button>
         </div>
       </div>
     </div>
@@ -250,7 +250,7 @@
         <div class="content">
           <p>Здравствуйте!<br />Меня зовут Симонова Юлия Павловна.<br />Я - главный врач клиники Стоматология ВТВ уже более 10 лет.<br />Я гарантирую: в наших клиниках вы получите своевременную и безопасную медицинскую помощь!</p>
         </div>
-        <button class="btn btn-primary btn-md" type="button">Записаться на сайте</button>
+        <button class="btn btn-primary js-modal-btn btn-md" type="button">Записаться на сайте</button>
       </div>
       <div class="section__aside">
         <img class="section__img img-fluid" src="src/assets/images/section-img.png" alt="" />
@@ -262,7 +262,7 @@
         <div class="content">
           <p>Здравствуйте!<br />Меня зовут Симонова Юлия Павловна.<br />Я - главный врач клиники Стоматология ВТВ уже более 10 лет.<br />Я гарантирую: в наших клиниках вы получите своевременную и безопасную медицинскую помощь!</p>
         </div>
-        <button class="btn btn-primary btn-md" type="button">Записаться на сайте</button>
+        <button class="btn btn-primary js-modal-btn btn-md" type="button">Записаться на сайте</button>
       </div>
       <div class="section__aside">
         <img class="section__img img-fluid" src="src/assets/images/section-img.png" alt="" />
@@ -372,7 +372,7 @@
           </div>
           <div class="team-item__footer">
             <a class="team-item__link" href="#">Отзывы о докторе</a>
-            <button class="btn btn-primary btn-sm" type="button">Записаться</button>
+            <button class="btn btn-primary js-modal-btn btn-sm" type="button">Записаться</button>
           </div>
         </div>
       {% endfor %}
@@ -542,7 +542,7 @@
       </a>
     </div>
     <div class="social social_hidden">
-      <button class="btn btn-primary" type="button">Записаться</button>
+      <button class="btn btn-primary js-modal-btn" type="button">Записаться</button>
       <a class="social__item" href="#"><img src="src/assets/icons/max-icon.svg" alt="" /></a>
     </div>
     <nav class="footer__nav footer__nav_type_copyright">
@@ -551,3 +551,51 @@
     </nav>
   </div>
 </footer>
+
+<div id="form" class="modal-overlay">
+    <div class="modal modal_type_plain">
+        <div class="modal-wrapper">
+            <button class="modal-close js-modal-close" type="button">×</button>
+            <div class="modal-content">
+                <div class="modal-container form-container js-form">
+                    <div class="form-header js-form-header">
+                        <div class="form-title js-form-title">Оставьте свой номер</div>
+                        <div class="form-desc">и мы свяжемся с вами в ближайшее время</div>
+                    </div>
+
+                    <div class="form-title js-form-content-success is-hidden">
+                        Спасибо! Мы свяжемся с Вами в ближайшее время.
+                    </div>
+
+                    <form class="form" data-ym="">
+                        <div class="form-desc form-desc_type_error js-form-content-failure is-hidden">Не удалось отправить сообщение, повторите попытку позже.</div>
+
+                        <div class="form__item is-hidden js-input-holder">
+                            <input class="js-input-title js-input-field js-input-type-default" name="modal_form" value="Заказать звонок" type="hidden" data-name="form">
+                        </div>
+                        <fieldset class="form__fieldset">
+                            <div class="form__item js-input-holder">
+                                <input class="form__field js-input-field js-input-type-phone" data-name="phone" name="modal_phone" value="" type="tel" placeholder="+7 (999) 999-99-99">
+                                <label class="form__label">Телефон</label>
+                                <span class="form-error js-error-message"></span>
+                            </div>
+                            <div class="form__item js-input-holder">
+                                <input class="form__field js-input-field js-input-type-default" data-name="name" name="modal_name" value="" type="text" placeholder="Ваше имя">
+                                <label class="form__label">Ваше имя</label>
+                                <span class="form-error js-error-message"></span>
+                            </div>
+                        </fieldset>
+                        <div class="form-toggler-row js-input-holder">
+                            <input id="modal_confirm" class="form-toggler form-toggler_type_checkbox js-input-checkbox" type="checkbox" checked />
+                            <label class="form-toggler-label form__label" for="modal_confirm">
+                                <span class="form-toggler-icon"><img src="src/assets/icons/checked-icon.svg" alt="" /></span>
+                                <span>Даю согласие на <a class="td-underline" href="politika-konfidenczialnosti" target="_blank">обработку персональных данных</a></span>
+                            </label>
+                        </div>
+                        <button class="btn btn-md btn-primary js-form-submit" type="submit">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
