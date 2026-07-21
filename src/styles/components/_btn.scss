@@ -15,6 +15,11 @@
   &.btn-md {
     @include py(14px);
   }
+
+  &:disabled {
+    pointer-events: none;
+    background-color: var(--color-grey);
+  }
 }
 
 .btn-toggler {

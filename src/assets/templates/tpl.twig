@@ -567,30 +567,58 @@
                         Спасибо! Мы свяжемся с Вами в ближайшее время.
                     </div>
 
-                    <form class="form" data-ym="">
-                        <div class="form-desc form-desc_type_error js-form-content-failure is-hidden">Не удалось отправить сообщение, повторите попытку позже.</div>
-
-                        <div class="form__item is-hidden js-input-holder">
-                            <input class="js-input-title js-input-field js-input-type-default" name="modal_form" value="Заказать звонок" type="hidden" data-name="form">
+                    <form class="form" data-ym="" data-action="/feedback">
+                        <div class="form-title form-title_type_error js-form-content-failure is-hidden">
+                          Не удалось отправить сообщение, повторите попытку позже.
                         </div>
+
                         <fieldset class="form__fieldset">
+                            <div class="form__item is-hidden js-input-holder">
+                                <input
+                                  class="js-input-title js-input-field js-input-type-default"
+                                  name="feedback"
+                                  value="Заказать звонок"
+                                  type="hidden"
+                                  data-name="feedback"
+                                />
+                            </div>
                             <div class="form__item js-input-holder">
-                                <input class="form__field js-input-field js-input-type-phone" data-name="phone" name="modal_phone" value="" type="tel" placeholder="+7 (999) 999-99-99">
+                                <input
+                                  class="form__field js-input-field js-input-type-phone"
+                                  data-name="phone"
+                                  name="phone"
+                                  value=""
+                                  type="tel"
+                                  placeholder="+7 (999) 999-99-99"
+                                />
                                 <label class="form__label">Телефон</label>
                                 <span class="form-error js-error-message"></span>
                             </div>
                             <div class="form__item js-input-holder">
-                                <input class="form__field js-input-field js-input-type-default" data-name="name" name="modal_name" value="" type="text" placeholder="Ваше имя">
+                                <input
+                                  class="form__field js-input-field js-input-type-default"
+                                  data-name="name"
+                                  name="name"
+                                  value=""
+                                  type="text"
+                                  placeholder="Ваше имя"
+                                />
                                 <label class="form__label">Ваше имя</label>
                                 <span class="form-error js-error-message"></span>
                             </div>
                         </fieldset>
                         <div class="form-toggler-row js-input-holder">
-                            <input id="modal_confirm" class="form-toggler form-toggler_type_checkbox js-input-checkbox" type="checkbox" checked />
-                            <label class="form-toggler-label form__label" for="modal_confirm">
+                            <input
+                              id="feedback_confirm"
+                              class="form-toggler js-input-checkbox js-checkbox-required"
+                              type="checkbox"
+                              checked
+                            />
+                            <label class="form-toggler-label form__label" for="feedback_confirm">
                                 <span class="form-toggler-icon"><img src="src/assets/icons/checked-icon.svg" alt="" /></span>
                                 <span>Даю согласие на <a class="td-underline" href="politika-konfidenczialnosti" target="_blank">обработку персональных данных</a></span>
                             </label>
+                            <span class="form-error js-error-message">Примите соглашение на обработку персональных данных</span>
                         </div>
                         <button class="btn btn-md btn-primary js-form-submit" type="submit">Отправить</button>
                     </form>

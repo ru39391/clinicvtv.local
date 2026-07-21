@@ -122,7 +122,7 @@ class Modal {
       currentTarget: event.currentTarget as HTMLElement,
     };
 
-    if(target === this.btnClose) { //target.parentElement === currentTarget ||
+    if(target.parentElement === currentTarget || target === this.btnClose) {
       this.hideModal(currentTarget);
     }
   }
@@ -237,8 +237,6 @@ class Modal {
 
     const { dataset } = event.target as HTMLElement;
     const { res, target, title } = dataset;
-
-    console.log({ res, target, title });
 
     this.isModalPlain = false;
 

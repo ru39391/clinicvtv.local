@@ -4,7 +4,7 @@ import { RESPONSE_DATA } from '../constants';
 import { type TResponseData } from './types';
 
 const handleApiClient = async <P, R>(
-  params: { method?: "GET"; url: string },
+  params: { method?: "GET" | "POST"; url: string },
   payload: P | null = null,
 ): Promise<TResponseData<R>> => {
   let res: TResponseData<R> = {
@@ -43,6 +43,8 @@ const handleApiClient = async <P, R>(
 export const apiHandler = {
   fetch: async <T>(url: string) =>
     handleApiClient<null, T>({ url, method: "GET" }),
+  create: async <P, T>(url: string, payload: P) =>
+    handleApiClient<P, T>({ url, method: "POST" }, payload),
 };
 
 export * from './types';

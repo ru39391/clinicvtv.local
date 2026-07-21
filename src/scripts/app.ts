@@ -9,6 +9,7 @@ import {
   type TTestimonialItemData
 } from './utils';
 import { handleCarousel, initSlides } from './modules/slides';
+import { showFormItems, submitForm } from './modules/forms';
 import Accordion from './modules/accordion';
 import ExampleTabsRenderer from './modules/example-tabs-renderer';
 import Modal from './modules/modal';
@@ -42,6 +43,13 @@ const fetchTemplate = async (): Promise<Template | undefined> => {
 }
 
 const initApp = () => {
+  const modals = new Modal({
+    btnSel: '.js-modal-btn',
+    overlayClass: 'popup-overlay',
+    titleSel: FORM_SELECTORS.formTitle,
+    inputSel: FORM_SELECTORS.inputTitle,
+    handleOpen: (item) => showFormItems(item)
+  });
   const slidesConfig = {
     sliderSel: '.js-slides',
     carouselSel: '.js-carousel'
@@ -62,14 +70,9 @@ const initApp = () => {
   });
 
   initSlides(slidesConfig);
+  submitForm(modals);
 
   new Accordion();
-  new Modal({
-    btnSel: '.js-modal-btn',
-    overlayClass: 'modal-overlay',
-    titleSel: FORM_SELECTORS.formTitle,
-    inputSel: FORM_SELECTORS.inputTitle
-  });
   new TabsRenderer<TTeamItemData>({
     ...tabsRendererConfig,
     tabsWrapper: document.querySelector('.js-team-tabs'),
