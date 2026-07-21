@@ -28,7 +28,7 @@ const showErrorMessage = (
     FORM_SELECTORS.errorContent,
   ) as HTMLElement;
 
-  errorItem.textContent = message;
+  if(errorItem) errorItem.textContent = message;
 };
 
 /**
@@ -400,8 +400,6 @@ const submitForm = (modals: TModal) => {
         console.error(ERROR_MESSAGES.formInvalid);
         return;
       }
-
-      console.log(API_URL, action);
 
       const { message, success } = await apiHandler.create<Record<string,string>, { message: string; success: boolean }>(action, payload);
 
