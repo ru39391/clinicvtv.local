@@ -336,7 +336,7 @@ const handleYMCounter = (ym: string, goal: string) => {
         }
     }, 100);
 }
-
+// TODO: кастомизировать обработки форм
 const handlePayload = (action: string, data: Record<string, string>): Record<string, string | number> => {
   if(action.includes("feedback")) {
     return data;

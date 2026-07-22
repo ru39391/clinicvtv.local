@@ -2,6 +2,32 @@
 
 .articles-wrapper {
   display: flex;
+
+  &.articles-wrapper_type_grid {
+    gap: 16px;
+    flex-direction: column;
+
+    @media #{$breakpoint-up-xs} {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+    }
+
+    @media #{$breakpoint-up-sm} {
+      gap: 24px;
+    }
+
+    @media #{$breakpoint-up-md} {
+      grid-template-columns: repeat(3,1fr);
+    }
+
+    .article-item {
+      max-width: unset;
+    }
+
+    .article-item__img {
+      @include mx(auto);
+    }
+  }
 }
 
 .article-slide {

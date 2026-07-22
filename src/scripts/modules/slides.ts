@@ -40,3 +40,8 @@ export const initSlides = ({ sliderSel, carouselSel }: Record<string, string>) =
     slider
   };
 };
+
+export const slidesConfig = {
+  sliderSel: '.js-slides',
+  carouselSel: '.js-carousel'
+};

@@ -8,7 +8,8 @@ import {
   type TExampleItemData,
   type TTestimonialItemData
 } from './utils';
-import { handleCarousel, initSlides } from './modules/slides';
+import { handleCarousel, initSlides, slidesConfig } from './modules/slides';
+import { initGallery } from './modules/gallery';
 import { showFormItems, submitForm } from './modules/forms';
 import Accordion from './modules/accordion';
 import ExampleTabsRenderer from './modules/example-tabs-renderer';
@@ -54,10 +55,6 @@ const initApp = () => {
     ...modalsConfig,
     handleOpen: (item) => showFormItems(item)
   });
-  const slidesConfig = {
-    sliderSel: '.js-slides',
-    carouselSel: '.js-carousel'
-  };
   const tabsRendererConfig = {
     itemHolderSel: '.js-items-wrapper',
     itemSel: '.js-item',
@@ -73,6 +70,7 @@ const initApp = () => {
     });
   });
 
+  initGallery();
   initSlides(slidesConfig);
   submitForm(modals);
 
