@@ -18,7 +18,7 @@
 
   @media #{$breakpoint-up-md} {
     font-size: var(--font-size-body);
-    font-weight: var(--fw-medium);
+    font-weight: var(--fw-normal);
     grid-template-columns: repeat(2, minmax(min-content,50%));
   }
 }
@@ -26,10 +26,4 @@
 .price__row-value {
   padding: 0 10px;
   text-align: center;
-
-  @media #{$breakpoint-up-md} {
-    @include fs-lh(var(--font-size-lg),26px);
-    font-family: var(--font-family-title);
-    font-weight: var(--fw-normal);
-  }
 }

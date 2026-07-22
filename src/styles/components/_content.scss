@@ -46,6 +46,10 @@
     }
   }
 
+  &.content_offset_mb {
+    margin-bottom: 30px;
+  }
+
   &.content_offset_px {
     @include px(5px);
 

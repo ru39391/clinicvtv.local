@@ -12,6 +12,12 @@
     flex-direction: row;
     padding: 10px 0 0 30px;
   }
+
+  &.tab-section_nav_nopt {
+    .tab-nav {
+      padding-top: 0;
+    }
+  }
 }
 
 .tab-nav {
