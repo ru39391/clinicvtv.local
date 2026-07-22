@@ -145,13 +145,23 @@
   @extend %d-flex-column;
   position: relative;
   gap: 8px 0;
+
+  &.is-hidden {
+    display: none;
+  }
 }
 
 .form__field {
+  @include wh(100%,46px);
   @include border(1px,var(--color-basic));
-  height: 46px;
   padding: 12px 8px;
   border-radius: 10px;
+  background-color: var(--color-white);
+
+  &.form__field_type_textarea {
+    min-height: 120px;
+    resize: none;
+  }
 
   &:focus {
     outline: 0;;

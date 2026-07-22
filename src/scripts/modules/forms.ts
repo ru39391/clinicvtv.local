@@ -337,6 +337,19 @@ const handleYMCounter = (ym: string, goal: string) => {
     }, 100);
 }
 
+const handlePayload = (action: string, data: Record<string, string>): Record<string, string | number> => {
+  if(action.includes("feedback")) {
+    return data;
+  }
+
+  return {
+    ...data,
+    spec_id: Number(data.spec_id),
+    rating: Number(data.rating),
+    is_hidden: Number(data.is_hidden),
+  }
+}
+
 /**
  * Валидация и отправка формы
  */
@@ -398,7 +411,10 @@ const submitForm = (modals: TModal) => {
         return;
       }
 
-      const { data: { message, success } } = await apiHandler.create<Record<string,string>, { message: string; success: boolean }>(action, payload);
+      const { data: { message, success } } = await apiHandler.create<Record<string, string | number>, { message: string; success: boolean }>(
+        action,
+        handlePayload(action, payload)
+      );
 
       if (success) {
         formNode.reset();
