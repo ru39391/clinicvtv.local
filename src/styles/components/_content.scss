@@ -57,4 +57,15 @@
       @include px(30px);
     }
   }
+
+  &.content_fw_light {
+    p, li {
+      font-size: var(--font-size-md);
+      font-weight: var(--fw-light);
+    }
+  }
+}
+
+.content__link {
+  font-family: var(--font-family-title);
 }

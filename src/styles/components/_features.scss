@@ -72,6 +72,35 @@
       }
     }
   }
+
+  &.feature_type_contacts {
+    align-items: stretch;
+    text-align: left;
+    gap: 30px 0;
+
+    @media #{$breakpoint-up-md} {
+      @include px(30px);
+    }
+
+    .feature__title {
+      text-align: center;
+    }
+  }
+
+  &.feature_type_pic {
+    @include py(0);
+    gap: 10px 0;
+    border: 0;
+    background-color: var(--color-transp);
+
+    .feature__title {
+      font-weight: var(--fw-normal);
+
+      @media #{$breakpoint-up-md} {
+        font-size: var(--font-size-lg);
+      }
+    }
+  }
 }
 
 .feature__icon {

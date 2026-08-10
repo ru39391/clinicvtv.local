@@ -34,10 +34,18 @@ const renderPicsList = (
 
   const carouselWrapper = section?.querySelector('.js-carousel-wrapper');
 
-  arr.forEach(data => {
+  arr.forEach((data, index, array) => {
     const row = renderPicItem(data.pics, rowTpl);
 
     if(!row) return;
+
+    row.addEventListener('mouseenter', () => {
+      if(index === array.length - 1) carouselWrapper?.classList.add('is-active');
+    });
+
+    row.addEventListener('mouseleave', () => {
+      if(index === array.length - 1) carouselWrapper?.classList.remove('is-active');
+    });
 
     carouselWrapper?.append(row);
   });
@@ -54,7 +62,7 @@ export const initGallery = async () => {
 
   const [{ data: { data } }, wrapperTpl, rowTpl] = await Promise.all(
     [
-      apiHandler.fetch<{ data: TPictureItemData[] }>('/pictures?all=1&thumbs=1&dir=images/gallery&sortby=name'),
+      apiHandler.fetch<{ data: TPictureItemData[] }>('/pictures?all=1&thumbs=1&dir=images/gallery&sortby=name&sortdir=ASC'),
       Utils.fetchTemplateData('gallery-carousel-wrapper'),
       Utils.fetchTemplateData('gallery-carousel-item')
     ]

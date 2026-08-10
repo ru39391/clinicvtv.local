@@ -1,3 +1,4 @@
+<div class="wrapper">
 <div class="container">
   <header class="header">
     <div class="header__logo">
@@ -75,11 +76,96 @@
     </a>
     <a class="pathway__item" href="#">Услуги</a>
     <a class="pathway__item pathway__item_type_current" href="#">Лечение кариеса</a>
-  </div>
-</div>
+  </nav>
 
-<div class="wrapper wrapper_bg_right">
-  <div class="promo container">
+  <section class="section content section_offset_md">
+    <h1>Контакты</h1>
+  </section>
+
+  <div class="section section_pb_none section_type_row section_type_media section_ai_stretch section_dir_reverse">
+    <div class="section__aside">
+      <img class="section__img img-fluid" src="src/assets/images/section-img.png" alt="" />
+    </div>
+    <div class="section__wrapper section__wrapper_type_col section__wrapper_bg_white">
+      <div class="content content_offset_mb">
+        <p>Одно из преимуществ нашей стоматологической клиники является ее расположение - 1-2 минуты от с. метро Тушинская, наличие парковки.</p>
+        <p>К нам можно легко и быстро добраться на общественном и личном транспорте из Митино, и Красногорска.</p>
+      </div>
+      <button class="btn btn-primary btn-md js-modal-btn" type="button" data-target="form" data-title="Стр. контактов">Записаться</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="features-wrapper features-wrapper_type_grid">
+      <div class="feature feature_type_contacts feature_type_card">
+        <div class="feature__title">Контакты</div>
+        <div class="feature__wrapper">
+          <div class="content content_fw_light">
+            <p>Телефон<br />
+            <a class="content__link" href="">+ 7 (495) 491-93-41</a><br />
+            <a class="content__link" href="">+ 7 (916) 951-99-51</a></p>
+
+            <p>Почта<br />
+            <a class="content__link" href="">info@clinicvtv.ru</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="feature feature_type_card">
+        <div class="feature__title">Напишите нам</div>
+        <div class="feature__wrapper">
+          <a class="btn btn-primary btn-sm" href="#">Max</a>
+        </div>
+      </div>
+      <div class="feature feature_type_contacts feature_type_card">
+        <div class="feature__title">График работы</div>
+        <div class="feature__wrapper">
+          <div class="content content_fw_light">
+            <p>Мы открыты для вас ежедневно.</p>
+            <p>С понедельника по субботу<br />
+            <span class="content__link">с 9:00 до 21:00</span></p>
+            <p>В воскресенье<br />
+            <span class="content__link">с 10:00 до 18:00</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section section_pb_none section_type_start section_bg_white">
+    <div class="section-title section-title_mb_none">Наш адрес</div>
+  </div>
+  <div class="section section_type_row section_ai_stretch section_type_end section_bg_white">
+    <div class="section__wrapper">
+      <div class="content">
+        <p>Наш адрес: ООО “Стоматология ВТВ”<br />
+        г. Москва м. Тушинская<br />
+        Волоколамское ш., 94</p>
+      </div>
+    </div>
+    <div class="section__aside section__aside_width_unset">
+      <img class="section__img img-fluid" src="src/assets/images/map.png" alt="" />
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Как до нас добраться</div>
+    <div class="features-wrapper features-wrapper_type_grid">
+      <div class="feature feature_type_pic">
+        <div class="feature__title">от м.Тушинская</div>
+        <div class="feature__wrapper"><img src="src/assets/images/address-1.png" alt="" /></div>
+      </div>
+      <div class="feature feature_type_pic">
+        <div class="feature__title">от МЦД-2</div>
+        <div class="feature__wrapper"><img src="src/assets/images/address-2.png" alt="" /></div>
+      </div>
+      <div class="feature feature_type_pic">
+        <div class="feature__title">на машине</div>
+        <div class="feature__wrapper"><img src="src/assets/images/address-3.png" alt="" /></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="promo">
     <div class="swiper js-slides">
       <div class="swiper-wrapper">
         {% for item in [1,2,3,4] %}
@@ -102,7 +188,6 @@
     </div>
   </div>
 
-  <div class="container">
     <div class="section content content_offset_px content_type_col">
       <h1>Почему нам доверяют поколения пациентов:</h1>
       <p>Кариес зубов является очень распространенной болезнью. Он заключается в деминерализации и распаде твердых тканей зуба. Требует соответствующего лечения, а если такие действия не будут приняты, может распространяться и достигать даже внутренних частей зуба, вызывая их полное разрушение.</p>
@@ -239,11 +324,7 @@
         {% endfor %}
       </div>
     </div>
-  </div>
-</div>
 
-<div class="wrapper wrapper_bg_left">
-  <div class="container">
     <div class="section section_type_row">
       <div class="section__wrapper">
         <div class="section-title">Стоматология ВТВ</div>
@@ -419,13 +500,9 @@
           </button>
         {% endfor %}
       </div>
-      <div class="tab-content js-tab-content">
+      <div class="tab-content js-tab-content"></div>
     </div>
-  </div>
-</div>
 
-<div class="wrapper wrapper_bg_right">
-  <div class="container">
     <div class="section">
       <div class="section-title">Почему пациенты выбирают нас</div>
       <div class="features-wrapper">
@@ -504,6 +581,7 @@
     </div>
     #}
   </div>
+</div>
 </div>
 
 <footer class="footer container">

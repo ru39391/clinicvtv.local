@@ -1,11 +1,33 @@
 @use "../utils/helpers" as *;
 
 .gallery {
-  gap: 0 16px;
-
   @media #{$breakpoint-up-md} {
     justify-content: stretch;
   }
+
+  &.is-active {
+    .gallery-slide {
+      &:last-child {
+        .gallery__item {
+          @media #{$breakpoint-up-md} {
+            max-width: 585px;
+            transform: translateX(-50%);
+          }
+        }
+      }
+
+      .gallery__item {
+        @media #{$breakpoint-up-md} {
+          transform: translateX(calc(-100% - 16px));
+        }
+      }
+    }
+  }
+}
+
+.gallery-slide {
+  @include px(8px);
+  transition: all .3s ease;
 }
 
 .gallery__item {

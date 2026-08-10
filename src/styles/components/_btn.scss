@@ -12,6 +12,10 @@
     background-color: var(--color-primary);
   }
 
+  &.btn-sm {
+    min-width: 222px;
+  }
+
   &.btn-md {
     @include py(14px);
   }
