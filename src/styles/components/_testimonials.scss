@@ -29,6 +29,7 @@
 .testimonials-item {
   @extend %d-flex-column;
   gap: 15px 0;
+  height: 100%;
   max-width: 272px;
   padding: 30px 20px;
   border-radius: 20px;
@@ -68,6 +69,7 @@
 .testimonials-item__text {
   @include fs-lh(var(--font-size-xs),var(--line-height-sm));
   font-weight: var(--fw-light);
+  flex-grow: 1;
 
   @media #{$breakpoint-up-md} {
     @include fs-lh(var(--font-size-md),var(--line-height-body));

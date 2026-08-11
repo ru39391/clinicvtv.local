@@ -2,12 +2,14 @@
 
 .header {
   @include py(5px);
+  margin: 0 0 20px;
   gap: 10px 20px;
   display: flex;
   justify-content: space-between;
 
   @media #{$breakpoint-up-sm} {
     @include py(16px);
+    margin: 0;
     display: grid;
     align-items: center;
     grid-template-columns: repeat(3, 1fr);

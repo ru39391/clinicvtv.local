@@ -52,6 +52,10 @@ body {
   pointer-events: none;
 }
 
+.pos-rel {
+  position: relative;
+}
+
 .zi-2 {
   @include zi(2);
 }

@@ -1,19 +1,23 @@
 @use "../utils/helpers" as *;
 
 .nav-wrapper {
+  @include offset(0 0 20px,30px 32px);
+  gap: 16px 32px;
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  gap: 16px 32px;
-  margin-bottom: 10px;
+  position: relative;
+  border-radius: 20px;
   animation: show 0.5s;
+  background-color: #C5DFEA;
 
-  @media #{$breakpoint-up-md} {
-    @include py(5px);
+  @media #{$breakpoint-up-sm} {
+    @include offset(0 0 10px,5px 0);
     display: flex;
     flex-direction: row;
     align-items: center;
     animation: none;
+    background-color: var(--color-transp);
   }
 
   @media #{$breakpoint-up-lg} {
@@ -29,27 +33,83 @@
   @extend %d-flex-column;
   justify-content: space-between;
   flex-grow: 1;
-  gap: 0 16px;
+  order: 2;
 
   @media #{$breakpoint-up-sm} {
+    order: 1;
+    gap: 0 16px;
     flex-direction: row;
     align-items: center;
+  }
+}
+
+.nav__row {
+  flex-grow: 1;
+  position: relative;
+
+  @media #{$breakpoint-up-sm} {
+    position: static;
+  }
+
+  &:hover {
+    & > .nav__dropdown {
+      @media #{$breakpoint-up-sm} {
+        display: flex;
+      }
+    }
+  }
+
+  &.is-active {
+    & > .nav__toggler {
+      &:before {
+        content: '-';
+      }
+    }
+
+    & > .nav__dropdown {
+      @media #{$breakpoint-down-xs} {
+        display: flex;
+      }
+    }
+  }
+}
+
+.nav__toggler {
+  position: absolute;
+  top: 10px;
+  right: -10px;
+  padding: 10px;
+  font-size: var(--font-size-md);
+  font-family: var(--font-family-body);
+  font-weight: var(--fw-medium);
+  color: var(--color-primary);
+
+  @media #{$breakpoint-up-sm} {
+    display: none;
+  }
+
+  &:before {
+    content: '+';
   }
 }
 
 .nav__item {
   @extend %d-flex-ai-center;
   @include before;
+  @include fs-lh(var(--font-size-lg),1.1);
   flex-wrap: nowrap;
   flex-grow: 1;
   gap: 0 10px;
-  padding: 12px 0;
-  font-weight: var(--fw-medium);
-  line-height: var(--line-height-body);
+  padding: 15px 20px 15px 0;
+  color: var(--color-primary);
+  font-family: var(--font-family-title);
   transition: all .3s ease;
 
   @media #{$breakpoint-up-sm} {
-    font-size: var(--font-size-sm);
+    @include fs-lh(var(--font-size-sm),var(--line-height-body));
+    font-weight: var(--fw-medium);
+    font-family: var(--font-family-body);
+    color: var(--color-basic);
     position: static;
     padding: 5px 8px;
     justify-content: center;
@@ -60,17 +120,6 @@
     font-size: var(--font-size-body);
   }
 
-  &:before {
-    @include pos(0,-10px);
-    right: -10px;
-    height: 100%;
-    transition: all .3s ease;
-
-    @media #{$breakpoint-up-sm} {
-      display: none;
-    }
-  }
-
   &:hover,
   &.is-active {
     @media #{$breakpoint-up-sm} {
@@ -79,6 +128,150 @@
 
     &:before {
       background: rgba(168, 200, 214, 0.21);
+    }
+  }
+
+  &:hover {
+    & ~ .nav__dropdown {
+      .nav__row {
+        &:first-child {
+          & > .nav__item {
+            @media #{$breakpoint-up-sm} {
+              background-color: var(--color-light-blue);
+            }
+          }
+
+          .nav__dropdown {
+            @media #{$breakpoint-up-sm} {
+              display: flex;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.nav__item-icon {
+  display: none;
+
+  @media #{$breakpoint-up-sm} {
+    display: block;
+  }
+}
+
+.nav__dropdown {
+  display: none;
+
+  @media #{$breakpoint-up-sm} {
+    @include before;
+    @include pos(100%,0);
+    @include offset(-5px 0 0,30px 32px);
+    width: 100%;
+    animation: show 0.5s;
+  }
+
+  &:before {
+    @media #{$breakpoint-up-sm} {
+      @include pos(5px,0);
+      width: 100%;
+      bottom: 0;
+      border-radius: 30px;
+      background-color: #C5DFEA;
+    }
+  }
+
+  .nav__item {
+    @include fs-lh(var(--font-size-body),1);
+    font-family: var(--font-family-body);
+    justify-content: flex-start;
+    color: var(--color-primary);
+    padding: 0 20px 10px 0;
+
+    @media #{$breakpoint-up-sm} {
+      @include fs-lh(var(--font-size-lg),1.1);
+      font-family: var(--font-family-title);
+      padding: 10px 20px;
+      border-radius: 30px;
+    }
+
+    &.is-active,
+    &:hover {
+      @media #{$breakpoint-up-sm} {
+        background-color: var(--color-light-blue);
+      }
+    }
+  }
+
+  .nav__toggler {
+    @include py(0);
+    top: -4px;
+  }
+
+  .nav__dropdown {
+    @extend %d-flex-column;
+    display: none;
+    gap: 15px 0;
+    padding: 0 0 10px;
+    background-color: var(--color-transp);
+
+    @media #{$breakpoint-up-sm} {
+      @include pos(0,100%);
+      @include offset(0,0 15px);
+      height: 100%;
+    }
+
+    &:before {
+      display: none;
+    }
+
+    .nav__item {
+      flex-grow: 0;
+      padding: 0 20px;
+      font-size: var(--font-size-body);
+      font-weight: var(--fw-normal);
+      font-family: var(--font-family-body);
+      color: var(--color-black);
+      background-color: var(--color-transp);
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  .nav__row {
+    &:hover {
+      & > .nav__item {
+        @media #{$breakpoint-up-sm} {
+          background-color: var(--color-light-blue);
+        }
+      }
+    }
+  }
+}
+
+.nav__aside {
+  @extend %d-flex-column;
+  flex-grow: 1;
+
+  @media #{$breakpoint-up-sm} {
+    @include border(0 1px 0 0,var(--color-primary));
+    max-width: 404px;
+    flex-grow: 0;
+    gap: 10px 0;
+    position: relative;
+  }
+
+  .nav__row {
+    @media #{$breakpoint-up-sm} {
+      padding: 0 60px 0 0;
+    }
+  }
+
+  .nav__dropdown {
+    @media #{$breakpoint-up-sm} {
+      display: none;
     }
   }
 }

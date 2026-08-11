@@ -57,8 +57,9 @@ class Toggler {
 
   hideSection(event: MouseEvent) {
     const item = event.target as HTMLElement;
+    console.log(item.closest(this.sectionSel));
 
-    if(this.btnSel && item.closest(this.btnSel)) {
+    if((this.btnSel && item.closest(this.btnSel)) || item.closest(this.sectionSel)) {
       return;
     } else {
       this.btn?.classList.remove(this.btnClassMod);
