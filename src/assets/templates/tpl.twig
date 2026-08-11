@@ -40,34 +40,84 @@
     </div>
   </header>
 
-  <div class="nav-wrapper js-nav">
-    <nav class="nav">
-      <a class="nav__item is-active" href="#">
-        <img src="src/assets/icons/tooth-icon.svg" alt="" />
-        Услуги
-      </a>
-      <a class="nav__item" href="#">
-        <img src="src/assets/icons/heart-icon.svg" alt="" />
-        Наша команда
-      </a>
-      <a class="nav__item" href="#">
-        <img src="src/assets/icons/drop-icon.svg" alt="" />
-        Стоимость
-      </a>
-      <a class="nav__item" href="#">
-        <img src="src/assets/icons/pills-icon.svg" alt="" />
-        Акции
-      </a>
-      <a class="nav__item" href="#">
-        <img src="src/assets/icons/cross-icon.svg" alt="" />
-        Контакты
-      </a>
-    </nav>
+  <nav class="nav-wrapper js-nav">
+    <ul class="nav">
+      <li class="nav__row">
+        <a class="nav__item is-active" href="#">
+          <img src="src/assets/icons/tooth-icon.svg" alt="" />
+          Услуги
+        </a>
+        <div class="nav__dropdown">
+          <ul class="nav__aside">
+            <li class="nav__row">
+              <a class="nav__item" href="#">Лечение зубов</a>
+              <div class="nav__dropdown">
+                <a class="nav__item" href="#">Лечение кариеса</a>
+                <a class="nav__item" href="#">Лечение кист зубов</a>
+                <a class="nav__item" href="#">Лечение клиновидного деффекта</a>
+              </div>
+            </li>
+            <li class="nav__row">
+              <a class="nav__item" href="#">Детская стоматология</a>
+              <div class="nav__dropdown">
+                <a class="nav__item" href="#">Лечение кист зубов</a>
+                <a class="nav__item" href="#">Лечение клиновидного деффекта</a>
+                <a class="nav__item" href="#">Лечение кариеса</a>
+              </div>
+            </li>
+            <li class="nav__row">
+              <a class="nav__item" href="#">Протезирования зубов</a>
+              <div class="nav__dropdown">
+                <a class="nav__item" href="#">Лечение кариеса</a>
+                <a class="nav__item" href="#">Лечение клиновидного деффекта</a>
+              </div>
+            </li>
+            <li class="nav__row">
+              <a class="nav__item" href="#">Исправление прикуса</a>
+              <div class="nav__dropdown">
+                <a class="nav__item" href="#">Лечение кариеса</a>
+                <a class="nav__item" href="#">Лечение кист зубов</a>
+              </div>
+            </li>
+            <li class="nav__row">
+              <a class="nav__item" href="#">Удаление и имплантация зубов</a>
+            </li>
+            <li class="nav__row">
+              <a class="nav__item" href="#">Профилактика</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav__row">
+        <a class="nav__item" href="#">
+          <img src="src/assets/icons/heart-icon.svg" alt="" />
+          Наша команда
+        </a>
+      </li>
+      <li class="nav__row">
+        <a class="nav__item" href="#">
+          <img src="src/assets/icons/drop-icon.svg" alt="" />
+          Стоимость
+        </a>
+      </li>
+      <li class="nav__row">
+        <a class="nav__item" href="#">
+          <img src="src/assets/icons/pills-icon.svg" alt="" />
+          Акции
+        </a>
+      </li>
+      <li class="nav__row">
+        <a class="nav__item" href="#">
+          <img src="src/assets/icons/cross-icon.svg" alt="" />
+          Контакты
+        </a>
+      </li>
+    </ul>
     <form class="search-form search-form_hidden">
       <button class="search-form__btn" type="button"><img src="src/assets/icons/search-icon.svg" alt="" /></button>
       <input class="search-form__field" type="text" />
     </form>
-  </div>
+  </nav>
 
   <nav class="pathway">
     <a class="pathway__item" href="#">
