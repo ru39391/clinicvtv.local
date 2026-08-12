@@ -3,6 +3,7 @@
 .nav-wrapper {
   @include offset(0 0 20px,30px 32px);
   gap: 16px 32px;
+  z-index: 2;
   display: none;
   flex-direction: column;
   justify-content: space-between;
