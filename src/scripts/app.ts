@@ -180,7 +180,6 @@ const initApp = () => {
   new Toggler({
     btnSel: '.js-nav-toggler',
     btn: document.querySelector('.js-nav-toggler') as HTMLElement,
-    bodyClassMod: 'overflow-hidden'
   });
 };
 

@@ -1,24 +1,27 @@
 @use "../utils/helpers" as *;
 
 .nav-wrapper {
+  @include pos(52px,0,sticky);
   @include offset(0 0 20px,30px 32px);
   gap: 16px 32px;
   z-index: 2;
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  position: relative;
   border-radius: 20px;
   animation: show 0.5s;
   background-color: #C5DFEA;
 
   @media #{$breakpoint-up-sm} {
     @include offset(0 0 10px,5px 0);
+    top: 0;
+    z-index: 11;
     display: flex;
     flex-direction: row;
     align-items: center;
+    border-radius: 0;
     animation: none;
-    background-color: var(--color-transp);
+    background-color: var(--color-light-blue);
   }
 
   @media #{$breakpoint-up-lg} {
