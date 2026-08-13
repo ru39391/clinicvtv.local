@@ -6,6 +6,21 @@
 
 .examples-slide {
   @include px(5px);
+
+  &.is-active {
+    .examples-item {
+      @media #{$breakpoint-up-md} {
+        max-width: 500px;
+      }
+
+      &:hover {
+        .examples-item__footer {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
 }
 
 .examples-item {
@@ -19,17 +34,6 @@
   @media #{$breakpoint-up-md} {
     max-width: 215px;
     border-radius: 30px;
-  }
-
-  &:hover {
-    @media #{$breakpoint-up-md} {
-      max-width: 500px;
-    }
-
-    .examples-item__footer {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
 
   &.is-visible {

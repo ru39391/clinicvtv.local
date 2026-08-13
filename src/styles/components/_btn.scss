@@ -35,6 +35,10 @@
   transition: all .3s ease;
   background-color: var(--color-light-blue);
 
+  &.btn-toggler_bg_white {
+    background-color: var(--color-white);
+  }
+
   &.is-active {
     background-color: var(--color-grey);
   }
