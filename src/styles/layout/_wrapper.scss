@@ -1,0 +1,27 @@
+@use "../utils/helpers" as *;
+
+body {
+  background-image: url('#{$assets}/icons/tree-icon.svg');
+  background-repeat: no-repeat;
+  background-position: 350% 450px;
+}
+
+.wrapper {
+  flex-grow: 1;
+
+  &.wrapper_type_bg {
+    @include before;
+
+    &:before {
+      @include zi(1);
+      @include pos(70%,0);
+      right: 0;
+      bottom: 0;
+      background: url('#{$assets}/icons/tree-icon.svg') no-repeat -400% bottom rgba(0,0,0,0);
+    }
+  }
+}
+
+.wrapper__inner {
+  @include zi(2);
+}

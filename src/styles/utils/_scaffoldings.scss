@@ -21,10 +21,6 @@ body {
   height: 100%;
 }
 
-.wrapper {
-  flex-grow: 1;
-}
-
 .container {
   @include px(10px);
   @include mx(auto);
