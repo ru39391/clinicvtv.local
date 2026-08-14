@@ -1,8 +1,8 @@
 import Swiper from "swiper";
-import { Autoplay, Pagination } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 
 export const handleSlider = (sel: string): Swiper => new Swiper(sel, {
-  modules: [Autoplay],
+  modules: [Autoplay, Navigation],
   loop: true,
   slidesPerView: 1,
   spaceBetween: 0,
@@ -12,6 +12,10 @@ export const handleSlider = (sel: string): Swiper => new Swiper(sel, {
     delay: 7000,
     pauseOnMouseEnter: true,
     disableOnInteraction: false
+  },
+  navigation: {
+    nextEl: `${sel} .js-slides-nav-next`,
+    prevEl: `${sel} .js-slides-nav-prev`
   },
 });
 

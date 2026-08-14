@@ -6,6 +6,27 @@
   gap: 24px 0;
 }
 
+.swiper-nav-btn {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  margin: -15px 0 0;
+
+  &.swiper-nav-btn_type_prev {
+    left: 14px;
+  }
+
+  &.swiper-nav-btn_type_next {
+    right: 14px;
+  }
+
+  @media #{$breakpoint-up-md} {
+    display: block;
+  }
+}
+
 .swiper-footer {
   @extend %d-flex-ai-center;
   display: none;
