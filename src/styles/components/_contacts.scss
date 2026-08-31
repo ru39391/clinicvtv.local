@@ -58,6 +58,10 @@
   &.contacts__item_color_secondary {
     color: var(--color-secondary);
   }
+
+  &.is-hidden {
+    display: none;
+  }
 }
 
 .contacts__item-caption {

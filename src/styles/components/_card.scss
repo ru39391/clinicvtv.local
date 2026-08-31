@@ -130,6 +130,10 @@
   }
 }
 
+.card__meta {
+  display: none;
+}
+
 .card__list {
   @extend %d-flex-column;
   gap: 5px 0;
