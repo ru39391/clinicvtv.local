@@ -1,0 +1,217 @@
+@use "../utils/helpers" as *;
+
+.cards-wrapper {
+  @extend %d-flex-column;
+  gap: 30px 0;
+  justify-content: center;
+
+  @media #{$breakpoint-up-sm} {
+    gap: 46px 44px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media #{$breakpoint-up-md} {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media #{$breakpoint-up-lg} {
+    gap: 46px 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  &.cards-wrapper_type_grid {
+    @media #{$breakpoint-up-sm} {
+      gap: 24px 30px;
+    }
+
+    @media #{$breakpoint-up-md} {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+.card {
+  @extend %d-flex-column;
+  @include before;
+  gap: 20px 0;
+  padding: 20px 15px;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: var(--color-white);
+
+  @media #{$breakpoint-up-sm} {
+    text-align: center;
+    padding: 30px 16px;
+    border-radius: 30px;
+  }
+
+  @media #{$breakpoint-up-lg} {
+    @include fw(calc(100%/4));
+    padding: 30px 38px;
+    border-radius: 0;
+    background-color: var(--color-transp);
+  }
+
+  &:before {
+    @media #{$breakpoint-up-lg} {
+      @include pos(0,22px);
+      right: 22px;
+      bottom: 0;
+      z-index: 1;
+      border-radius: 30px;
+      background-color: var(--color-white);
+    }
+  }
+
+  &.card_type_plain {
+    align-items: center;
+
+    @media #{$breakpoint-up-sm} {
+      @include fw(auto);
+      max-width: unset;
+      flex-direction: row;
+      text-align: left;
+      gap: 20px;
+      padding: 0;
+      background-color: var(--color-transp);
+    }
+
+    &:before {
+      display: none;
+    }
+  }
+
+  &.card_type_row {
+    display: grid;
+    align-items: center;
+    justify-content: flex-start;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-areas:
+      "media title title title"
+      "desc desc desc desc";
+    text-align: left;
+    max-width: unset;
+    gap: 20px 10px;
+    border-radius: 20px;
+    background-color: var(--color-white);
+
+    @media #{$breakpoint-up-sm} {
+      gap: 20px;
+      border-radius: 30px;
+      grid-template-areas:
+        "media title title title"
+        "media desc desc desc";
+    }
+
+    @media #{$breakpoint-up-md} {
+      @include px(30px);
+    }
+
+    &:before {
+      display: none;
+    }
+
+    .card__media {
+      min-height: unset;
+      grid-area: media;
+    }
+
+    .card__title {
+      grid-area: title;
+    }
+
+    .card__list {
+      grid-area: desc;
+    }
+  }
+}
+
+.card__meta {
+  display: none;
+}
+
+.card__list {
+  @extend %d-flex-column;
+  gap: 5px 0;
+}
+
+.card__list-item {
+  @include fs-lh(var(--font-size-xs), var(--line-height-sm));
+  display: list-item;
+  list-style-position: inside;
+  font-weight: var(--fw-light);
+  color: var(--color-black);
+
+  @media #{$breakpoint-up-md} {
+    @include fs-lh(var(--font-size-md), var(--line-height-body));
+  }
+}
+
+.card__header {
+  @extend %d-flex-ai-center;
+  gap: 0 15px;
+
+  @media #{$breakpoint-up-sm} {
+    gap: 20px 0;
+    flex-direction: column;
+  }
+
+  @media #{$breakpoint-up-lg} {
+    @include zi(2);
+  }
+}
+
+.card__media {
+  @extend %d-flex-column;
+  @extend %d-flex-centered;
+  @include fw(50px);
+
+  @media #{$breakpoint-up-sm} {
+    @include fw(auto);
+    max-width: unset;
+    min-height: 104px;
+  }
+}
+
+.card__title {
+  @include fs-lh(var(--font-size-lg), 26px);
+  font-family: var(--font-family-title);
+  font-weight: var(--fw-bold);
+  color: var(--color-primary);
+
+  @media #{$breakpoint-up-sm} {
+    @include fs-lh(32px, var(--line-height-lg));
+  }
+
+  &.card__title_ta_center {
+    @media #{$breakpoint-up-sm} {
+      text-align: center;
+    }
+  }
+
+  &.card__title_type_link {
+    &:after {
+      @include wh(100%);
+      @include pos(0);
+      content: '';
+    }
+  }
+}
+
+.card__desc {
+  @include fs-lh(var(--font-size-xs), var(--line-height-sm));
+  font-weight: var(--fw-light);
+  color: var(--color-black);
+
+  @media #{$breakpoint-up-sm} {
+    @include fs-lh(var(--font-size-md), var(--line-height-body));
+  }
+
+  @media #{$breakpoint-up-lg} {
+    @include zi(2);
+  }
+}

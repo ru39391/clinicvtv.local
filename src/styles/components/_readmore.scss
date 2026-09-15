@@ -1,0 +1,32 @@
+@use "../utils/helpers" as *;
+
+.readmore-link {
+  @include fs-lh(var(--font-size-lg), 26px);
+  font-family: var(--font-family-title);
+  color: var(--color-primary);
+  white-space: nowrap;
+
+  &.readmore-link_fs_lg {
+    @include fs-lh(32px, 44px);
+    font-weight: var(--fw-light);
+  }
+}
+
+.readmore-link__hide,
+.readmore-link__show {
+  pointer-events: none;
+}
+
+.readmore-link__hide {
+  display: none;
+}
+
+.is-active {
+  .readmore-link__show {
+    display: none;
+  }
+
+  .readmore-link__hide {
+    display: block;
+  }
+}

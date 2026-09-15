@@ -1,1 +1,789 @@
-<div>tpl</div>
+<div class="wrapper">
+<div class="wrapper__inner container">
+  <header class="header">
+    <div class="header__logo">
+      <a class="logo" href="/"><img src="src/assets/icons/logo-icon.svg" alt="" /></a>
+    </div>
+    <div class="header__social">
+      <div class="social social_jc_end social_hidden">
+        <button class="btn btn-primary js-modal-btn" type="button">Записаться</button>
+        <a class="social__item" href="#"><img src="src/assets/icons/max-icon.svg" alt="" /></a>
+      </div>
+    </div>
+    <div class="header__contacts">
+      <button class="nav-toggler js-nav-toggler" data-target="js-nav" type="button">
+        <span class="nav-toggler__show-icon"><img class="icon-fluid" src="src/assets/icons/nav-icon.svg" alt="" /></span>
+        <span class="nav-toggler__close-icon"><img class="icon-fluid" src="src/assets/icons/close-icon.svg" alt="" /></span>
+      </button>
+      <div class="contacts contacts_type_list contacts_border_right">
+        <a class="contacts__item contacts__item_color_secondary" href="tel:+79169519951">
+          <img src="src/assets/icons/phone-icon.svg" alt="" />
+          <span class="contacts__item-caption contacts__item-caption_hidden">+7 (916) 951-99-51</span>
+        </a>
+        <a class="contacts__item contacts__item_color_secondary" href="tel:+74954919341">
+          <img src="src/assets/icons/phone-icon.svg" alt="" />
+          <span class="contacts__item-caption contacts__item-caption_hidden">+7 (495) 491-93-41</span>
+        </a>
+      </div>
+      <div class="contacts contacts_type_list">
+        <div class="contacts__item contacts__item_color_secondary contacts__item_fs_sm">
+          <img src="src/assets/icons/placemark-icon.svg" alt="" />
+          <span class="contacts__item-caption">
+            м. Тушинская<span class="contacts__item-address">Волоколамское ш., 94</span>
+          </span>
+        </div>
+        <div class="contacts__item contacts__item_color_secondary">
+          <img src="src/assets/icons/hours-icon.svg" alt="" />
+          Пн-Сб: 9-21 | Вс: 10-18
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav-wrapper js-nav">
+    <ul class="nav">
+      <li class="nav__row js-accordion">
+        <a class="nav__item is-active" href="#">
+          <img class="nav__item-icon" src="src/assets/icons/tooth-icon.svg" alt="" />
+          Услуги
+        </a>
+        <button class="nav__toggler js-accordion-btn" type="button"></button>
+        <div class="nav__dropdown">
+          <ul class="nav__aside">
+            <li class="nav__row js-accordion">
+              <a class="nav__item" href="#">Лечение зубов</a>
+              <div class="nav__dropdown">
+                <a class="nav__item" href="#">Лечение кариеса</a>
+                <a class="nav__item" href="#">Лечение кист зубов</a>
+                <a class="nav__item" href="#">Лечение клиновидного деффекта</a>
+              </div>
+              <button class="nav__toggler js-accordion-btn" type="button"></button>
+            </li>
+            <li class="nav__row js-accordion">
+              <a class="nav__item" href="#">Детская стоматология</a>
+              <div class="nav__dropdown">
+                <a class="nav__item" href="#">Лечение кист зубов</a>
+                <a class="nav__item" href="#">Лечение клиновидного деффекта</a>
+                <a class="nav__item" href="#">Лечение кариеса</a>
+              </div>
+              <button class="nav__toggler js-accordion-btn" type="button"></button>
+            </li>
+            <li class="nav__row js-accordion">
+              <a class="nav__item" href="#">Протезирования зубов</a>
+              <div class="nav__dropdown">
+                <a class="nav__item" href="#">Лечение кариеса</a>
+                <a class="nav__item" href="#">Лечение клиновидного деффекта</a>
+              </div>
+              <button class="nav__toggler js-accordion-btn" type="button"></button>
+            </li>
+            <li class="nav__row js-accordion">
+              <a class="nav__item" href="#">Исправление прикуса</a>
+              <div class="nav__dropdown">
+                <a class="nav__item" href="#">Лечение кариеса</a>
+                <a class="nav__item" href="#">Лечение кист зубов</a>
+              </div>
+              <button class="nav__toggler js-accordion-btn" type="button"></button>
+            </li>
+            <li class="nav__row">
+              <a class="nav__item" href="#">Удаление и имплантация зубов</a>
+            </li>
+            <li class="nav__row">
+              <a class="nav__item" href="#">Профилактика</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav__row">
+        <a class="nav__item" href="#">
+          <img class="nav__item-icon" src="src/assets/icons/heart-icon.svg" alt="" />
+          Наша команда
+        </a>
+      </li>
+      <li class="nav__row">
+        <a class="nav__item" href="#">
+          <img class="nav__item-icon" src="src/assets/icons/drop-icon.svg" alt="" />
+          Стоимость
+        </a>
+      </li>
+      <li class="nav__row">
+        <a class="nav__item" href="#">
+          <img class="nav__item-icon" src="src/assets/icons/pills-icon.svg" alt="" />
+          Акции
+        </a>
+      </li>
+      <li class="nav__row">
+        <a class="nav__item" href="#">
+          <img class="nav__item-icon" src="src/assets/icons/cross-icon.svg" alt="" />
+          Контакты
+        </a>
+      </li>
+    </ul>
+    <form class="search-form search-form_hidden">
+      <button class="search-form__btn" type="button"><img src="src/assets/icons/search-icon.svg" alt="" /></button>
+      <input class="search-form__field" type="text" placeholder="Поиск" />
+    </form>
+  </nav>
+{#
+  <nav class="pathway">
+    <a class="pathway__item" href="#">
+      <img src="src/assets/icons/home-icon.svg" alt="" />
+      Главная
+    </a>
+    <a class="pathway__item" href="#">Услуги</a>
+    <a class="pathway__item pathway__item_type_current" href="#">Лечение кариеса</a>
+  </nav>
+
+  <section class="section content section_offset_md">
+    <h1>Контакты</h1>
+  </section>
+
+  <div class="section section_pb_none section_type_row section_type_media section_ai_stretch section_dir_reverse">
+    <div class="section__aside">
+      <img class="section__img img-fluid" src="src/assets/images/section-img.png" alt="" />
+    </div>
+    <div class="section__wrapper section__wrapper_type_col section__wrapper_bg_white">
+      <div class="content content_offset_mb">
+        <p>Одно из преимуществ нашей стоматологической клиники является ее расположение - 1-2 минуты от с. метро Тушинская, наличие парковки.</p>
+        <p>К нам можно легко и быстро добраться на общественном и личном транспорте из Митино, и Красногорска.</p>
+      </div>
+      <button class="btn btn-primary btn-md js-modal-btn" type="button" data-target="form" data-title="Стр. контактов">Записаться</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="features-wrapper features-wrapper_type_grid">
+      <div class="feature feature_type_contacts feature_type_card">
+        <div class="feature__title">Контакты</div>
+        <div class="feature__wrapper">
+          <div class="content content_fw_light">
+            <p>Телефон<br />
+            <a class="content__link" href="">+ 7 (495) 491-93-41</a><br />
+            <a class="content__link" href="">+ 7 (916) 951-99-51</a></p>
+
+            <p>Почта<br />
+            <a class="content__link" href="">info@clinicvtv.ru</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="feature feature_type_card">
+        <div class="feature__title">Напишите нам</div>
+        <div class="feature__wrapper">
+          <a class="btn btn-primary btn-sm" href="#">Max</a>
+        </div>
+      </div>
+      <div class="feature feature_type_contacts feature_type_card">
+        <div class="feature__title">График работы</div>
+        <div class="feature__wrapper">
+          <div class="content content_fw_light">
+            <p>Мы открыты для вас ежедневно.</p>
+            <p>С понедельника по субботу<br />
+            <span class="content__link">с 9:00 до 21:00</span></p>
+            <p>В воскресенье<br />
+            <span class="content__link">с 10:00 до 18:00</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section section_pb_none section_type_start section_bg_white">
+    <div class="section-title section-title_mb_none">Наш адрес</div>
+  </div>
+  <div class="section section_type_row section_ai_stretch section_type_end section_bg_white">
+    <div class="section__wrapper">
+      <div class="content">
+        <p>Наш адрес: ООО “Стоматология ВТВ”<br />
+        г. Москва м. Тушинская<br />
+        Волоколамское ш., 94</p>
+      </div>
+    </div>
+    <div class="section__aside section__aside_width_unset">
+      <img class="section__img img-fluid" src="src/assets/images/map.png" alt="" />
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Как до нас добраться</div>
+    <div class="features-wrapper features-wrapper_type_grid">
+      <div class="feature feature_type_pic">
+        <div class="feature__title">от м.Тушинская</div>
+        <div class="feature__wrapper"><img src="src/assets/images/address-1.png" alt="" /></div>
+      </div>
+      <div class="feature feature_type_pic">
+        <div class="feature__title">от МЦД-2</div>
+        <div class="feature__wrapper"><img src="src/assets/images/address-2.png" alt="" /></div>
+      </div>
+      <div class="feature feature_type_pic">
+        <div class="feature__title">на машине</div>
+        <div class="feature__wrapper"><img src="src/assets/images/address-3.png" alt="" /></div>
+      </div>
+    </div>
+  </div>
+ #}
+  <div class="promo">
+    <div class="swiper js-slides">
+      <div class="swiper-wrapper">
+        {% for item in [1,2,3,4] %}
+        <div class="promo__item swiper-slide">
+          <img class="promo__img promo__img_type_mobile" src="src/assets/images/promo-mobile.png" alt="" />
+          <img class="promo__img promo__img_type_desktop" src="src/assets/images/promo.png" alt="" />
+          <div class="promo__wrapper">
+            <div class="promo__content">
+              <div class="promo__subtitle">Стоматология ВТВ</div>
+              <div class="promo__title">ваша улыбка - наша история</div>
+              <div class="promo__desc">
+                <p>Многолетний опыт и забота о каждом пациенте</p>
+              </div>
+              <button class="btn btn-primary js-modal-btn btn-md" data-target="form" type="button">Записаться на сайте</button>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-nav-btn swiper-nav-btn_type_prev js-slides-nav-prev">
+        <img src="src/assets/icons/arrow-left-icon.svg" alt="" />
+      </div>
+      <div class="swiper-nav-btn swiper-nav-btn_type_next js-slides-nav-next">
+        <img src="src/assets/icons/arrow-right-icon.svg" alt="" />
+      </div>
+    </div>
+  </div>
+
+    <div class="section content content_offset_px content_type_col">
+      <h1>Почему нам доверяют поколения пациентов:</h1>
+      <p>Кариес зубов является очень распространенной болезнью. Он заключается в деминерализации и распаде твердых тканей зуба. Требует соответствующего лечения, а если такие действия не будут приняты, может распространяться и достигать даже внутренних частей зуба, вызывая их полное разрушение.</p>
+      <p>В зависимости от места, в котором он возникает, и от его течения можно выделить несколько видов кариеса.</p>
+      <ul>
+        <li>Клиника с 20-летней историей</li>
+        <li>Врачи работают в ВТВ долгие годы</li>
+        <li>Спокойная семейная атмосфера</li>
+        <li>Индивидуальный подход без спешки</li>
+        <li>Понятные рекомендации и план лечения</li>
+        <li>Удобное расположение в Москве</li>
+      </ul>
+
+      <div class="section">
+        <nav class="pagination">
+          <a class="pagination__btn" href="akczii/">1</a>
+
+          <div class="pagination__wrapper">
+            <span class="pagination__item pagination__item_type_current">1</span>
+            <a class="pagination__item" href="akczii/?page=2">2</a>
+            <a class="pagination__item" href="akczii/?page=3">3</a>
+            <a class="pagination__item" href="akczii/?page=4">4</a>
+            <a class="pagination__item" href="akczii/?page=5">5</a>
+            <a class="pagination__item" href="akczii/?page=3">3</a>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="section">
+      <blockquote class="blockquote">
+        <img src="src/assets/icons/blockquote-icon.svg" alt="" />
+        Не ждите пока кариес перерастет в пульпит и Вам будут лечить каналы. Намного легче и дешевле купировать кариес на стадии черной точки, не дожидаясь боли. Если при ежегодном осмотре врач находит у вас начальный кариес, нужно сразу его лечить. Для примера: лечение жевательного зуба в стадии кариозного пятна обойдется вам в 4 700 руб, а лечение пульпита этого же зуба в 14 000 руб.
+      </blockquote>
+    </div>
+
+    <div class="section">
+      <div class="section-card">
+        <div class="section-intro">
+          <div class="section-title">Записаться на приём</div>
+          <div class="section-desc">Если вы хотите записаться на прием или у Вас остались вопросы</div>
+        </div>
+        <div class="section-card__wrapper">
+          <a class="readmore-link readmore-link_fs_lg" href="#">+7 (495) 491-93-41</a>
+          <button class="btn btn-primary js-modal-btn btn-md" type="button">Записаться на сайте</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-intro">
+        <div class="section-title">Блок с карточками</div>
+        <div class="section-desc">Это блок с карточками с белым фотом, иконками, заголовком, подзхаголовком и текстом.</div>
+      </div>
+      <div class="features-wrapper features-wrapper_type_grid">
+        <div class="feature feature_type_card">
+          <div class="feature__icon feature__icon_rounded"><img class="img-fluid" src="src/assets/images/serv-2.png" alt="" /></div>
+          <div class="feature__wrapper">
+            <div class="feature__title">Ранний кариес</div>
+            <div class="feature__desc">Возникает на молочных зубах вскоре после их формирования. Развивается очень быстро и в короткое время разрушает поверхность зубов.</div>
+          </div>
+        </div>
+        <div class="feature feature_type_card">
+          <div class="feature__icon feature__icon_rounded"><img class="img-fluid" src="src/assets/images/serv-2.png" alt="" /></div>
+          <div class="feature__wrapper">
+            <div class="feature__title">Острый кариес</div>
+            <div class="feature__desc">Чаще всего появляется у молодых людей. Имеет яркий цвет и мягкую консистенцию.</div>
+          </div>
+        </div>
+        <div class="feature feature_type_card">
+          <div class="feature__icon feature__icon_rounded"><img class="img-fluid" src="src/assets/images/serv-2.png" alt="" /></div>
+          <div class="feature__wrapper">
+            <div class="feature__title">Хронический кариес</div>
+            <div class="feature__desc">Возникает в основном у взрослых и пожилых людей, действует медленнее, чем острый кариес. Имеет темный цвет и твердую консистенцию.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% set cards = [
+      {
+        title: 'Лечение',
+        desc: 'Терапия. Лечение кариеса и его осложнений: пульпита, периодонтита',
+      },
+      {
+        title: 'Детская стоматология',
+        desc: 'Лечение зубов детям любого возраста',
+      },
+      {
+        title: 'Протезирование',
+        desc: 'Ортопедия. Съемное и несъемное протезирование. На своих зубах и на имплантах.',
+      },
+      {
+        title: 'Исправление прикуса',
+        desc: 'Ортодонтия. Коррекция прикуса взрослым и детям.',
+      },
+      {
+        title: 'Хирургия и имплантация',
+        desc: 'Все виды имплантации: от одиночных имплантов до восстановления полностью беззубой челюсти. Удаление зубов любой сложности.',
+      },
+      {
+        title: 'Профилактика',
+        desc: 'Все мероприятия для профилактики: профилактические осмотры, профессиональная гигиена полости рта и отбеливание.',
+      }
+    ] %}
+    <div class="section">
+      <div class="section-title">Услуги</div>
+      <div class="cards-wrapper cards-wrapper_type_grid">
+        {% for item in cards %}
+        <div class="card card_type_row">
+          <a class="card__media" href="#"><img class="img-fluid" src="src/assets/images/serv-{{ loop.index }}.png" alt="" /></a>
+          <a class="card__title" href="#">{{ item.title }}</a>
+          <div class="card__list">
+            <a class="card__list-item" href="#">Лечение кариеса</a>
+            <a class="card__list-item" href="#">Лечение кист зубов</a>
+            <a class="card__list-item" href="#">Лечение клиновидного деффекта</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Услуги</div>
+      <div class="cards-wrapper">
+        {% for item in cards %}
+        <div class="card">
+          <div class="card__header">
+            <div class="card__media"><img class="img-fluid" src="src/assets/images/serv-{{ loop.index }}.png" alt="" /></div>
+            <a class="card__title card__title_type_link" href="#">{{ item.title }}</a>
+          </div>
+          <div class="card__desc">{{ item.desc }}</div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="section section_type_row">
+      <div class="section__wrapper">
+        <div class="section-title">Стоматология ВТВ</div>
+        <div class="content">
+          <p>Здравствуйте!<br />Меня зовут Симонова Юлия Павловна.<br />Я - главный врач клиники Стоматология ВТВ уже более 10 лет.<br />Я гарантирую: в наших клиниках вы получите своевременную и безопасную медицинскую помощь!</p>
+        </div>
+        <button class="btn btn-primary js-modal-btn btn-md" type="button">Записаться на сайте</button>
+      </div>
+      <div class="section__aside">
+        <img class="section__img img-fluid" src="src/assets/images/section-img.png" alt="" />
+      </div>
+    </div>
+    <div class="section section_type_row section_dir_reverse">
+      <div class="section__wrapper">
+        <div class="section-title">Стоматология ВТВ</div>
+        <div class="content">
+          <p>Здравствуйте!<br />Меня зовут Симонова Юлия Павловна.<br />Я - главный врач клиники Стоматология ВТВ уже более 10 лет.<br />Я гарантирую: в наших клиниках вы получите своевременную и безопасную медицинскую помощь!</p>
+        </div>
+        <button class="btn btn-primary js-modal-btn btn-md" type="button">Записаться на сайте</button>
+      </div>
+      <div class="section__aside">
+        <img class="section__img img-fluid" src="src/assets/images/section-img.png" alt="" />
+      </div>
+    </div>
+
+    <div class="section section_bg_white">
+      <div class="content">
+        <p>Кариес приводит к образованию в зубах полостей, цель лечения заключается в тщательной очистке полости и ее заполнении. Эффективнее всего начать лечение в самом начале заболевания, когда кариес еще не развит и находится в первой стадии. Он затрагивает только эмаль и виден как пятно.</p>
+        <p>Если лечение не предпринимается, кариес начинает развиваться, в таком случае необходимо механическое удаление этих изменений и восстановление удаленной части зуба. Если кариес затрагивает мягкие ткани, расположенные в зубе, может возникнуть необходимость лечения корневых каналов, удаление нерва.</p>
+        <p>Существует несколько вариантов лечения кариеса:</p>
+
+        <ul class="content__cols">
+          <li>Лечение кариеса с использованием светоотверждаемого композита. У нас в стоматологии мы используем материал японского производства. Пломбировочный материал позволяет восстановить естественную форму зуба. Но надо помнить , что срок службы композита максимум 5 лет, и если не поменять пломбу во время, то есть риск развития вторичного кариеса, намного сильнее предыдущего.</li>
+          <li>Альтернатива светоотверждаемой пломбы - керамическая вкладка. После обработки кариозной полости снимается слепок и у нас в лаборатории изготавливается керамическая вкладка, которая полностью повторяет форму и цвет зуба. Керамическая вкладка прослужит Вам более 15 лет и позволит лучше сохранить зуб.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section section_bg_white section_type_row section_type_cols">
+      <div class="section__aside">
+        <div class="section-title section-title_mb_md">Часто задаваемые вопросы</div>
+        <div class="section-desc section-desc_type_plain">Собрали ответы на самые частые вопросы о лечении кариеса у взрослых и детей.</div>
+      </div>
+      <div class="section__wrapper">
+        <div class="faq-wrapper">
+          {% for item in [
+            {
+              title: 'Больно ли лечить кариес?',
+              content: 'Современное лечение кариеса обычно проходит комфортно. При необходимости врач использует местную анестезию, поэтому пациент не чувствует боли во время лечения.',
+            },
+            {
+              title: 'Можно ли вылечить кариес за одно посещение?',
+              content: 'Да, можно',
+            },
+            {
+              title: 'Сколько длится лечение кариеса?',
+              content: 'Меньше, чем ожидаете',
+            },
+            {
+              title: 'Нужно ли лечить кариес, если зуб не болит?',
+              content: 'Нужно, лечите',
+            },
+            {
+              title: 'От чего зависит стоимость лечения кариеса?',
+              content: 'От сложности',
+            }
+          ] %}
+          <div class="faq-item accordion-item js-accordion">
+            <div class="faq-item__title accordion-title js-accordion-btn">{{ item.title }}</div>
+            <div class="faq-item__content accordion-content">{{ item.content }}</div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="section section_type_row section_type_cols">
+      <div class="section__aside">
+        <div class="section-title section-title_mb_md">Полезно знать</div>
+        <div class="section-desc section-desc_type_plain">Делимся рекомендациями врачей, новостями клиники и понятными ответами на частые вопросы пациентов.</div>
+      </div>
+      <div class="section__wrapper">
+        <div class="swiper js-carousel">
+          <div class="articles-wrapper swiper-wrapper">
+            {% for item in [1,2,3,4,5,6] %}
+            <div class="swiper-slide w-auto">
+              <div class="article-item">
+                <img class="article-item__img img-fluid" src="src/assets/images/team.png" alt="" />
+                <a class="article-item__title" href="#">Когда стоит записаться к ортодонту: признаки, которые важно не игнорировать</a>
+                <div class="article-item__desc">Неровное положение зубов, скученность, щели или изменения прикуса могут влиять не только на эстетику, но и на здоровье зубочелюстной системы. В статье рассказываем, в каких случаях стоит обратиться к ортодонту и почему ранняя консультация помогает выбрать оптимальное лечение.</div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="swiper-footer">
+            <div class="swiper-pagination"></div>
+            <a class="readmore-link" href="#">читать все статьи</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% set doctor = {
+      pic: 'src/assets/images/team.png',
+      name: 'ГАРЬКУША Алина Алексеевна'
+    } %}
+    <div class="section">
+      <div class="section-title">Наша команда</div>
+
+      <div class="team-wrapper team-wrapper_type_grid">
+      {% for item in [1,2,3,4,5,6,7] %}
+        <div class="team-item">
+          <img class="team-item__img img-fluid" src="{{ doctor.pic }}" alt="" />
+          <div class="team-item__wrapper">
+            <a class="team-item__title" href="#">{{ doctor.name }}</a>
+            <ul class="team-item__list">
+              <li class="team-item__feature">
+                <span class="color-grey"><img src="src/assets/icons/checked-icon.svg" alt="" /></span>
+                стоматолог-терапевт, хирург
+              </li>
+              <li class="team-item__feature">
+                <span class="color-grey"><img src="src/assets/icons/checked-icon.svg" alt="" /></span>
+                опыт работы с 2022 года
+              </li>
+            </ul>
+          </div>
+          <div class="team-item__footer">
+            <a class="team-item__link" href="#">Отзывы о докторе</a>
+            <button class="btn btn-primary js-modal-btn btn-sm" type="button">Записаться</button>
+          </div>
+        </div>
+      {% endfor %}
+      </div>
+
+      <div class="tab-section js-team-tabs">
+        <div class="tab-nav js-tab-nav">
+          <button class="btn-toggler js-tabs-link" data-pane="team-tab-12" data-action="team" data-id="12" type="button">Терапевты</button>
+          <button class="btn-toggler js-tabs-link" data-pane="team-tab-13" data-action="team" data-id="13" type="button">Детские стоматологи</button>
+          <button class="btn-toggler js-tabs-link" data-pane="team-tab-14" data-action="team" data-id="14" type="button">Ортопеды</button>
+          <button class="btn-toggler js-tabs-link" data-pane="team-tab-15" data-action="team" data-id="15" type="button">Ортодонты</button>
+          <button class="btn-toggler js-tabs-link" data-pane="team-tab-16" data-action="team" data-id="16" type="button">Хирурги-имплантологи</button>
+        </div>
+        <div class="tab-content js-tab-content" data-href="nasha-komanda/"></div>
+      </div>
+    </div>
+
+    <div class="section js-testimonials-list">
+      <div class="section-title">Отзывы наших пацентов</div>
+      <div class="tab-nav is-hidden js-tab-nav">
+        <button class="btn-toggler js-tabs-link is-active" data-pane="testimonial-tab-12" data-action="testimonials" data-id="12" type="button"></button>
+      </div>
+      <div class="tab-content js-tab-content" data-href="testimonials"></div>
+    </div>
+
+    <div class="section section_bg_white js-example-tabs">
+      <div class="section-title">Примеры работ</div>
+      <div class="tab-nav tab-nav_type_row js-tab-nav">
+        {% for item in [
+          { id: '12', name: 'Лечение зубов (терапия)' },
+          { id: '13', name: 'Протезирование зубов' },
+          { id: '14', name: 'Исправление прикуса' },
+          { id: '15', name: 'Имплантация' },
+          { id: '16', name: 'Детская стоматология' }
+        ] %}
+          <button
+            class="btn-toggler js-tabs-link"
+            data-action="examples?spec_id=48"
+            data-id="{{ item.id }}"
+            data-pane="examples-tab-{{ item.id }}"
+            type="button"
+          >
+            {{ item.name }}
+          </button>
+        {% endfor %}
+      </div>
+      <div class="tab-content js-tab-content"></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Почему пациенты выбирают нас</div>
+      <div class="features-wrapper">
+        <div class="feature">
+          <div class="feature__icon"><img class="img-fluid" src="src/assets/icons/tooth-icon.svg" alt="" /></div>
+          <div class="feature__desc">Понятный план лечения без лишних процедур</div>
+        </div>
+        <div class="feature">
+          <div class="feature__icon"><img class="img-fluid" src="src/assets/icons/cross-icon.svg" alt="" /></div>
+          <div class="feature__desc">Опытные врачи и сопровождение пациентов</div>
+        </div>
+        <div class="feature">
+          <div class="feature__icon"><img class="img-fluid" src="src/assets/icons/pills-icon.svg" alt="" /></div>
+          <div class="feature__desc">Современные материалы и методы лечения</div>
+        </div>
+        <div class="feature">
+          <div class="feature__icon"><img class="img-fluid" src="src/assets/icons/heart-icon.svg" alt="" /></div>
+          <div class="feature__desc">Внимательное отношение и спокойная атмосфера</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Прейскурант</div>
+      <div class="tab-section js-price-tabs">
+        <div class="tab-nav js-tab-nav">
+          {% for item in [
+            { id: '12', name: 'Ортодонтия' },
+            { id: '13', name: 'Хирургия и имплантология' },
+            { id: '14', name: 'Терапия' },
+            { id: '15', name: 'Ортопедия' },
+            { id: '16', name: 'Детская стоматология' }
+          ] %}
+            <button
+              class="btn-toggler js-tabs-link"
+              data-action="pricelist"
+              data-id="{{ item.id }}"
+              data-pane="price-tab-{{ item.id }}"
+              type="button"
+            >
+              {{ item.name }}
+            </button>
+          {% endfor %}
+        </div>
+        <div class="tab-content js-tab-content">
+          {#
+          <div class="tab-pane js-tabs-pane is-active" data-id="price-tab-1">
+            <div class="price">
+              {% for item in [1,2,3,4,5,6] %}
+              <div class="price__row">
+                Средний кариес (без пломбировки каналов)
+                <div class="price__row-value">от 6050 руб.</div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          #}
+        </div>
+      </div>
+    </div>
+
+    <div class="js-gallery-wrapper"></div>
+    {#
+    <div class="section section_bg_white">
+      <div class="section-title">Наша галерея</div>
+      <div class="swiper js-carousel" data-loop="1">
+        <div class="gallery swiper-wrapper">
+          {% for item in [1,2,3,4,5,6] %}
+          <div class="swiper-slide w-auto h-auto">
+            <div class="gallery__item"><img class="gallery__item-img" src="src/assets/images/section-img.png" alt="" /></div>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+    #}
+  </div>
+</div>
+</div>
+
+<footer class="footer container">
+  <div class="footer__logo">
+    <a class="logo logo_bg_white" href="/"><img src="src/assets/icons/logo-icon.svg" alt="" /></a>
+  </div>
+  <nav class="footer__nav">
+    <a class="footer__nav-item" href="#">Услуги</a>
+    <a class="footer__nav-item" href="#">Специалисты</a>
+    <a class="footer__nav-item" href="#">Стоимость</a>
+    <a class="footer__nav-item" href="#">Акции</a>
+    <a class="footer__nav-item" href="#">Контакты</a>
+    <a class="footer__nav-item" href="#">Вакансии</a>
+  </nav>
+  <div class="footer__nav footer__nav_type_search">
+    <form class="search-form">
+      <button class="search-form__btn" type="button"><img src="src/assets/icons/search-icon.svg" alt="" /></button>
+      <input class="search-form__field" type="text" />
+    </form>
+
+    <a class="footer__nav-item" href="#">Новости</a>
+    <a class="footer__nav-item" href="#">Лицензии и юридическая информация</a>
+    <a class="footer__nav-item" href="#">Вакансии</a>
+    <a class="footer__nav-item" href="#">Политика конфиденциальности</a>
+  </div>
+  <div class="footer__contacts">
+    <div class="contacts contacts_offset_none">
+      <a class="contacts__item" href="tel:+79169519951">
+        <img src="src/assets/icons/phone-icon.svg" alt="" />
+        +7 (916) 951-99-51
+      </a>
+      <div class="contacts__item contacts__item_fs_sm">
+        <img src="src/assets/icons/placemark-icon.svg" alt="" />
+        м. Тушинская, Волоколамское ш., 94
+      </div>
+      <a class="contacts__item" href="tel:+74954919341">
+        <img src="src/assets/icons/phone-icon.svg" alt="" />
+        +7 (495) 491-93-41
+      </a>
+    </div>
+    <div class="social social_hidden">
+      <button class="btn btn-primary js-modal-btn" type="button">Записаться</button>
+      <a class="social__item" href="#"><img src="src/assets/icons/max-icon.svg" alt="" /></a>
+    </div>
+    <nav class="footer__nav footer__nav_type_copyright">
+      <a class="footer__nav-item" href="#">Политика конфиденциальности</a>
+      <p class="footer__text">&copy; 2026 Все права защищены</p>
+    </nav>
+  </div>
+</footer>
+
+<div id="form" class="modal-overlay">
+    <div class="modal modal_type_plain">
+        <div class="modal-wrapper">
+            <button class="modal-close js-modal-close" type="button">×</button>
+            <div class="modal-content">
+                <div class="modal-container form-container js-form">
+                    <div class="form-header js-form-header">
+                        <div class="form-title js-form-title">Оставьте свой номер</div>
+                        <div class="form-desc">и мы свяжемся с вами в ближайшее время</div>
+                    </div>
+
+                    <div class="form-title js-form-content-success is-hidden">
+                        Спасибо! Мы свяжемся с Вами в ближайшее время.
+                    </div>
+
+                    <form class="form js-form-content" data-ym="" data-action="/feedback">
+                        <div class="form-title form-title_type_error js-form-content-failure is-hidden">
+                          Не удалось отправить сообщение, повторите попытку позже.
+                        </div>
+
+                        <fieldset class="form__fieldset">
+                            <div class="form__item is-hidden js-input-holder">
+                                <input
+                                  class="js-input-title js-input-field js-input-type-default"
+                                  name="form"
+                                  value="Записаться в подвале"
+                                  type="hidden"
+                                  data-name="form"
+                                />
+                            </div>
+                            <div class="form__item is-hidden js-input-holder">
+                                <input
+                                  class="js-input-field"
+                                  name="pageId"
+                                  value="16"
+                                  type="hidden"
+                                  data-name="pageId"
+                                />
+                            </div>
+                            <div class="form__item is-hidden js-input-holder">
+                                <input
+                                  class="js-input-field"
+                                  name="pagetitle"
+                                  value="Заголовок страницы"
+                                  type="hidden"
+                                  data-name="pagetitle"
+                                />
+                            </div>
+                            <div class="form__item js-input-holder">
+                                <input
+                                  class="form__field js-input-field js-input-type-phone"
+                                  data-name="phone"
+                                  name="phone"
+                                  value=""
+                                  type="tel"
+                                  placeholder="+7 (999) 999-99-99"
+                                />
+                                <label class="form__label">Телефон</label>
+                                <span class="form-error js-error-message"></span>
+                            </div>
+                            <div class="form__item js-input-holder">
+                                <input
+                                  class="form__field js-input-field js-input-type-default"
+                                  data-name="name"
+                                  name="name"
+                                  value=""
+                                  type="text"
+                                  placeholder="Ваше имя"
+                                />
+                                <label class="form__label">Ваше имя</label>
+                                <span class="form-error js-error-message"></span>
+                            </div>
+                        </fieldset>
+                        <div class="form-toggler-row js-input-holder">
+                            <input
+                              id="feedback_confirm"
+                              class="form-toggler js-input-checkbox js-checkbox-required"
+                              type="checkbox"
+                              checked
+                            />
+                            <label class="form-toggler-label form__label" for="feedback_confirm">
+                                <span class="form-toggler-icon"><img src="src/assets/icons/checked-icon.svg" alt="" /></span>
+                                <span>Даю согласие на <a class="td-underline" href="politika-konfidenczialnosti" target="_blank">обработку персональных данных</a></span>
+                            </label>
+                            <span class="form-error js-error-message">Примите соглашение на обработку персональных данных</span>
+                        </div>
+                        <button class="btn btn-md btn-primary js-form-submit" type="submit">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

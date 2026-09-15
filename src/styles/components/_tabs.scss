@@ -1,0 +1,58 @@
+@use "../utils/helpers" as *;
+
+.tab-section {
+  @extend %d-flex-column;
+  gap: 10px 0;
+
+  @media #{$breakpoint-up-md} {
+    display: grid;
+    grid-template-columns: 320px minmax(0,100%);
+    gap: 0 50px;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    padding: 10px 0 0 30px;
+  }
+
+  &.tab-section_nav_nopt {
+    .tab-nav {
+      padding-top: 0;
+    }
+  }
+}
+
+.tab-nav {
+  @extend %d-flex-wrap;
+  gap: 5px;
+
+  @media #{$breakpoint-up-md} {
+    gap: 20px 0;
+    padding: 20px 0;
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+
+  &.is-hidden {
+    display: none;
+  }
+
+  &.tab-nav_type_row {
+    align-items: center;
+    margin: 0 0 20px;
+    gap: 5px;
+
+    @media #{$breakpoint-up-md} {
+      gap: 8px 20px;
+      padding: 0;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+  }
+}
+
+.tab-pane {
+  display: none;
+
+  &.is-active {
+    display: block;
+  }
+}

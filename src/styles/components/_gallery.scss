@@ -1,0 +1,59 @@
+@use "../utils/helpers" as *;
+
+.gallery {
+  @media #{$breakpoint-up-md} {
+    justify-content: stretch;
+  }
+
+  &.is-active {
+    .gallery-slide {
+      &:last-child {
+        .gallery__item {
+          @media #{$breakpoint-up-md} {
+            max-width: 585px;
+            transform: translateX(-50%);
+          }
+        }
+      }
+
+      .gallery__item {
+        @media #{$breakpoint-up-md} {
+          transform: translateX(calc(-100% - 16px));
+        }
+      }
+    }
+  }
+}
+
+.gallery-slide {
+  @include px(8px);
+  transition: all .3s ease;
+}
+
+.gallery__item {
+  max-width: 300px;
+  overflow: hidden;
+  border-radius: 20px;
+  transition: all .3s ease;
+
+  @media #{$breakpoint-up-md} {
+    height: 100%;
+    border-radius: 30px;
+  }
+
+  &:hover {
+    @media #{$breakpoint-up-md} {
+      max-width: 585px;
+    }
+  }
+}
+
+.gallery__item-img {
+  max-width: unset;
+  height: auto;
+
+  @media #{$breakpoint-up-md} {
+    @include wh(auto,100%);
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,37 @@
+@use "../utils/helpers" as *;
+
+.pagination {
+  @extend %d-flex-centered;
+  gap: 8px 16px;
+}
+
+.pagination__wrapper {
+  @extend %d-flex-ai-center;
+  gap: 8px;
+}
+
+.pagination__item {
+  @extend %d-flex-centered;
+  @extend %d-flex-column;
+  min-width: 30px;
+  height: 30px;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid var(--color-grey);
+  color: var(--color-dark);
+  background-color: var(--color-white);
+
+  &.pagination__item_type_btn {
+    padding: 0;
+    color: var(--color-primary);
+    border-color: var(--color-transp);
+    background-color: var(--color-transp);
+  }
+
+  &.pagination__item_type_current {
+    pointer-events: none;
+    color: var(--color-white);
+    border-color: var(--color-primary);
+    background-color: var(--color-primary);
+  }
+}

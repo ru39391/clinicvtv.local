@@ -1,0 +1,71 @@
+@use "../utils/helpers" as *;
+
+.content {
+  h1 {
+    margin-bottom: 30px;
+  }
+
+  p, ul, ol {
+    margin-bottom: 24px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ul {
+    list-style: disc;
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  p, li {
+    @include fs-lh(var(--font-size-xs),var(--line-height-sm));
+    font-weight: var(--fw-light);
+
+    @media #{$breakpoint-up-sm} {
+      @include fs-lh(var(--font-size-body),var(--line-height-body));
+      font-weight: var(--fw-normal);
+    }
+  }
+
+  li {
+    list-style-position: inside;
+  }
+
+  &.content_type_col {
+    max-width: 735px;
+  }
+
+  &.content_type_columned {
+    @media #{$breakpoint-up-md} {
+      column-count: 2;
+      column-gap: 30px;
+    }
+  }
+
+  &.content_offset_mb {
+    margin-bottom: 30px;
+  }
+
+  &.content_offset_px {
+    @include px(5px);
+
+    @media #{$breakpoint-up-sm} {
+      @include px(30px);
+    }
+  }
+
+  &.content_fw_light {
+    p, li {
+      font-size: var(--font-size-md);
+      font-weight: var(--fw-light);
+    }
+  }
+}
+
+.content__link {
+  font-family: var(--font-family-title);
+}

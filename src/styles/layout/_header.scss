@@ -1,0 +1,96 @@
+@use "../utils/helpers" as *;
+
+.header {
+  @include before;
+  @include py(5px);
+  @include pos(0,0,sticky);
+  z-index: 11;
+  margin: 0 0 20px;
+  gap: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+
+  @media #{$breakpoint-up-sm} {
+    @include py(16px);
+    margin: 0;
+    position: static;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "logo contacts contacts"
+      "social contacts contacts";
+  }
+
+  @media #{$breakpoint-up-md} {
+    @include py(18px,8px);
+    display: flex;
+    align-items: flex-start;
+  }
+
+  @media #{$breakpoint-up-lg} {
+    @include px(30px);
+  }
+
+  &:before {
+    @include pos(0,-10px);
+    right: -10px;
+    bottom: 0;
+    z-index: 1;
+    background-color: var(--color-light-blue);
+
+    @media #{$breakpoint-up-sm} {
+      position: static;
+    }
+  }
+}
+
+.header__logo {
+  @include zi(2);
+  max-width: 108px;
+  display: flex;
+  flex-grow: 1;
+
+  @media #{$breakpoint-up-sm} {
+    max-width: unset;
+    grid-area: logo;
+  }
+
+  @media #{$breakpoint-up-md} {
+    padding: 8px 0 0;
+  }
+}
+
+.header__social {
+  display: none;
+  flex-grow: 1;
+
+  @media #{$breakpoint-up-sm} {
+    display: flex;
+    justify-content: flex-start;
+    grid-area: social;
+  }
+
+  @media #{$breakpoint-up-md} {
+    display: block;
+  }
+}
+
+.header__contacts {
+  @include zi(2);
+  gap: 0 10px;
+  display: flex;
+  flex-direction: row-reverse;
+  grid-area: contacts;
+
+  @media #{$breakpoint-up-sm} {
+    gap: 0 10px;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  @media #{$breakpoint-up-md} {
+    gap: 0 20px;
+    padding: 8px 0 0;
+  }
+}

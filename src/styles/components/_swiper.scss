@@ -1,0 +1,70 @@
+@use "../utils/helpers" as *;
+
+.swiper {
+  @extend %d-flex-column;
+  width: 100%;
+  gap: 24px 0;
+}
+
+.swiper-nav-btn {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  margin: -15px 0 0;
+
+  &.swiper-nav-btn_type_prev {
+    left: 14px;
+  }
+
+  &.swiper-nav-btn_type_next {
+    right: 14px;
+  }
+
+  @media #{$breakpoint-up-md} {
+    display: block;
+  }
+}
+
+.swiper-footer {
+  @extend %d-flex-ai-center;
+  display: none;
+  width: 100%;
+  gap: 0 16px;
+
+  @media #{$breakpoint-up-md} {
+    display: flex;
+  }
+
+  &.swiper-footer_pagination_none {
+    justify-content: flex-end;
+
+    .swiper-pagination {
+      display: none;
+    }
+  }
+}
+
+.swiper-pagination {
+  @extend %d-flex-centered;
+  position: static;
+  padding: 4px 0;
+  gap: 0 10px;
+  flex-grow: 1;
+
+  .swiper-pagination-bullet {
+    opacity: 1;
+  }
+}
+
+.swiper-pagination-bullet {
+  @include fw(18px);
+  @include wh(18px);
+  cursor: pointer;
+  background-color: var(--color-grey);
+
+  &.is-active {
+    background-color: var(--color-primary);
+  }
+}

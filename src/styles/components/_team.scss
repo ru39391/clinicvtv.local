@@ -1,0 +1,119 @@
+@use "../utils/helpers" as *;
+
+.team-wrapper {
+  display: flex;
+
+  &.team-wrapper_type_grid {
+    @extend %d-flex-column;
+    gap: 16px;
+
+    @media #{$breakpoint-up-xs} {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media #{$breakpoint-up-md} {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .team-item {
+      max-width: unset;
+    }
+  }
+}
+
+.team-slide {
+  @include px(5px);
+
+  @media #{$breakpoint-up-md} {
+    @include px(18px);
+  }
+}
+
+.team-item {
+  @extend %d-flex-column;
+  text-align: center;
+  max-width: 270px;
+  height: 100%;
+  gap: 20px 0;
+  padding: 20px 10px;
+  position: relative;
+  border-radius: 20px;
+  background-color: var(--color-white);
+
+  @media #{$breakpoint-up-md} {
+    @include px(20px);
+    max-width: 405px;
+    border-radius: 30px;
+  }
+}
+
+.team-item__img {
+  margin: 0 auto;
+  border-radius: 20px;
+
+  @media #{$breakpoint-up-md} {
+    border-radius: 30px;
+  }
+}
+
+.team-item__wrapper {
+  @extend %d-flex-column;
+  align-items: center;
+  flex-grow: 1;
+  gap: 10px 0;
+}
+
+.team-item__title {
+  @extend %section-title;
+  @include fs-lh(var(--font-size-lg),26px);
+  color: var(--color-black);
+
+  @media #{$breakpoint-up-md} {
+    @include fs-lh(32px,var(--line-height-lg));
+    max-width: 75%;
+  }
+
+  &:after {
+    @include wh(100%);
+    @include pos(0);
+    z-index: 1;
+    content: '';
+  }
+}
+
+.team-item__list {
+  @extend %d-flex-column;
+  gap: 1px 0;
+
+  @media #{$breakpoint-up-md} {
+    gap: 4px 0;
+  }
+}
+
+.team-item__feature {
+  @extend %d-flex-centered;
+  @include fs-lh(var(--font-size-xs),var(--line-height-sm));
+  font-weight: var(--fw-light);
+  gap: 0 10px;
+
+  @media #{$breakpoint-up-md} {
+    @include fs-lh(var(--font-size-md),var(--line-height-body));
+    gap: 0 20px;
+  }
+}
+
+.team-item__footer {
+  @extend %d-flex-centered;
+  @include zi(2);
+  display: none;
+
+  @media #{$breakpoint-up-md} {
+    display: flex;
+    gap: 0 10px;
+  }
+}
+
+.team-item__link {
+  font-weight: var(--fw-medium);
+}
