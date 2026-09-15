@@ -126,7 +126,7 @@ src/
 Табы:
 - `tabs.ts` — базовые табы.
 - `tabs-renderer.ts` — табы с запросом на сервер и рендером возвращаемого контента, наследует `tabs.ts`.
-- `example-tabs-renderer.ts` — табы для блока «Примеры работ», наследует `tabs.ts`.
+- `example-tabs-renderer.ts` — табы для блока с примерами работ, наследует `tabs.ts`.
 - `price-tabs-renderer.ts` — табы для прайслиста, наследует `tabs.ts`.
 - `testimonial-tabs-renderer.ts` — табы для отзывов, наследует `tabs.ts`.
 
@@ -136,9 +136,9 @@ src/
 
 - `tpl.twig` — общая вёрстка всех блоков страницы. Расширение шаблона не планируется, так как далее он внедряется в CMS MODX.
 - Остальные Twig-файлы используются для клиентского рендеринга контента, который приходит с API:
-  - `team-grid-item.twig`, `team-grid-wrapper.twig` — сетка врачей.
-  - `team-carousel-item.twig`, `team-carousel-wrapper.twig` — карусель врачей.
-  - `team-item-feature.twig` — дополнительный признак карточки врача.
+  - `team-grid-item.twig`, `team-grid-wrapper.twig` — сетка карточек сотрудников.
+  - `team-carousel-item.twig`, `team-carousel-wrapper.twig` — карусель карточек сотрудников.
+  - `team-item-feature.twig` — дополнительный признак карточки сотрудника.
   - `price-list-item.twig`, `price-list-wrapper.twig` — прайслист.
   - `examples-carousel-item.twig`, `examples-carousel-wrapper.twig` — примеры работ.
   - `testimonial-carousel-item.twig`, `testimonial-carousel-wrapper.twig` — отзывы.
@@ -182,7 +182,7 @@ src/
 - `POST /api/feedback` — форма обратной связи.
 - `POST /api/testimonials` — публичное создание отзыва.
 
-Публичные GET-эндпоинты не требуют авторизации. Операции создания, обновления и удаления (кроме публичных `POST /api/testimonials` и `POST /api/feedback`) требуют роль `Administrator` в MODX. Полное описание API, коды ответов и примеры запросов приведены в README бэкенда.
+Публичные GET-эндпоинты не требуют авторизации. Операции создания, обновления и удаления (кроме публичных `POST /api/testimonials` и `POST /api/feedback`) требуют роль `Administrator` в CMS MODX.
 
 ## Деплой
 
@@ -206,5 +206,5 @@ CI/CD в проекте отсутствует, деплой выполняет�
 - В dev-режиме (`VITE_APP_ENV=development`) страница рендерится на клиенте из `tpl.twig`, что позволяет работать без MODX.
 - В продакшене рендер отключён: `initApp()` навешивает поведение на уже отрисованную сервером разметку.
 - Все динамические сущности рендерятся из Twig-шаблонов на клиенте по данным API.
-- В `testimonial-tabs-renderer.ts` оставлен комментарий `TODO: объединить два запроса в один` — сначала запрашивается команда, затем отзывы по `spec_ids`.
+- В `testimonial-tabs-renderer.ts` оставлен комментарий `TODO: объединить два запроса в один` — сначала запрашивается список сотрудников, затем отзывы по `spec_ids`.
 - Маска телефона реализована в `Utils.phoneMask()` без использования `inputmask`, хотя зависимость присутствует в `package.json`.
